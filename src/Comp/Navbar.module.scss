@@ -1,0 +1,82 @@
+@import "./Styles/Colors.scss";
+
+.navbarContainer {
+  margin: auto;
+  max-width: $maxWidth;
+  height: 60px;
+}
+
+.navbarContainer .navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.navbarContainer .navbar h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: auto 0;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.navbarContainer .navbar a {
+  text-decoration: none;
+  color: $logoColor;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+.navbarContainer .navbarLinks {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbarContainer .navbarLinks a {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  align-items: center;
+  color: $primaryFontColor;
+  padding: 0 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbarContainer .navbarLinks a:hover {
+  box-sizing: border-box;
+  background-color: $btnHoverBackgroundColor;
+  color: $btnHoverFontColor;
+  border-bottom: 1px solid $btnHoverFontColor;
+}
+
+@media (max-width: 600px) {
+  .navbarContainer {
+    height: 100px;
+  }
+  .navbarContainer .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbarContainer .navbar h1 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: auto 0;
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+  .navbarContainer .navbarLinks {
+    min-height: 40px;
+  }
+  .navbarContainer .navbarLinks a {
+    height: 40px;
+  }
+}
