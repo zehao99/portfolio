@@ -2,10 +2,10 @@ import React from "react";
 import "./App.css";
 import Colors from "./Comp/Colors";
 import PageRouter from "./PageRouter";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 const App = (props) => {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="App">
         <PageRouter />
         <style jsx>{`
@@ -14,7 +14,7 @@ const App = (props) => {
           }
         `}</style>
       </div>
-    </BrowserRouter>
+    </Router>
   );
 };
 

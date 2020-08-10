@@ -12,13 +12,16 @@ const Navbar = () => {
           </a>
         </h1>
         <div className={styles.navbarLinks}>
-          <a className={styles.btn} href="/lzh">
-            About
-          </a>
-          <a className={styles.btn} href="https://philipli.art">
+          <NavLink to="/collections" className={styles.btn}>
+            Collections
+          </NavLink>
+          <NavLink to="/about" className={styles.btn}>
             Portfolio
-          </a>
-          <a className={styles.btn} href="https://calories.page">
+          </NavLink>
+          <NavLink to="/about" className={styles.btn}>
+            About
+          </NavLink>
+          <a className={styles.btn} href="/lzh">
             Calories
           </a>
         </div>
