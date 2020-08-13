@@ -5,6 +5,7 @@ import IntroPage from "./Pages/SelfIntro";
 const PageRouter = (props) => {
   return (
     <Switch>
+      <Route path="/latestwork" component={() => <h1>Hi</h1>} />
       <Route path="/collections" component={() => <h1>Hi</h1>} />
       <Route path="/landscape" component={() => <h1>Hi</h1>} />
       <Route path="/about" component={IntroPage} />

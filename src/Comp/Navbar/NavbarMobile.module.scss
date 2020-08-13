@@ -1,0 +1,131 @@
+@import "../Styles/Colors.scss";
+
+.navbarContainer {
+  margin: auto;
+  max-width: $maxWidth;
+  height: 80px;
+
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+  }
+
+  .background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    background: #fff5e3;
+  }
+
+  button {
+    outline: none;
+    border: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: pointer;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+  }
+
+  ul {
+    padding: 25px;
+    position: absolute;
+    top: 100px;
+    width: 230px;
+  }
+
+  li {
+    list-style: none;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .icon-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    flex: 40px 0;
+    margin-right: 20px;
+  }
+
+  .text-placeholder {
+    border-radius: 5px;
+    width: 200px;
+    height: 20px;
+    flex: 1;
+  }
+
+  .refresh {
+    padding: 10px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.navbarContainer .navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.navbarContainer .navbar h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: auto 0;
+  margin-top: 1rem;
+  padding: 0 1rem;
+}
+
+.navbarContainer .navbar a {
+  text-decoration: none;
+  color: $logoColor;
+}
+
+.navbar img {
+  margin-top: 0.5rem;
+  height: 40px;
+}
+
+.navbarToggleIcon {
+  width: 40px;
+  height: 40px;
+  background-color: $lightTextColorComplimentary;
+  cursor: pointer;
+  margin: 0.9rem 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $primaryColorComplimentary;
+  padding: 0.5rem 0.6rem;
+  box-shadow: rgba($color: #000000, $alpha: 0.2) 0.1rem 0.1rem 0.1rem;
+  border-radius: 50%;
+}
