@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, transform } from "framer-motion";
 import NavTag from "./NavTag";
-import Color from "../Colors";
+import Color from "../../Colors";
 
 const styleLeft = {
   zIndex: "100",
@@ -23,7 +23,7 @@ const SubNav = (props) => {
     <motion.div
       style={props.isRight ? styleRight : styleLeft}
       animate={{ opacity: [0, 1] }}
-      translate={{ duration: 0.3 }}
+      translate={{ duration: 0.7 }}
     >
       {props.content === undefined
         ? null

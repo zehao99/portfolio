@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useWindowDimensions from "../../Utilities/useWindowDimensions";
-import NavbarMobile from "./NavbarMobile";
-import NavbarWide from "./NavbarWide";
+import NavbarMobile from "./NavbarMobile/NavbarMobile";
+import NavbarWide from "./NavbarWide/NavbarWide";
 
 const navContent = [
   {

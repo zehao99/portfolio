@@ -8,6 +8,7 @@ const Footer = () => {
         <a href="https://www.instagram.com/zehao99/">
           <i className="fab fa-instagram fa-2x"></i>
         </a>
+        {/* Pop Out a Contact Form */}
         <a href="#">
           <i className="far fa-envelope fa-2x"></i>
         </a>

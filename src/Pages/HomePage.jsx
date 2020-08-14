@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../Comp/Navbar/Navbar";
+import { NavLink } from "react-router-dom";
 import Footer from "../Comp/Footer";
 import styles from "./HomePage.module.scss";
 import useWindowDimensions from "../Utilities/useWindowDimensions";
@@ -9,7 +10,7 @@ const HomePage = (props) => {
   const { height, width } = useWindowDimensions();
 
   return (
-    <motion.div animate={{ opacity: [0, 1] }} transition={{ duration: 0.2 }}>
+    <motion.div animate={{ opacity: [0, 1] }} transition={{ duration: 0.1 }}>
       <div className={styles.bkImage}></div>
       <div className={styles.bkImageBefore}></div>
       <div className={styles.HomePageHeader}>
@@ -21,7 +22,12 @@ const HomePage = (props) => {
       >
         <div className={styles.HomePageContent}>
           <div className={styles.HomePagePrompt}>
-            <p>Sense & Simplicity</p>
+            <h1>Hey~ Welcome!</h1>
+            <h2>Philip Li</h2>
+            <p>Photography | Landscape | Life</p>
+            <NavLink className={styles.HomePageBtn} to={"/latestworks"}>
+              Latest Works
+            </NavLink>
           </div>
         </div>
       </motion.div>

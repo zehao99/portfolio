@@ -31,8 +31,8 @@ const NavbarWide = (props) => {
     <div className={styles.navbarContainer}>
       <div className={styles.navbar}>
         <h1>
-          <a href="http://zehao99.github.io/">
-            <img src={`${process.env.PUBLIC_URL}/img/logo-light.png`} />
+          <a href="/">
+            <img src={`${process.env.PUBLIC_URL}/img/logo-light-light.png`} />
           </a>
         </h1>
         <div className={styles.navbarLinks}>

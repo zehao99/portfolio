@@ -3,33 +3,20 @@ import styles from "./NavbarMobile.module.scss";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useCycle } from "framer-motion";
-import { MenuToggle } from "./MenuToggle";
-import { Navigation } from "./Navigation";
-import useDimensions from "../../Utilities/useWindowDimensions";
-
-const Path = (props) => (
-  <motion.path
-    fill="transparent"
-    strokeWidth="3"
-    stroke="hsl(0, 0%, 18%)"
-    strokeLinecap="round"
-    {...props}
-  />
-);
+import { MenuToggle } from "./NavbarMobileToggle";
+import { Navigation } from "./NavbarMobileMainNav";
+import useDimensions from "../../../Utilities/useWindowDimensions";
 
 const NavbarMobile = (props) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { width, height } = useDimensions();
-  const [widthNow, setWidthNow] = useState(width);
-
-  useEffect(() => {
-    setWidthNow(width);
-  }, [width]);
 
   const sidebar = {
-    open: (height = 1000) => ({
-      clipPath: `circle(${height * 2 + 200}px at right 40px top 40px )`,
+    open: (height = 1500) => ({
+      clipPath: `circle(${height * 2 + 200}px at left 40px top 40px )`,
+      width: "600vw",
+      height: "600vh",
       transition: {
         type: "spring",
         stiffness: 20,
@@ -37,7 +24,10 @@ const NavbarMobile = (props) => {
       },
     }),
     closed: {
-      clipPath: `circle(30px at right 40px top 40px )`,
+      clipPath: `circle(30px at left 40px top 40px )`,
+      overflow: "hidden",
+      width: 80,
+      height: 80,
       transition: {
         delay: 0.5,
         type: "spring",
@@ -47,24 +37,42 @@ const NavbarMobile = (props) => {
     },
   };
 
+  const navValues = {
+    open: {
+      width: "100vw",
+      height: "100vh",
+      position: "absolute",
+      top: 0,
+      right: 0,
+      bottom: 0,
+      transition: {
+        duration: 0.1,
+      },
+    },
+    closed: {
+      width: 80,
+      height: 80,
+    },
+  };
+
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.navbar}>
-        <h1>
-          <a href="http://zehao99.github.io/">
-            <img src={`${process.env.PUBLIC_URL}/img/logo-light.png`} />
-          </a>
-        </h1>
         <motion.nav
           initial={false}
           animate={isOpen ? "open" : "closed"}
           custom={height}
-          ref={containerRef}
+          variants={navValues}
         >
           <motion.div className={styles.background} variants={sidebar} />
-          <Navigation />
+          <Navigation isOpen={isOpen} navContent={props.navContent} />
           <MenuToggle toggle={() => toggleOpen()} />
         </motion.nav>
+        <h1>
+          <a href="/">
+            <img src={`${process.env.PUBLIC_URL}/img/logo-light-light.png`} />
+          </a>
+        </h1>
       </div>
     </div>
   );

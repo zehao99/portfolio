@@ -66,7 +66,7 @@ const ProjectCard = (props) => {
           .projectcard-container .card .card-text {
             font-family: "Sora", sans-serif;
             font-size: 1rem;
-            z-index: 100;
+            z-index: 10;
             opacity: 0;
             padding: 2rem;
             position: absolute;
