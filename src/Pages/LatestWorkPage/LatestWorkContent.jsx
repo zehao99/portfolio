@@ -7,11 +7,15 @@ import { SortableContainer, SortableElement } from "react-sortable-hoc";
 import { Photos } from "./PhotosLatestWorks";
 import useWindowDimensions from "../../Utilities/useWindowDimensions";
 
+const ClickHandler = ({ index }) => {
+  console.log("clicked", index);
+};
 const SortablePhoto = SortableElement((item) => <PhotoComp {...item} />);
 const SortableGallery = SortableContainer(({ items }) => (
   <Gallery
     photos={items}
     renderImage={(props) => <SortablePhoto {...props} />}
+    onClick={ClickHandler}
   />
 ));
 
@@ -25,7 +29,12 @@ const LatestWorkContent = (props) => {
     <div className={styles.LatestWorkContent}>
       <div className={styles.ContentContainer}>
         {width > 600 ? (
-          <SortableGallery items={items} onSortEnd={onSortEnd} axis={"xy"} />
+          <SortableGallery
+            items={items}
+            onSortEnd={onSortEnd}
+            axis={"xy"}
+            pressDelay={500}
+          />
         ) : (
           <Gallery photos={items} />
         )}
