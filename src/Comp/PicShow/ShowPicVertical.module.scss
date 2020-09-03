@@ -1,0 +1,30 @@
+.VerticalContainer {
+  background: rgba(240, 240, 240, 0.1);
+  max-width: 80%;
+  margin: auto;
+  padding: 2rem 0;
+  @media (max-width: 600px) {
+    max-width: 90%;
+    padding: 1rem 0;
+  }
+}
+.VerticalPicContainer {
+  overflow: hidden;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+
+  img {
+    max-width: 90%;
+    margin: auto;
+    @media (max-width: 600px) {
+      max-width: 95%;
+    }
+  }
+  p {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+}

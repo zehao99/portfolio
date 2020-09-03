@@ -1,0 +1,12 @@
+@import "../../Comp/Styles/Colors.scss";
+
+.LandscapeTitle {
+  color: $logoColor;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-align: center;
+  margin: 5vh 0;
+  @media (max-width: 600px) {
+    font-size: 1.2rem;
+  }
+}

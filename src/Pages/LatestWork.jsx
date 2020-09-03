@@ -6,9 +6,13 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 import LatestWorkContent from "./LatestWorkPage/LatestWorkContent";
 import { useScrollPercentage } from "react-scroll-percentage";
+import useDocMaxSize from "../Utilities/useDocMaxSize";
+import useScrollPosition from "../Utilities/useScrollPosition";
 
 const LatestWork = (props) => {
-  const [ref, percentage] = useScrollPercentage();
+  const { docHeight, docWidth } = useDocMaxSize();
+  const { scrollXPos, scrollYPos } = useScrollPosition();
+  const percentage = scrollYPos / docHeight;
   useEffect(() => {
     let colorRed = (1 - percentage) * 28;
     let colorGreen = (1 - percentage) * 42;
@@ -17,11 +21,7 @@ const LatestWork = (props) => {
   }, [percentage]);
 
   return (
-    <motion.div
-      ref={ref}
-      animate={{ opacity: [0, 1] }}
-      transition={{ duration: 0.1 }}
-    >
+    <motion.div animate={{ opacity: [0, 1] }} transition={{ duration: 0.1 }}>
       <div>
         <NavBar />
       </div>
