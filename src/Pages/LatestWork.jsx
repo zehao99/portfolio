@@ -17,11 +17,17 @@ const LatestWork = (props) => {
     let colorRed = (1 - percentage) * 28;
     let colorGreen = (1 - percentage) * 42;
     let colorBlue = (1 - percentage) * 63;
-    document.body.style.background = `rgb(${colorRed}, ${colorGreen},${colorBlue})`;
+    document.getElementById(
+      "latestwork"
+    ).style.background = `rgb(${colorRed}, ${colorGreen},${colorBlue})`;
   }, [percentage]);
 
   return (
-    <motion.div animate={{ opacity: [0, 1] }} transition={{ duration: 0.1 }}>
+    <motion.div
+      id="latestwork"
+      animate={{ opacity: [0, 1] }}
+      transition={{ duration: 0.1 }}
+    >
       <div>
         <NavBar />
       </div>

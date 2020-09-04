@@ -1,14 +1,18 @@
 @import "../../Comp/Styles/Colors.scss";
 
 .LatestWorkContent {
-  max-width: $maxWidth - 50px;
+  max-width: 90%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem 0;
   margin: auto;
+  @media (max-width: 600px) {
+    padding: 1rem 0;
+  }
 }
 
 .ContentContainer {
-  margin: 3rem 2rem;
+  margin: 0 2rem;
   @media (max-width: 600px) {
-    margin: 3rem auto;
-    width: calc(100vw - 50px);
+    margin: 0 1rem;
   }
 }
