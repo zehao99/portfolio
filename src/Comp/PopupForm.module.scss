@@ -1,0 +1,93 @@
+@import "./Styles/Colors.scss";
+.ErrorContainer {
+  z-index: 500;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.ErrorPopCard {
+  z-index: 501;
+  position: fixed;
+  top: calc(30% - 4rem);
+  left: calc(50% - 9.5rem);
+
+  background-color: rgba(241, 245, 255, 0.9);
+  color: $primaryColorComplimentary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+  max-width: 300px;
+  border-radius: 20px;
+
+  button {
+    border: none;
+    padding: 0.7rem;
+    color: $lightTextColorComplimentary;
+    background: $skillCardBackgroundColor;
+    cursor: pointer;
+    border-radius: 0.3rem;
+
+    &:hover {
+      color: $complimentaryTextColor;
+      background: $primaryColor;
+    }
+  }
+}
+
+.ErrorPopCard h3 {
+  font-family: "Antic Slab", serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 1rem;
+}
+
+.ErrorPopCard p {
+  text-align: center;
+}
+
+.ContactForm {
+  margin: 0;
+  padding: 0 1rem;
+  width: 100%;
+}
+.ContactFormInput {
+  label {
+    display: block;
+    font-size: 0.9rem;
+    padding: 0.7rem;
+    span {
+      color: #777;
+      font-size: 0.8rem;
+    }
+  }
+  input {
+    width: 100%;
+    background: none;
+    border: $primaryColor 1px solid;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    &:focus {
+      outline: none;
+      border: $primaryColorComplimentary 1.5px solid;
+      background: white;
+    }
+  }
+  textarea {
+    width: 100%;
+    background: none;
+    border: $primaryColor 1px solid;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    &:focus {
+      outline: none;
+      border: $primaryColorComplimentary 1.5px solid;
+      background: white;
+    }
+  }
+}

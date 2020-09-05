@@ -46,7 +46,7 @@
   justify-content: center;
   font-family: "Antic Slab", serif;
   align-items: flex-start;
-  transform: translateY(90%);
+  transform: translateY(calc(100vh - 60px - 50vh));
   color: $HomePageLightTextColor;
   margin: 0 2rem;
   h1 {

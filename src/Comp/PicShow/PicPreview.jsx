@@ -1,25 +1,29 @@
 import React, { useState, useEffect } from "react";
 import styles from "./PicPreview.module.scss";
 import useWindowDimensions from "../../Utilities/useWindowDimensions";
+
 const PicPreview = (props) => {
   const { height, width } = useWindowDimensions();
   const [idPicked, setIdPicked] = useState(props.idPicked);
+
   useEffect(() => {
     setIdPicked(props.idPicked);
   }, [props.idPicked]);
+
   let len = props.photos.length;
   let PhotosToShow = Array(len);
   //   if (len % 2 == 0) len -= 1;
   const halfLen = len / 2;
+
   props.photos.map((e, idx) => {
     let newIdx = idx - idPicked + halfLen;
     if (newIdx < 0) newIdx += len;
     if (newIdx >= len) newIdx -= len;
     PhotosToShow[newIdx] = e;
   });
+
   let singleWidth = height / 10;
-  console.log(singleWidth);
-  for (let i = -len / 2; i < len; i++) {}
+
   return (
     <div className={styles.PicPreviewContainer}>
       {PhotosToShow.map((e, idx) => {
@@ -66,7 +70,7 @@ const PicPreview = (props) => {
                         "0.1rem 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.6)",
                     }
                   : {
-                      "-webkit-filter": "brightness(50%)",
+                      WebkitFilter: "brightness(50%)",
                       filter: "brightness(50%)",
                     }
               }

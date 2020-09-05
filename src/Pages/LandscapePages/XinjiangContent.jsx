@@ -1,3 +1,8 @@
+export const Info = {
+  title: "Xin Jiang",
+  description: "",
+};
+
 export const Photos = [
   {
     id: 0,

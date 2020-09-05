@@ -16,7 +16,7 @@ const App = (props) => {
         onDragStart={preventDefaultEvent}
       >
         <PageRouter />
-        <style jsx>{`
+        <style>{`
           body {
             color: ${Colors.primaryFontColor};
           }

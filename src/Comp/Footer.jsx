@@ -1,7 +1,14 @@
 import React from "react";
 import Colors from "./Colors";
-
+import Popup from "./PopupAlert";
 const Footer = () => {
+  const showPopHandle = () => {
+    Popup.show({
+      message: "Building",
+      title: "Contact Form",
+    });
+  };
+
   return (
     <div className="footer-container">
       <div className="sns-icons">
@@ -9,15 +16,15 @@ const Footer = () => {
           <i className="fab fa-instagram fa-2x"></i>
         </a>
         {/* Pop Out a Contact Form */}
-        <a href="#">
-          <i className="far fa-envelope fa-2x"></i>
+        <a>
+          <i className="far fa-envelope fa-2x" onClick={showPopHandle}></i>
         </a>
         <a href="https://www.linkedin.com/in/zehao-li-49ab9615b/">
           <i className="fab fa-linkedin fa-2x"></i>
         </a>
         <p>Zehao Li, 2020 &copy; all rights reserved.</p>
       </div>
-      <style jsx>{`
+      <style>{`
         .footer-container {
           text-align: center;
         }
@@ -36,6 +43,9 @@ const Footer = () => {
 
         .footer-container p {
           padding: 1rem;
+        }
+        .footer-container i {
+          cursor: pointer;
         }
       `}</style>
     </div>
