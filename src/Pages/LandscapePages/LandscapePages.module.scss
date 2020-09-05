@@ -1,11 +1,13 @@
 @import "../../Comp/Styles/Colors.scss";
 
 .LandscapeTitle {
+  font-family: "Noto Serif SC", serif;
   color: $logoColor;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 300;
   text-align: center;
   margin: 2rem 0;
+  text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.6);
   @media (max-width: 600px) {
     font-size: 2rem;
   }

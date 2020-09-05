@@ -2,7 +2,7 @@ import React from "react";
 import LandScapePage from "./LandScapePages";
 
 const Info = {
-  title: "Xin Jiang",
+  title: "Xin Jiang 新疆",
   description: "",
 };
 

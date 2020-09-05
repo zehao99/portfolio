@@ -41,9 +41,24 @@ const ShowPicHorizontal = (props) => {
     });
   };
 
+  const onClickHandler = (newId) => {
+    console.log(newId);
+    setCurrentPicID(([id, direction]) => {
+      let dir = 0;
+      if (newId > id) dir = 1;
+      if (newId < id) dir = -1;
+      return [newId, dir];
+    });
+  };
+
   return (
     <div>
-      <div className={styles.ShowPicHorizontalContainer}>
+      <motion.div
+        className={styles.ShowPicHorizontalContainer}
+        initial={{ x: -100, scale: 0 }}
+        animate={{ x: 0, scale: 1 }}
+        transition={{ duration: 0.4 }}
+      >
         <i className="fas fa-angle-left fa-3x" onClick={previousPicHandler}></i>
         <div className={styles.PhotoContainer}>
           <div className={styles.ImgContainer}>
@@ -82,10 +97,21 @@ const ShowPicHorizontal = (props) => {
           <p>{props.photos[currentPicID].description}</p>
         </div>
         <i className="fas fa-angle-right fa-3x" onClick={nextPicHandler}></i>
-      </div>
-      <div className={styles.PicPreview}>
-        <PicPreview photos={props.photos} idPicked={currentPicID} />
-      </div>
+      </motion.div>
+      {props.photos.length > 1 ? (
+        <motion.div
+          className={styles.PicPreview}
+          initial={{ x: -100, scale: 0 }}
+          animate={{ x: 0, scale: 1 }}
+          transition={{ duration: 0.2 }}
+        >
+          <PicPreview
+            photos={props.photos}
+            idPicked={currentPicID}
+            onClickHandler={onClickHandler}
+          />
+        </motion.div>
+      ) : null}
     </div>
   );
 };

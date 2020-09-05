@@ -9,11 +9,10 @@ const PicPreview = (props) => {
   useEffect(() => {
     setIdPicked(props.idPicked);
   }, [props.idPicked]);
-
   let len = props.photos.length;
   let PhotosToShow = Array(len);
   //   if (len % 2 == 0) len -= 1;
-  const halfLen = len / 2;
+  const halfLen = Math.floor(len / 2);
 
   props.photos.map((e, idx) => {
     let newIdx = idx - idPicked + halfLen;
@@ -40,7 +39,12 @@ const PicPreview = (props) => {
                     zIndex: -Math.abs(idx - halfLen) + 100,
                     marginLeft:
                       idx == 0
-                        ? `${0.5 * width - singleWidth * halfLen * 0.605}px`
+                        ? `${
+                            len % 2 == 0
+                              ? 0.5 * width - singleWidth * halfLen * 0.605
+                              : 0.5 * width -
+                                singleWidth * (halfLen + 1) * 0.605
+                          }px`
                         : `${
                             (((idx - halfLen) * singleWidth) / halfLen) * 1
                           }px`,
