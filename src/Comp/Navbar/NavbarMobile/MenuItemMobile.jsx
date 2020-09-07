@@ -36,6 +36,7 @@ const variants = {
     opacity: 0,
     margin: 0,
     height: 0,
+    overflow: "hidden",
     cursor: "default",
     transition: {
       y: { stiffness: 1000 },

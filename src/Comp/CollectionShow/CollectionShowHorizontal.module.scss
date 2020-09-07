@@ -1,0 +1,41 @@
+@import "../Styles/Colors.scss";
+
+.ContentContainer {
+  height: calc(100vh - 60px - 8rem);
+  display: flex;
+  flex-direction: initial;
+  align-items: center;
+  width: auto;
+  overflow: auto;
+  overflowx: scroll;
+  margin: 0 1rem;
+  h1 {
+    font-weight: lighter;
+    font-size: 2rem;
+  }
+}
+.DescriptionPlaceholder {
+  height: 10vh;
+}
+
+.CollectionPageDescription {
+  font-family: "Quicksand", "Noto Serif JP", sans-serif;
+  width: 400px;
+  min-width: 400px;
+  height: 100%;
+  h1 {
+    margin: 2rem 1rem;
+  }
+
+  p {
+    margin: 2rem 1rem;
+  }
+}
+
+.PhotoContainer {
+  padding: 1rem;
+  img {
+    max-width: 60vw;
+    max-height: 60vh;
+  }
+}

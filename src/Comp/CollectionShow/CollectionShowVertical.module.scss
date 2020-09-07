@@ -1,0 +1,28 @@
+@import "../Styles/Colors.scss";
+
+.CollectionPageDescription {
+  font-family: "Quicksand", "Noto Serif JP", sans-serif;
+  margin: 2rem 1rem;
+  h1 {
+    font-weight: lighter;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  p {
+    padding: 1rem;
+  }
+}
+.ContentContainer {
+  img {
+    max-width: 90vw;
+    max-height: 90vw;
+    margin: auto;
+  }
+}
+
+.PhotoContainer {
+  margin: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

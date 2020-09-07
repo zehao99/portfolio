@@ -52,10 +52,10 @@ const navContent = [
         name: "Japan Stories",
         url: "/collections/japanstories",
       },
-      {
-        name: "Road Trip",
-        url: "/collections/roadtrip",
-      },
+      // {
+      //   name: "Road Trip",
+      //   url: "/collections/roadtrip",
+      // },
     ],
     show: false,
     isRight: false,

@@ -1,9 +1,15 @@
-export const Info = {
-  title: "Japan",
-  description: "",
+import React from "react";
+import CollectionPage from "./CollectionPages";
+const Info = {
+  title: "The weird",
+  description: (
+    <>
+      <p>Weird but interesting stuff in life.</p>
+      <p>&nbsp; : )))))</p>
+    </>
+  ),
 };
-
-export const Photos = [
+const Photos = [
   {
     id: 0,
     url: "https://philipliart.files.wordpress.com/2020/04/img_5462.jpg",
@@ -31,3 +37,14 @@ export const Photos = [
     description: "Twinkle Twinkle, 2020, Tokyo",
   },
 ];
+const TheWeirdPage = () => {
+  return (
+    <CollectionPage
+      title={Info.title}
+      description={Info.description}
+      Photos={Photos}
+    />
+  );
+};
+
+export default TheWeirdPage;

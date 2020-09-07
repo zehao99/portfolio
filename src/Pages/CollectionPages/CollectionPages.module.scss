@@ -1,0 +1,23 @@
+@import "../../Comp/Styles/Colors.scss";
+
+.CollectionPage {
+  background: white;
+  min-height: 100vh;
+  color: $primaryColor;
+}
+
+.CollectionNavbar {
+  a {
+    color: $primaryColor !important;
+  }
+}
+::-webkit-scrollbar {
+  height: 4px;
+  width: 4px;
+  border-radius: 10px;
+  margin: 1px 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $primaryColor !important;
+  border-radius: 10px;
+}

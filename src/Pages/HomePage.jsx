@@ -22,7 +22,7 @@ const HomePage = (props) => {
       >
         <div className={styles.HomePageContent}>
           <div className={styles.HomePagePrompt}>
-            <h1>Hey~ Welcome!</h1>
+            <h1>Hi~&nbsp; : )</h1>
             <h2>Philip Li</h2>
             <p>Photography | Landscape | Life</p>
             <NavLink className={styles.HomePageBtn} to={"/latestworks"}>
