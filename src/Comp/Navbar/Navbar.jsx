@@ -82,11 +82,13 @@ const navContent = [
 
 const Navbar = () => {
   const { height, width } = useWindowDimensions();
-
-  return width > 700 ? (
-    <NavbarWide navContent={navContent} />
-  ) : (
+  var u = navigator.userAgent;
+  var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; //android终端
+  var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+  return width <= 700 || isAndroid || isiOS ? (
     <NavbarMobile navContent={navContent} />
+  ) : (
+    <NavbarWide navContent={navContent} />
   );
 };
 
