@@ -9,7 +9,6 @@ const Info = {
         After 12 months here, this country still feels unfamiliar to me. (Thanks
         to COVID19 -_- )
       </p>
-      <p>Might be using this page to record life in the near future.</p>
     </>
   ),
 };
@@ -18,6 +17,9 @@ const Photos = [
     id: 0,
     url: "https://philipliart.files.wordpress.com/2019/10/img_4881.jpg",
     description: "Glamorous Life, 2019, Japan",
+  },
+  {
+    stories: "The sofa that keeps me company throughout the quarantine.",
   },
   {
     id: 1,

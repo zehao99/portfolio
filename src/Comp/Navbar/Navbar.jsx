@@ -83,9 +83,10 @@ const navContent = [
 const Navbar = () => {
   const { height, width } = useWindowDimensions();
   var u = navigator.userAgent;
+  var isTouch = navigator.maxTouchPoints > 1;
   var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1; //android终端
   var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-  return width <= 700 || isAndroid || isiOS ? (
+  return width <= 700 || isAndroid || isiOS || isTouch ? (
     <NavbarMobile navContent={navContent} />
   ) : (
     <NavbarWide navContent={navContent} />

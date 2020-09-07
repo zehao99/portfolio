@@ -1,7 +1,7 @@
 @import "../Styles/Colors.scss";
 .ShowPicHorizontalContainer {
   width: 100vw;
-  height: calc(100vh - 15vh - 60px - 8rem);
+  height: calc(100vh - 15vh - 60px - 5.5rem);
   display: flex;
   flex-direction: initial;
   justify-content: space-between;
@@ -21,6 +21,10 @@
     &:active {
       background: rgba(0, 0, 0, 0.3);
     }
+  }
+
+  @media (max-height: 1100px) {
+    height: calc(100vh - 15vh - 60px - 4.5rem);
   }
 }
 .PhotoContainer {
@@ -44,12 +48,16 @@
   p {
     color: $complimentaryTextColor;
     justify-self: end;
-    padding: 1rem;
+    padding: 0.5rem;
   }
   img {
     position: absolute;
-    max-height: calc(100vh - 15vh - 60px - 12rem);
+    max-height: calc(100vh - 15vh - 60px - 8.5rem);
     max-width: calc(100vw - 12rem);
+
+    @media (max-height: 1100px) {
+      max-height: calc(100vh - 15vh - 60px - 7.5rem);
+    }
   }
 }
 .PicPreview {

@@ -35,7 +35,20 @@ const CollectionShowHorizontal = (props) => {
         {props.description}
       </motion.div>
       {props.Photos.map((e, idx) => {
-        return (
+        return e.stories !== null && e.stories !== undefined ? (
+          <motion.div
+            key={e.id}
+            className={styles.storiesContainer}
+            initial={{ x: -100, scale: 0 }}
+            animate={{ x: 0, scale: 1 }}
+            transition={{ duration: 0.4 }}
+          >
+            <div className={styles.storiesPlaceHolder}></div>
+            <div className={styles.storiesText}>
+              <p>{e.stories}</p>
+            </div>
+          </motion.div>
+        ) : (
           <motion.div
             key={e.id}
             className={styles.PhotoContainer}
@@ -43,7 +56,9 @@ const CollectionShowHorizontal = (props) => {
             animate={{ x: 0, scale: 1 }}
             transition={{ duration: 0.4 }}
           >
-            <img src={e.url} alt="" />
+            <div className={styles.picContainer}>
+              <img src={e.url} alt="" />
+            </div>
           </motion.div>
         );
       })}
