@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import useWindowDimensions from "../../Utilities/useWindowDimensions";
 import styles from "./ShowPicHorizontal.module.scss";
 import PicPreview from "./PicPreview";
 import { motion, AnimatePresence } from "framer-motion";
@@ -25,7 +24,6 @@ const variants = {
   },
 };
 const ShowPicHorizontal = (props) => {
-  const { height, width } = useWindowDimensions();
   const [[currentPicID, direction], setCurrentPicID] = useState([0, 0]);
   const previousPicHandler = () => {
     setCurrentPicID(([id, direction]) => {
@@ -65,6 +63,7 @@ const ShowPicHorizontal = (props) => {
             <AnimatePresence initial={false} custom={direction}>
               <motion.img
                 key={currentPicID}
+                alt=""
                 src={props.photos[currentPicID].url}
                 custom={direction}
                 variants={variants}

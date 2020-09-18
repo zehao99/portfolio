@@ -16,7 +16,7 @@ const ProjectCard = (props) => {
       >
         <a href={props.url}>
           <div className="card">
-            <img src={`${process.env.PUBLIC_URL}/${props.name}.jpg`} />
+            <img alt="" src={`${process.env.PUBLIC_URL}/${props.name}.jpg`} />
             <div className="card-text">
               <p>{props.imgText}</p>
             </div>

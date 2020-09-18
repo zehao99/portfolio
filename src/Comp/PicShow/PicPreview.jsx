@@ -19,6 +19,7 @@ const PicPreview = (props) => {
     if (newIdx < 0) newIdx += len;
     if (newIdx >= len) newIdx -= len;
     PhotosToShow[newIdx] = e;
+    return 0;
   });
 
   let singleWidth = height / 10;
@@ -38,9 +39,9 @@ const PicPreview = (props) => {
                     }deg) scale(${(-Math.abs(idx - halfLen) * 4 + 60) / 50})`,
                     zIndex: -Math.abs(idx - halfLen) + 100,
                     marginLeft:
-                      idx == 0
+                      idx === 0
                         ? `${
-                            len % 2 == 0
+                            len % 2 === 0
                               ? 0.5 * width - singleWidth * halfLen * 0.605
                               : 0.5 * width -
                                 singleWidth * (halfLen + 1) * 0.605
@@ -53,7 +54,7 @@ const PicPreview = (props) => {
                     transform: `perspective(400px) rotateY(${
                       (((-idx + halfLen) * 0.95) / halfLen) * 90
                     }deg) scale(${
-                      idx == halfLen
+                      idx === halfLen
                         ? 1.5
                         : (-Math.abs(idx - halfLen) * 4 + 60) / 50
                     })`,
@@ -67,15 +68,18 @@ const PicPreview = (props) => {
             <img
               src={e.url + "?w=150"}
               alt={e.description}
+              onClick={props.onClickHandler.bind(this, e.id)}
               style={
-                idx == halfLen
+                idx === halfLen
                   ? {
                       boxShadow:
                         "0.1rem 0.1rem 0.3rem 0.1rem rgba(0, 0, 0, 0.6)",
+                      cursor: "pointer",
                     }
                   : {
                       WebkitFilter: "brightness(50%)",
                       filter: "brightness(50%)",
+                      cursor: "pointer",
                     }
               }
             />

@@ -3,12 +3,9 @@ import Navbar from "../Comp/Navbar/Navbar";
 import { NavLink } from "react-router-dom";
 import Footer from "../Comp/Footer";
 import styles from "./HomePage.module.scss";
-import useWindowDimensions from "../Utilities/useWindowDimensions";
 import { motion } from "framer-motion";
 
 const HomePage = (props) => {
-  const { height, width } = useWindowDimensions();
-
   return (
     <motion.div animate={{ opacity: [0, 1] }} transition={{ duration: 0.1 }}>
       <div className={styles.bkImage}></div>

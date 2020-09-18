@@ -25,7 +25,7 @@ const CollectionShowVertical = (props) => {
             transition={{ duration: 0.4 }}
           >
             <img src={e.url} alt="" />
-            {e.stories == null || e.stories == undefined ? null : (
+            {e.stories == null || e.stories === undefined ? null : (
               <p>{e.stories}</p>
             )}
           </motion.div>

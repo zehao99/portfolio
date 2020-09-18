@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./NavbarMobile.module.scss";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useRef } from "react";
 import { useCycle } from "framer-motion";
 import { MenuToggle } from "./NavbarMobileToggle";
 import { Navigation } from "./NavbarMobileMainNav";
@@ -10,7 +9,6 @@ import useDimensions from "../../../Utilities/useWindowDimensions";
 
 const NavbarMobile = (props) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
   const { width, height } = useDimensions();
 
   const sidebar = {
@@ -71,7 +69,10 @@ const NavbarMobile = (props) => {
         </motion.nav>
         <h1>
           <NavLink to="/">
-            <img src={`${process.env.PUBLIC_URL}/img/logo-light-light.png`} />
+            <img
+              alt=""
+              src={`${process.env.PUBLIC_URL}/img/logo-light-light.png`}
+            />
           </NavLink>
         </h1>
       </div>

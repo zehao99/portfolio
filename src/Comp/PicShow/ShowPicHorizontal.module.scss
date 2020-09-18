@@ -1,7 +1,7 @@
 @import "../Styles/Colors.scss";
 .ShowPicHorizontalContainer {
   width: 100vw;
-  height: calc(100vh - 15vh - 60px - 5.5rem);
+  height: calc(100vh - 15vh - 60px - 6.5rem);
   display: flex;
   flex-direction: initial;
   justify-content: space-between;
@@ -23,7 +23,7 @@
     }
   }
 
-  @media (max-height: 1100px) {
+  @media (max-height: 800px) {
     height: calc(100vh - 15vh - 60px - 4.5rem);
   }
 }
@@ -55,7 +55,7 @@
     max-height: calc(100vh - 15vh - 60px - 8.5rem);
     max-width: calc(100vw - 12rem);
 
-    @media (max-height: 1100px) {
+    @media (max-height: 800px) {
       max-height: calc(100vh - 15vh - 60px - 7.5rem);
     }
   }

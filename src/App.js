@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import Colors from "./Comp/Colors";
 import PageRouter from "./PageRouter";
