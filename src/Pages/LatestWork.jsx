@@ -8,8 +8,10 @@ import LatestWorkContent from "./LatestWorkPage/LatestWorkContent";
 import { useScrollPercentage } from "react-scroll-percentage";
 import useDocMaxSize from "../Utilities/useDocMaxSize";
 import useScrollPosition from "../Utilities/useScrollPosition";
+import useWindowDimensions from "../Utilities/useWindowDimensions";
 
 const LatestWork = (props) => {
+  const { width, height } = useWindowDimensions();
   const { docHeight, docWidth } = useDocMaxSize();
   const { scrollXPos, scrollYPos } = useScrollPosition();
   const percentage = scrollYPos / docHeight;
@@ -38,7 +40,13 @@ const LatestWork = (props) => {
         >
           <h1 className={styles.LatestWorkTitle}>Latest Works</h1>
         </motion.div>
-        <LatestWorkContent />
+        {height < 600 ? (
+          <div className={styles.HorizontalAlert}>
+            <p>Please turn your phone to portrait orientation</p>
+          </div>
+        ) : (
+          <LatestWorkContent />
+        )}
       </div>
       <div>
         <Footer />

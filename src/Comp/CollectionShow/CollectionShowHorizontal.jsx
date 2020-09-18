@@ -6,6 +6,7 @@ const CollectionShowHorizontal = (props) => {
   useEffect(() => {
     const sliding = document.getElementById("slidingWindow");
     const handleScroll = (e) => {
+      e.preventDefault();
       let v = -e.wheelDelta;
       sliding.scrollLeft += v;
     };

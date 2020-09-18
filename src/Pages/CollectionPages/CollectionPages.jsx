@@ -19,7 +19,13 @@ const CollectionPage = (props) => {
         transition={{ delay: 0.3, duration: 0.3 }}
       >
         {width >= height ? (
-          <CollectionShowHorizontal {...props} />
+          height < 600 ? (
+            <div className={styles.HorizontalAlert}>
+              <p>Please turn your phone to portrait orientation</p>
+            </div>
+          ) : (
+            <CollectionShowHorizontal {...props} />
+          )
         ) : (
           <CollectionShowVertical {...props} />
         )}
