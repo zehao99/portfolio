@@ -4,6 +4,7 @@
 
 This is the source code for my photography portfolio page.
 
+The application is built upon React.js framework.
 Navbar is different on mobile devices and desktops.
 There are four different show picture components.
 
