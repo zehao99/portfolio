@@ -21,8 +21,8 @@ const SubNav = (props) => {
   const content = props.show ? (
     <motion.div
       style={props.isRight ? styleRight : styleLeft}
-      animate={{ opacity: [0, 1] }}
-      translate={{ duration: 0.7 }}
+      animate={{ opacity: [0, 1], y: [2, 0] }}
+      translate={{ duration: 0.8 }}
     >
       {props.content === undefined
         ? null

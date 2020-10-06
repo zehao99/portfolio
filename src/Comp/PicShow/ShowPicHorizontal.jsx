@@ -81,9 +81,9 @@ const ShowPicHorizontal = (props) => {
                   const swipe = swipePower(offset.x, velocity.x);
 
                   if (swipe < -swipeConfidenceThreshold) {
-                    previousPicHandler();
-                  } else if (swipe > swipeConfidenceThreshold) {
                     nextPicHandler();
+                  } else if (swipe > swipeConfidenceThreshold) {
+                    previousPicHandler();
                   }
                 }}
               />

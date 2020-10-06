@@ -30,7 +30,7 @@
 .PhotoContainer {
   margin: auto;
   height: 100%;
-  width: calc(100vw - 12rem);
+  width: calc(100vw - 11rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,7 +52,7 @@
   }
   img {
     position: absolute;
-    max-height: calc(100vh - 15vh - 60px - 8.5rem);
+    max-height: calc(100vh - 15vh - 60px - 9rem);
     max-width: calc(100vw - 12rem);
 
     @media (max-height: 800px) {
