@@ -25,7 +25,6 @@ const PopupAlert = (props) => {
       alert("Please fill in the form.");
     } else {
       const newData = JSON.stringify(formData);
-      console.log(newData);
       fetch("https://react-hooks-update-74cc9.firebaseio.com/response.json", {
         method: "Post",
         body: newData,

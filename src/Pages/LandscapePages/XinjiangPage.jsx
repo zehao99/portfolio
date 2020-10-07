@@ -133,6 +133,28 @@ const Photos = [
     width: 3,
     height: 2,
   },
+  {
+    id: 18,
+    url: "https://philipliart.files.wordpress.com/2020/04/img_4141.jpg",
+    description: "Twists, 2019, Xinjiang",
+    width: 3,
+    height: 2,
+  },
+  {
+    id: 19,
+    url: "https://philipliart.files.wordpress.com/2020/04/img_4147.jpg",
+    description: "Untitled, 2019, Xinjiang",
+  },
+  {
+    id: 20,
+    url: "https://philipliart.files.wordpress.com/2020/04/img_4148.jpg",
+    description: "Spry, 2019, Xinjiang",
+  },
+  {
+    id: 21,
+    url: "https://philipliart.files.wordpress.com/2020/04/img_4135.jpg",
+    description: "Valley, 2019, Xinjiang",
+  },
 ];
 
 const XinjiangPage = () => {

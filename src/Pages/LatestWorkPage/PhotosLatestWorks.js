@@ -10,7 +10,7 @@ export const Photos = [
     height: 2,
   },
   {
-    src: "https://philipliart.files.wordpress.com/2019/10/img_2043.jpg",
+    src: "https://philipliart.files.wordpress.com/2020/04/img_4148.jpg",
     width: 3,
     height: 2,
   },
@@ -25,9 +25,9 @@ export const Photos = [
     height: 3,
   },
   {
-    src: "https://philipliart.files.wordpress.com/2019/10/img_0279.jpg",
-    width: 3,
-    height: 2,
+    src: "https://philipliart.files.wordpress.com/2020/04/img_4141.jpg",
+    width: 16,
+    height: 9,
   },
   {
     src: "https://philipliart.files.wordpress.com/2019/10/img_0310.jpg",
