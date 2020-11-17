@@ -1,6 +1,9 @@
 import React from "react";
 import Colors from "./Colors";
 import Popup from "./PopupAlert";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
 const Footer = () => {
   const showPopHandle = () => {
     Popup.show({
@@ -13,14 +16,14 @@ const Footer = () => {
     <div className="footer-container">
       <div className="sns-icons">
         <a href="https://www.instagram.com/zehao99/">
-          <i className="fab fa-instagram fa-2x"></i>
+          <FontAwesomeIcon className = "social-media-icon" icon={faInstagram} size="2x" />
         </a>
         {/* Pop Out a Contact Form */}
-        <a>
-          <i className="far fa-envelope fa-2x" onClick={showPopHandle}></i>
+        <a onClick={showPopHandle}>
+        <FontAwesomeIcon className = "social-media-icon" icon={faEnvelope} size="2x" />
         </a>
         <a href="https://www.linkedin.com/in/zehao-li-49ab9615b/">
-          <i className="fab fa-linkedin fa-2x"></i>
+        <FontAwesomeIcon className = "social-media-icon" icon={faLinkedin} size="2x" />
         </a>
         <p>Zehao Li, 2020 &copy; all rights reserved.</p>
       </div>
@@ -44,7 +47,7 @@ const Footer = () => {
         .footer-container p {
           padding: 1rem;
         }
-        .footer-container i {
+        .footer-container .social-media-icon {
           cursor: pointer;
         }
       `}</style>

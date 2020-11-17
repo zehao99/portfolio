@@ -71,13 +71,21 @@ const navContent = [
     url: "/about",
   },
   {
-    id: "Calories",
+    id: "Code&Chat",
     content: [],
     show: false,
     isRight: false,
     isExternalLink: true,
-    url: "https://calories.page",
+    url: "https://codeandchat.live",
   },
+  // {
+  //   id: "Calories",
+  //   content: [],
+  //   show: false,
+  //   isRight: false,
+  //   isExternalLink: true,
+  //   url: "https://calories.page",
+  // },
 ];
 
 const Navbar = () => {

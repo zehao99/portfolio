@@ -94,7 +94,7 @@ const Intro = () => {
         <ProjectCard
           name="Calories"
           imgText="Calories Search"
-          url="https://calories.page"
+          // url="https://calories.page"
           style={{ gridArea: "card" }}
         />
       </div>

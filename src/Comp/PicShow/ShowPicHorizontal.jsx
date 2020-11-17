@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import styles from "./ShowPicHorizontal.module.scss";
 import PicPreview from "./PicPreview";
 import { motion, AnimatePresence } from "framer-motion";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 const variants = {
   enter: (direction) => {
     return {
@@ -57,7 +58,9 @@ const ShowPicHorizontal = (props) => {
         animate={{ x: 0, scale: 1 }}
         transition={{ duration: 0.4 }}
       >
-        <i className="fas fa-angle-left fa-3x" onClick={previousPicHandler}></i>
+        <div className={styles.changePicBtn}  onClick={previousPicHandler}>
+        <FontAwesomeIcon icon ={faAngleLeft} size="2x"/>
+        </div>
         <div className={styles.PhotoContainer}>
           <div className={styles.ImgContainer}>
             <AnimatePresence initial={false} custom={direction}>
@@ -95,7 +98,9 @@ const ShowPicHorizontal = (props) => {
           </div> */}
           <p>{props.photos[currentPicID].description}</p>
         </div>
-        <i className="fas fa-angle-right fa-3x" onClick={nextPicHandler}></i>
+        <div className={styles.changePicBtn}  onClick={nextPicHandler}>
+        <FontAwesomeIcon icon={faAngleRight} size="2x"/>
+        </div>
       </motion.div>
       {props.photos.length > 1 ? (
         <motion.div
