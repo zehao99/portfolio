@@ -10,8 +10,6 @@ const PopupAlert = (props) => {
     description: "",
   });
 
-  console.log(formData);
-
   const changeHandler = (e, element) => {
     setFormData((prevState) => {
       prevState[element] = e.target.value;
@@ -45,7 +43,7 @@ const PopupAlert = (props) => {
         })
         .catch((err) => {
           console.log(err);
-          alert("There's an error");
+          alert("Sorry an error occurred : (.");
         });
     }
   };

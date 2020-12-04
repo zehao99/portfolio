@@ -9,7 +9,7 @@ import useDimensions from "../../../Utilities/useWindowDimensions";
 
 const NavbarMobile = (props) => {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const { width, height } = useDimensions();
+  const { height } = useDimensions();
 
   const sidebar = {
     open: (height = 1500) => ({

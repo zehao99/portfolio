@@ -84,6 +84,7 @@ const Intro = () => {
         <ProjectCard
           name="EIT"
           imgText="Flexible Proximity Sensor With Tomographic Approach"
+          url="https://doi.org/10.1109/IECON43393.2020.9254590"
           style={{ gridArea: "card" }}
         />
         <ProjectCard
@@ -102,7 +103,7 @@ const Intro = () => {
         <Title text="Skills" className="title" />
         <SkillCard
           skillName="Language"
-          skillInfo="Python, C++, Javascript, HTML&CSS, Java, MATLAB"
+          skillInfo="Python, C++, JavaScript, HTML&CSS, Java, MATLAB"
         />
         <SkillCard
           skillName="Frameworks & Tools"
@@ -119,7 +120,8 @@ const Intro = () => {
         <Title text="Publications" />
         <TextCard
           text={`Zehao Li, Shunshuke Yoshimoto and Akio Yamamoto, 
-          "Tomographic Approach for Proximity Imaging using Conductive Sheet", IECON 2020. (Accepted)`}
+          "Tomographic Approach for Proximity Imaging using Conductive Sheet", IECON 2020.`}
+          url="https://doi.org/10.1109/IECON43393.2020.9254590"
           textStyle="italic"
         />
       </div>
