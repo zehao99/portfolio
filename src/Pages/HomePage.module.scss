@@ -66,12 +66,15 @@
     margin: 0.3rem 1rem;
     text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
   }
+  .ButtonContainer {
+    margin: 1rem 1rem;
+  }
   .HomePageBtn {
     color: $HomePageLightTextColor;
     text-decoration: none;
     text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
     font-size: 1.1rem;
-    margin: 0.6rem 1rem;
+    margin-right: 0.5rem;
     padding: 0.5rem;
     border: 1px rgba($color: $logoColor, $alpha: 0.4) solid;
     cursor: pointer;

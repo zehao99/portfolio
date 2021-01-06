@@ -103,7 +103,7 @@ const Intro = () => {
         <Title text="Skills" className="title" />
         <SkillCard
           skillName="Language"
-          skillInfo="Python, C++, JavaScript, HTML&CSS, Java, MATLAB"
+          skillInfo="Python, TypeScript, Java, C++, HTML&CSS, MATLAB"
         />
         <SkillCard
           skillName="Frameworks & Tools"

@@ -22,9 +22,14 @@ const HomePage = (props) => {
             <h1>Hi~&nbsp; : )</h1>
             <h2>Philip Li</h2>
             <p>Photography | Landscape | Life</p>
-            <NavLink className={styles.HomePageBtn} to={"/latestworks"}>
-              Latest Works
-            </NavLink>
+            <div className={styles.ButtonContainer}>
+              <NavLink className={styles.HomePageBtn} to={"/latestworks"}>
+                Latest Works
+              </NavLink>
+              <NavLink className={styles.HomePageBtn} to={"/about"}>
+                About Me
+              </NavLink>
+            </div>
           </div>
         </div>
       </motion.div>
