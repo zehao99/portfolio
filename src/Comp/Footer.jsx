@@ -1,9 +1,14 @@
 import React from "react";
 import Colors from "./Colors";
 import Popup from "./PopupAlert";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faInstagram, faLinkedin, faGithub, faGit } from "@fortawesome/free-brands-svg-icons";
-import {faEnvelope} from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faLinkedin,
+  faGithub,
+  faGit,
+} from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 const Footer = () => {
   const showPopHandle = () => {
     Popup.show({
@@ -16,19 +21,35 @@ const Footer = () => {
     <div className="footer-container">
       <div className="sns-icons">
         <a href="https://www.instagram.com/zehao99/">
-          <FontAwesomeIcon className = "social-media-icon" icon={faInstagram} size="2x" />
+          <FontAwesomeIcon
+            className="social-media-icon"
+            icon={faInstagram}
+            size="2x"
+          />
         </a>
         {/* Pop Out a Contact Form */}
         <a onClick={showPopHandle}>
-          <FontAwesomeIcon className = "social-media-icon" icon={faEnvelope} size="2x" />
+          <FontAwesomeIcon
+            className="social-media-icon"
+            icon={faEnvelope}
+            size="2x"
+          />
         </a>
         <a href="https://www.linkedin.com/in/zehao-li-49ab9615b/">
-          <FontAwesomeIcon className = "social-media-icon" icon={faLinkedin} size="2x" />
+          <FontAwesomeIcon
+            className="social-media-icon"
+            icon={faLinkedin}
+            size="2x"
+          />
         </a>
         <a href="https://github.com/zehao99">
-          <FontAwesomeIcon className = "social-media-icon" icon={faGithub} size="2x" />
+          <FontAwesomeIcon
+            className="social-media-icon"
+            icon={faGithub}
+            size="2x"
+          />
         </a>
-        <p>Zehao Li, 2020 &copy; all rights reserved.</p>
+        <p>Zehao Li, 2021 &copy; all rights reserved.</p>
       </div>
       <style>{`
         .footer-container {
