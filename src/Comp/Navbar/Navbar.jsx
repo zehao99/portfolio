@@ -52,10 +52,6 @@ const navContent = [
         name: "Japan Stories",
         url: "/collections/japanstories",
       },
-      // {
-      //   name: "Road Trip",
-      //   url: "/collections/roadtrip",
-      // },
     ],
     show: false,
     isRight: false,
@@ -78,14 +74,14 @@ const navContent = [
     isExternalLink: true,
     url: "https://codeandchat.live",
   },
-  // {
-  //   id: "Calories",
-  //   content: [],
-  //   show: false,
-  //   isRight: false,
-  //   isExternalLink: true,
-  //   url: "https://calories.page",
-  // },
+  {
+    id: "Calories",
+    content: [],
+    show: false,
+    isRight: false,
+    isExternalLink: true,
+    url: "https://calories.page",
+  },
 ];
 
 const Navbar = () => {

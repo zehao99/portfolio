@@ -6,7 +6,6 @@ import {
   faInstagram,
   faLinkedin,
   faGithub,
-  faGit,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 const Footer = () => {
