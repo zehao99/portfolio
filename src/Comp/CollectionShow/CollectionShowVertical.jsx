@@ -1,10 +1,11 @@
-import React from "react";
-import { motion } from "framer-motion";
-import styles from "./CollectionShowVertical.module.scss";
+import React from 'react';
+import { motion } from 'framer-motion';
+import styles from './CollectionShowVertical.module.scss';
+import ImgLoadingComp from '../LoadingComp/ImgLoadingComp';
 
 const CollectionShowVertical = (props) => {
   return (
-    <motion.div id="slidingWindow" className={styles.ContentContainer}>
+    <motion.div id='slidingWindow' className={styles.ContentContainer}>
       <motion.div
         className={styles.CollectionPageDescription}
         initial={{ x: -100, scale: 0 }}
@@ -24,7 +25,7 @@ const CollectionShowVertical = (props) => {
             animate={{ x: 0, scale: 1 }}
             transition={{ duration: 0.4 }}
           >
-            <img src={e.url} alt="" />
+            <ImgLoadingComp url={e.url} alt='' dark={true} />
             {e.stories == null || e.stories === undefined ? null : (
               <p>{e.stories}</p>
             )}

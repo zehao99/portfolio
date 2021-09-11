@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import styles from "./ShowPicHorizontal.module.scss";
-import PicPreview from "./PicPreview";
-import { motion, AnimatePresence } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import styles from './ShowPicHorizontal.module.scss';
+import PicPreview from './PicPreview';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import ImgLoadingComp from '../LoadingComp/ImgLoadingComp';
 const variants = {
   enter: (direction) => {
     return {
@@ -58,26 +59,25 @@ const ShowPicHorizontal = (props) => {
         animate={{ x: 0, scale: 1 }}
         transition={{ duration: 0.4 }}
       >
-        <div className={styles.changePicBtn}  onClick={previousPicHandler}>
-        <FontAwesomeIcon icon ={faAngleLeft} size="2x"/>
+        <div className={styles.changePicBtn} onClick={previousPicHandler}>
+          <FontAwesomeIcon icon={faAngleLeft} size='2x' />
         </div>
         <div className={styles.PhotoContainer}>
           <div className={styles.ImgContainer}>
             <AnimatePresence initial={false} custom={direction}>
-              <motion.img
+              <motion.div
+                className={styles.ImgLoaderContainer}
                 key={currentPicID}
-                alt=""
-                src={props.photos[currentPicID].url}
                 custom={direction}
                 variants={variants}
-                initial="enter"
-                animate="center"
-                exit="exit"
+                initial='enter'
+                animate='center'
+                exit='exit'
                 transition={{
-                  x: { type: "spring", stiffness: 300, damping: 200 },
+                  x: { type: 'spring', stiffness: 300, damping: 200 },
                   opacity: { duration: 0.2 },
                 }}
-                drag="x"
+                drag='x'
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={1}
                 onDragEnd={(e, { offset, velocity }) => {
@@ -89,7 +89,14 @@ const ShowPicHorizontal = (props) => {
                     previousPicHandler();
                   }
                 }}
-              />
+              >
+                <ImgLoadingComp
+                  alt=''
+                  url={props.photos[currentPicID].url}
+                  height='300px'
+                  width='500px'
+                />
+              </motion.div>
             </AnimatePresence>
           </div>
 
@@ -98,8 +105,8 @@ const ShowPicHorizontal = (props) => {
           </div> */}
           <p>{props.photos[currentPicID].description}</p>
         </div>
-        <div className={styles.changePicBtn}  onClick={nextPicHandler}>
-        <FontAwesomeIcon icon={faAngleRight} size="2x"/>
+        <div className={styles.changePicBtn} onClick={nextPicHandler}>
+          <FontAwesomeIcon icon={faAngleRight} size='2x' />
         </div>
       </motion.div>
       {props.photos.length > 1 ? (

@@ -1,27 +1,28 @@
-import React, { useEffect } from "react";
-import styles from "./CollectionShowHorizontal.module.scss";
-import { motion } from "framer-motion";
+import React, { useEffect } from 'react';
+import styles from './CollectionShowHorizontal.module.scss';
+import { motion } from 'framer-motion';
+import ImgLoadingComp from '../LoadingComp/ImgLoadingComp';
 
 const CollectionShowHorizontal = (props) => {
   useEffect(() => {
-    const sliding = document.getElementById("slidingWindow");
+    const sliding = document.getElementById('slidingWindow');
     const handleScroll = (e) => {
       e.preventDefault();
       let v = -e.wheelDelta;
       sliding.scrollLeft += v;
     };
 
-    sliding.addEventListener("mousewheel", (e) => handleScroll(e));
+    sliding.addEventListener('mousewheel', (e) => handleScroll(e));
 
     return () =>
-      sliding.removeEventListener("mousewheel", (e) => handleScroll(e));
+      sliding.removeEventListener('mousewheel', (e) => handleScroll(e));
   }, []);
 
   const scrollHandler = (e) => {};
 
   return (
     <motion.div
-      id="slidingWindow"
+      id='slidingWindow'
       className={styles.ContentContainer}
       onScroll={(e) => scrollHandler(e)}
     >
@@ -58,7 +59,13 @@ const CollectionShowHorizontal = (props) => {
             transition={{ duration: 0.4 }}
           >
             <div className={styles.picContainer}>
-              <img src={e.url} alt="" />
+              <ImgLoadingComp
+                url={e.url}
+                alt=''
+                height='300px'
+                width='500px'
+                dark={true}
+              />
             </div>
           </motion.div>
         );
