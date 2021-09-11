@@ -1,7 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { motion } from "framer-motion";
-const imgWithClick = { cursor: "pointer" };
+import React from 'react';
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
+import ImgLoadingComp from '../../../Comp/LoadingComp/ImgLoadingComp';
+
+const imgWithClick = { cursor: 'pointer' };
 
 const Photo = ({
   index,
@@ -13,9 +15,9 @@ const Photo = ({
   left,
   key,
 }) => {
-  const imgStyle = { margin: margin, display: "block" };
-  if (direction === "column") {
-    imgStyle.position = "absolute";
+  const imgStyle = { margin: margin, display: 'block' };
+  if (direction === 'column') {
+    imgStyle.position = 'absolute';
     imgStyle.left = left;
     imgStyle.top = top;
   }
@@ -25,7 +27,7 @@ const Photo = ({
   };
 
   return (
-    <motion.img
+    <motion.div
       animate={{ scale: [0, 1.05, 1] }}
       whileTap={{ scale: [1, 0.8, 1] }}
       transition={{ duration: 0.2 }}
@@ -33,7 +35,9 @@ const Photo = ({
       style={onClick ? { ...imgStyle, ...imgWithClick } : imgStyle}
       {...photo}
       onClick={onClick ? handleClick : null}
-    />
+    >
+      <ImgLoadingComp {...photo} imgSameSize={true} />
+    </motion.div>
   );
 };
 
@@ -54,16 +58,16 @@ Photo.propTypes = {
   photo: photoPropType.isRequired,
   margin: PropTypes.number,
   top: (props) => {
-    if (props.direction === "column" && typeof props.top !== "number") {
+    if (props.direction === 'column' && typeof props.top !== 'number') {
       return new Error(
-        "top is a required number when direction is set to `column`"
+        'top is a required number when direction is set to `column`'
       );
     }
   },
   left: (props) => {
-    if (props.direction === "column" && typeof props.left !== "number") {
+    if (props.direction === 'column' && typeof props.left !== 'number') {
       return new Error(
-        "left is a required number when direction is set to `column`"
+        'left is a required number when direction is set to `column`'
       );
     }
   },
