@@ -2,7 +2,7 @@ import React from 'react';
 import PageProps from '../Utilities/PageProps';
 import ProjectCard from './Cards/ProjectCard';
 import Colors from './Colors';
-import { motion } from 'framer-motion';
+import {motion} from 'framer-motion';
 import EduCard from './Cards/EduCard';
 import Title from './Cards/Title';
 import SkillCard from './Cards/SkillCard';
@@ -12,25 +12,24 @@ const Intro = () => {
   return (
     <div className='intro-container'>
       <motion.div
-        initial={{ x: -100, scale: 0 }}
-        animate={{ x: 0, scale: 1 }}
-        transition={{ duration: 0.4 }}
+        initial={{x: -100, scale: 0}}
+        animate={{x: 0, scale: 1}}
+        transition={{duration: 0.4}}
       >
         <div className='about-container'>
           <h3>About Me</h3>
           <p className='about-text'>
-            I'm currently a master degree student at University of Tokyo,
-            working in the field of robot-human interfaces. Photography is my
+            I'm currently an upcoming software engineer at Rakuten Group, Inc. Photography is my
             hobby. I like challenging new things and making discoveries.
           </p>
         </div>
       </motion.div>
       <div className='past-info-container'>
         <div className='edu-container'>
-          <Title text='Education Background' />
+          <Title text='Education Background'/>
           <EduCard
             className='edu-1'
-            time='2019.09. - Now'
+            time='2019.09. - 2021.09.'
             school='University of Tokyo'
             major='MS in Precision Engineering'
             location='Tokyo, Japan'
@@ -47,29 +46,30 @@ const Intro = () => {
           ></EduCard>
         </div>
         <div className='exp-container'>
-          <Title text='Experiences' />
+          <Title text='Experiences'/>
           <EduCard
             className='exp-1'
-            time='2018.06.-2018.09.'
-            school='Microport Inc.'
-            major='CAE Engineer Intern'
-            location='Shanghai, China'
-            info='Simulations on cardiovascular stent'
-            link='http://www.microport.com'
+            time='2022.01.- Now'
+            school='Rakuten Group, Inc.'
+            major='Application Engineer'
+            location='Tokyo, Japan'
+            info='Application engineer in Commerce Company'
+            link='https://global.rakuten.com'
           ></EduCard>
           <EduCard
             className='exp-1'
-            time='2017.06.-2018.06.'
-            school='SJTU Photography Association'
-            major='President of SJTUPA'
-            location='Shanghai, China'
-            info="One of the 10 'Five-Star Students' Associations in campus"
+            time='2021.06.-2021.12.'
+            school='Reasonwhy Inc.'
+            major='Software Engineer (Part-time)'
+            location='Tokyo, Japan'
+            info="Lead software engineer on Findme Specialist Doctors."
+            link='https://www.reasonwhy.jp'
           ></EduCard>
         </div>
       </div>
       <div className='projects-container'>
-        <div className='title-area' style={{ gridArea: 'subtitles' }}>
-          <Title text='Projects' />
+        <div className='title-area' style={{gridArea: 'subtitles'}}>
+          <Title text='Projects'/>
           <p
             style={{
               padding: '2rem',
@@ -78,32 +78,32 @@ const Intro = () => {
               margin: 'auto',
             }}
           >
-            Now I'm working in the field of robot-human interfaces
+            Now I'm working in the field of software engineering.
           </p>
         </div>
         <ProjectCard
           name='EIT'
           imgText='Flexible Proximity Sensor With Tomographic Approach'
           url='https://doi.org/10.3390/s21082736'
-          style={{ gridArea: 'card' }}
+          style={{gridArea: 'card'}}
         />
         <ProjectCard
           name='UWBAGV'
           imgText='Positioning System for Port AGVs using UWB'
-          style={{ gridArea: 'card' }}
+          style={{gridArea: 'card'}}
         />
         <ProjectCard
           name='Calories'
           imgText='Calories Search'
           url='https://calories.page'
-          style={{ gridArea: 'card' }}
+          style={{gridArea: 'card'}}
         />
       </div>
       <div className='skill-container text-container'>
-        <Title text='Skills' className='title' />
+        <Title text='Skills' className='title'/>
         <SkillCard
           skillName='Language'
-          skillInfo='Python, TypeScript, Java, C++, HTML&CSS, MATLAB'
+          skillInfo='TypeScript, Java, Python, C++, HTML&CSS'
         />
         <SkillCard
           skillName='Frameworks & Tools'
@@ -111,13 +111,12 @@ const Intro = () => {
         />
         <SkillCard
           skillName='Cloud & Deployment'
-          skillInfo='GCP, Kubernetes, Istio, Spinnaker'
+          skillInfo='AWS, GCP, Kubernetes, Terraform, Istio, Spinnaker'
         />
-        <SkillCard skillName='CAE & Modelling' skillInfo='Solidworks, ABAQUS' />
-        <SkillCard skillName='Creative' skillInfo='Photoshop, Premiere Pro' />
+        <SkillCard skillName='Creative' skillInfo='Photoshop, Figma, Premiere Pro'/>
       </div>
       <div className='pub-container text-container'>
-        <Title text='Publications' />
+        <Title text='Publications'/>
         <TextCard
           text={`Zehao Li, Shunshuke Yoshimoto and Akio Yamamoto, 
           "Tomographic Approach for Proximity Imaging using Conductive Sheet", IECON 2020.`}
@@ -131,7 +130,7 @@ const Intro = () => {
         />
       </div>
       <div className='award-container text-container'>
-        <Title text='Awards' />
+        <Title text='Awards'/>
         <TextCard
           text={`The First Prize of Annual Photography Contest of VCG and 500px, 2016`}
           textAlign='center'
@@ -162,8 +161,7 @@ const Intro = () => {
             content: '';
             position: absolute;
             display: block;
-            background: url('${process.env.PUBLIC_URL}/about_bg.jpg') no-repeat
-              center center/cover;
+            background: url('${process.env.PUBLIC_URL}/about_bg.jpg') no-repeat center center/cover;
             width: 100%;
             height: 100%;
             top: 0;
@@ -194,10 +192,12 @@ const Intro = () => {
             grid-template-column: 1fr 1fr;
             grid-template-areas: 'edu exp';
           }
+
           .intro-container .past-info-container .edu-container {
             grid-area: 'edu';
             padding: 0 2rem;
           }
+
           .intro-container .past-info-container .exp-container {
             grid-area: 'exp';
             padding: 0 2rem;
@@ -226,12 +226,14 @@ const Intro = () => {
           .intro-container .award-container {
             margin-bottom: 3rem;
           }
+
           @media (max-width: 916px) {
             .intro-container .about-container h3 {
               display: block;
               width: 100%;
               padding: 0 3rem;
             }
+
             .intro-container .past-info-container {
               display: grid;
               grid-template-column: 1fr;

@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Colors from "./Comp/Colors";
 import PageRouter from "./PageRouter";
-import { HashRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 const App = (props) => {
   const preventDefaultEvent = (e) => {
     e.preventDefault();
