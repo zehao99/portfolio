@@ -35,7 +35,7 @@ const Intro = () => {
             location='Tokyo, Japan'
             info='AML Laboratory'
             link='https://aml.t.u-tokyo.ac.jp/'
-          ></EduCard>
+          />
           <EduCard
             className='edu-1'
             time='2015.09.-2019.06.'
@@ -43,7 +43,7 @@ const Intro = () => {
             major='BS in Mechanical Engineering'
             location='Shanghai, China'
             info='Minor in Finance'
-          ></EduCard>
+          />
         </div>
         <div className='exp-container'>
           <Title text='Experiences'/>
@@ -55,7 +55,7 @@ const Intro = () => {
             location='Tokyo, Japan'
             info='Application engineer in Commerce Company'
             link='https://global.rakuten.com'
-          ></EduCard>
+          />
           <EduCard
             className='exp-1'
             time='2021.06.-2021.12.'
@@ -64,7 +64,7 @@ const Intro = () => {
             location='Tokyo, Japan'
             info="Lead software engineer on Findme Specialist Doctors."
             link='https://www.reasonwhy.jp'
-          ></EduCard>
+          />
         </div>
       </div>
       <div className='projects-container'>
@@ -95,7 +95,6 @@ const Intro = () => {
         <ProjectCard
           name='Calories'
           imgText='Calories Search'
-          url='https://calories.page'
           style={{gridArea: 'card'}}
         />
       </div>
@@ -131,6 +130,11 @@ const Intro = () => {
       </div>
       <div className='award-container text-container'>
         <Title text='Awards'/>
+        <TextCard
+          text={`Master's Thesis Award of Merit, Department of Precision Engineering The University of Tokyo, 2021`}
+          textAlign='center'
+          textStyle='italic'
+        />
         <TextCard
           text={`The First Prize of Annual Photography Contest of VCG and 500px, 2016`}
           textAlign='center'

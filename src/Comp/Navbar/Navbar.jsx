@@ -73,15 +73,7 @@ const navContent = [
     isRight: false,
     isExternalLink: true,
     url: "https://codeandchat.live",
-  },
-  {
-    id: "Calories",
-    content: [],
-    show: false,
-    isRight: false,
-    isExternalLink: true,
-    url: "https://calories.page",
-  },
+  }
 ];
 
 const Navbar = () => {
