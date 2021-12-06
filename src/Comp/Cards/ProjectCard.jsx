@@ -9,7 +9,6 @@ const ProjectCard = (props) => {
       <motion.div
         animate={{
           scale: [0.5, 1.05, 1],
-          borderRadius: ["50%", 0, 0],
           overflow: "hidden",
         }}
         transition={{ duration: 0.3 }}
@@ -87,4 +86,4 @@ const ProjectCard = (props) => {
   );
 };
 
-export default ComponentWithScrollLoad(ProjectCard);
+export default ProjectCard;

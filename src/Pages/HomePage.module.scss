@@ -5,22 +5,43 @@
 .bkImage {
   height: 100vh;
   width: 100%;
-  top: 0;
-  left: 0;
-  background: url("../img/BackGround.jpg") no-repeat center center/cover;
+
+  //background: url("../img/BackGround.jpg") no-repeat center center/cover;
   z-index: -999;
-  position: fixed;
+  position: absolute;
+  img {
+    min-height: 100vh;
+    min-width: 100vw;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.bkImageBefore {
-  height: 100vh;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(17, 29, 43, 0.1);
-  z-index: -998;
-  position: fixed;
+.loadingIcon {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
 }
+
+.loadingIconAnimator {
+  background: $HomePageLightTextColor;
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+}
+
+//.bkImageBefore {
+//  height: 100vh;
+//  width: 100%;
+//  top: 0;
+//  left: 0;
+//  background: rgba(17, 29, 43, 0.1);
+//  z-index: -998;
+//  position: fixed;
+//}
 
 .HomePageHeader {
   a {
@@ -30,7 +51,7 @@
 
 .HomePageContent {
   height: 75vh;
-  display: absolute;
+  //display: absolute;
   max-width: $maxWidth;
   margin: auto;
 }

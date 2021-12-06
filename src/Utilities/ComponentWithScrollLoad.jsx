@@ -1,5 +1,6 @@
 import React from "react";
 import Colors from "../Comp/Colors";
+import {AnimatePresence, motion} from "framer-motion";
 
 const ComponentWithScrollLoad = (Component) => {
   return class extends React.Component {
@@ -8,6 +9,9 @@ const ComponentWithScrollLoad = (Component) => {
 
     componentDidMount() {
       const node = this.ref.current;
+      if(!node) {
+        return;
+      }
       this.observer = new IntersectionObserver((entries, observer) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -28,9 +32,11 @@ const ComponentWithScrollLoad = (Component) => {
       if (loading) {
         const loadingText = this.props.Loading || "loading";
         return (
-          <div ref={this.ref} style={{ color: `${Colors.primaryColor}` }}>
-            {loadingText}
-          </div>
+          <AnimatePresence>
+            <motion.div ref={this.ref} style={{ color: `${Colors.primaryColor}` }}>
+              {loadingText}
+            </motion.div>
+          </AnimatePresence>
         );
       }
       return <Component {...this.props} />;
