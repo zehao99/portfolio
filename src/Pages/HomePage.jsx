@@ -18,9 +18,10 @@ const HomePage = (props) => {
               key="loading-icon"
               className={styles.loadingIconAnimator}
               animate={{
-                scale: [1, 2, 2, 1, 1],
+                scale: [1, 1, 1, 1, 1],
+                x: [0, -100, 0, 100, 0],
                 rotate: [0, 0, 270, 270, 0],
-                borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+                borderRadius: ["20%", "50%", "20%", "50%", "20%"],
                 transition: {
                   duration: 2,
                   ease: "easeInOut",
