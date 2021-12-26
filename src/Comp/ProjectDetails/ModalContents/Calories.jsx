@@ -27,7 +27,7 @@ const Calories = () => {
                 <div className={styles.title}>Calories Search</div>
                 <div className={styles.periodContainer}>
                     <div className={styles.period}>
-                        YEAR <span>2020.6 - 2020.9</span>
+                        PERIOD <span>2020.6 - 2020.9</span>
                     </div>
                     <div className={styles.period}>
                         MEMBER <span>Team Project (2 Members)</span>

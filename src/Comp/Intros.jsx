@@ -106,18 +106,21 @@ const Intro = () => {
                 <ProjectCard
                     name="Calories"
                     imgText="Calories Search"
+                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/calories.png?h=300"}
                     style={{ gridArea: 'card' }}
                     onClick={() => handelDisplayModal("calories")}
                 />
                 <ProjectCard
                     name="EIT"
                     imgText="Flexible Proximity Sensor With Tomographic Approach"
+                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/eit.jpg?h=300"}
                     url="https://doi.org/10.3390/s21082736"
                     style={{ gridArea: 'card' }}
                 />
                 <ProjectCard
                     name="UWBAGV"
                     imgText="Positioning System for Port AGVs using UWB"
+                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/uwbagv.png?h=300"}
                     style={{ gridArea: 'card' }}
                 />
             </div>

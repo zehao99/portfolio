@@ -14,7 +14,7 @@ const ProjectCard = (props) => {
         transition={{ duration: 0.3 }}
       >
           <div className="card">
-            <img alt="" src={`${process.env.PUBLIC_URL}/${props.name}.jpg`} />
+            <img alt="" src={props.imgSrc} />
             <div className="card-text">
               <p>{props.imgText}</p>
             </div>
