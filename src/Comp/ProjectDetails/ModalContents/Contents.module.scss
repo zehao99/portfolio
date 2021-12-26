@@ -17,7 +17,9 @@
   }
 }
 
-
+.noShow {
+  display: none;
+}
 
 .periodContainer {
   display: flex;
@@ -115,9 +117,10 @@
 .baseImg {
   position: absolute;
 
+  transition: all 0.3s linear;
 
   img {
-    box-shadow: 10px 10px 30px #00000055;
+    box-shadow: 10px 10px 30px #000000AA;
     max-height: 400px;
     max-width: 82vw;
   }
@@ -142,9 +145,18 @@
   img {
     height: 300px;
   }
+
+  &:hover {
+    transform: translateX(50px) translateY(-10px);
+  }
+
   @media (max-width: 900px) {
     transform: none;
 
+
+    &:hover {
+      transform: none;
+    }
   }
 }
 
@@ -157,10 +169,15 @@
 
   &:hover {
     z-index: 302;
+    transform: translateX(200px) translateY(30px);
   }
 
   @media (max-width: 900px) {
     transform: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
 
@@ -173,9 +190,14 @@
 
   &:hover {
     z-index: 303;
+    transform: translateX(250px) translateY(80px);
   }
 
   @media (max-width: 900px) {
     transform: none;
+
+    &:hover {
+      transform: none;
+    }
   }
 }
