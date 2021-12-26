@@ -1,0 +1,181 @@
+@import "../../Styles/Colors";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Playfair Display', serif;
+}
+
+.title {
+  color: $logoColor;
+  align-self: center;
+  font-size: 3rem;
+  margin: 1.3rem 2rem;
+
+  @media (max-width: 600px) {
+    margin: 1rem;
+  }
+}
+
+
+
+.periodContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  @media(max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
+
+.period {
+  margin: 0.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.8rem;
+
+  span {
+    color: $logoColor;
+    font-size: 1rem;
+    margin: 0 0.5rem;
+  }
+}
+
+.subTitle {
+  font-size: 2rem;
+  color: $complimentaryTextColor;
+  margin: 1rem 2rem;
+
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+}
+
+.contentText {
+  margin: 0.8rem 2rem;
+  line-height: 2rem;
+
+  li::marker {
+    color: $complimentaryTextColor;
+  }
+
+  span {
+    color: $logoColor;
+    font-weight: bold;
+    margin: 0 0.2rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.9rem;
+    margin: 0.8rem;
+  }
+}
+
+.footer {
+  margin: 2rem;
+  text-align: center;
+  color: $complimentaryTextColor;
+
+  a {
+    padding: 0 1rem;
+    color: $primaryColorComplimentary;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $lightTextColorComplimentary;
+    }
+  }
+}
+
+.imgContainerWrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgContainer {
+  margin: 0.3rem 2rem;
+  height: 550px;
+  width: 800px;
+
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.baseImg {
+  position: absolute;
+
+
+  img {
+    box-shadow: 10px 10px 30px #00000055;
+    max-height: 400px;
+    max-width: 82vw;
+  }
+  
+  @media (max-width: 900px) {
+    position: static;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+}
+
+.imgOne {
+  @extend .baseImg;
+
+  z-index: 301;
+  transform: translateX(50px);
+
+  img {
+    height: 300px;
+  }
+  @media (max-width: 900px) {
+    transform: none;
+
+  }
+}
+
+.imgTwo {
+  @extend .baseImg;
+
+  z-index: 300;
+
+  transform: translateX(180px) translateY(50px);
+
+  &:hover {
+    z-index: 302;
+  }
+
+  @media (max-width: 900px) {
+    transform: none;
+  }
+}
+
+.imgThree {
+  @extend .baseImg;
+
+  z-index: 299;
+
+  transform: translateX(230px) translateY(100px);
+
+  &:hover {
+    z-index: 303;
+  }
+
+  @media (max-width: 900px) {
+    transform: none;
+  }
+}

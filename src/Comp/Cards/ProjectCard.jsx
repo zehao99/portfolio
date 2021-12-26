@@ -5,7 +5,7 @@ import ComponentWithScrollLoad from "../../Utilities/ComponentWithScrollLoad.jsx
 
 const ProjectCard = (props) => {
   return (
-    <div className="projectcard-container">
+    <div className="projectcard-container" onClick={props.onClick}>
       <motion.div
         animate={{
           scale: [0.5, 1.05, 1],
@@ -13,19 +13,18 @@ const ProjectCard = (props) => {
         }}
         transition={{ duration: 0.3 }}
       >
-        <a href={props.url}>
           <div className="card">
             <img alt="" src={`${process.env.PUBLIC_URL}/${props.name}.jpg`} />
             <div className="card-text">
               <p>{props.imgText}</p>
             </div>
           </div>
-        </a>
       </motion.div>
 
       <style jsx>
         {`
           .projectcard-container {
+            cursor: pointer;
             max-width: 200px;
             max-height: 200px;
             margin: 1rem;
