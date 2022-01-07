@@ -1,0 +1,13 @@
+@import "./Contents.module";
+
+.imgContainer {
+  height: auto;
+}
+
+.normalPicTwo {
+  @extend .normalPic;
+
+  img {
+    max-width: 250px;
+  }
+}
