@@ -1,12 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './SpecDoc.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
+import LoadingComp from '../../LoadingComp';
 
 const SpecDoc = () => {
+    const [imgLoadList, setImgLoadList] = useState([false, false]);
+    const [showComp, setShowComp] = useState(false);
+
+    useEffect(
+        () => setShowComp(imgLoadList.every((v) => v === true)),
+        [imgLoadList]
+    );
+
+    const handleLoadingDone = (idx) =>
+        setImgLoadList((prevState) => {
+            const newState = [...prevState];
+            newState[idx] = true;
+            return newState;
+        });
+
     return (
         <div>
-            <div className={styles.container}>
+            {showComp ? null : <LoadingComp />}
+            <div className={showComp ? styles.container : styles.noShow}>
                 <div className={styles.title}>Specialist Doctors</div>
                 <div className={styles.periodContainer}>
                     <div className={styles.period}>
@@ -24,23 +41,21 @@ const SpecDoc = () => {
                                     'https://philipliart.files.wordpress.com/2022/01/specdocmanagementlogin.png?w=600'
                                 }
                                 alt={'spec-doc-login'}
+                                onLoad={() => handleLoadingDone(0)}
                             />
                         </div>
                     </div>
                 </div>
                 <div className={styles.additionalInfo}>
                     <div className={styles.footerLine}>
-                        <span>
-                            * Many pictures are not displayed due to permission.
-                        </span>
+                        <span>Landing page of management system.</span>
                     </div>
                 </div>
                 <div className={styles.subTitle}>Management System</div>
                 <div className={styles.contentText}>
                     The management system handles information of the hospitals.
-                    Management operators and hospital employees can change
-                    hospitals' details, manage access members, mailing lists,
-                    and email templates.
+                    Operators can change hospitals' details, manage access
+                    members, edit mailing lists, and etc.
                 </div>
                 <div className={styles.imgContainerWrapper}>
                     <div className={styles.imgContainer}>
@@ -50,22 +65,35 @@ const SpecDoc = () => {
                                     'https://philipliart.files.wordpress.com/2022/01/specdocmanagementcpn.png?w=600'
                                 }
                                 alt={'spec-doc-login'}
+                                onLoad={() => handleLoadingDone(1)}
                             />
                         </div>
                     </div>
                 </div>
+                <div className={styles.additionalInfo}>
+                    <div className={styles.footerLine}>
+                        <span>* This image does not contain actual data.</span>
+                    </div>
+                </div>
                 <div className={styles.subTitle}>Campaign System</div>
                 <div className={styles.contentText}>
-                    The campaign system was an advertising system that could
+                    The campaign system is an advertising system that could
                     control the display method and order inside the service
-                    page. Hospitals hold different display methods according to
-                    their contract methods].
+                    page.
                     <br />
                     The hospital is sorted with display method and other factors
                     with some kind of randomization method.
                     <br />
-                    An impression and conversion counter was also implemented to
+                    An impression and conversion recorder was implemented to
                     provide hospitals with insight into campaign performance.
+                </div>
+                <div className={styles.subTitle}>Hospital Search API</div>
+                <div className={styles.contentText}>
+                    The hospital searching API provides functions of searching
+                    hospital public info for different services. The API
+                    supports several fields for searching. Response data is
+                    generated with regards to campaign status.
+                    <span>This API is used inside service page.</span>
                 </div>
                 <div className={styles.subTitle}>Technical Details</div>
                 <div className={styles.contentText}>
@@ -73,18 +101,15 @@ const SpecDoc = () => {
                         I designed and implemented all the systems mentioned
                         above (including{' '}
                         <span>
-                            UI/UX Design, Frontend, DevOps (AWS), and Backend{' '}
+                            UI/UX Design, Frontend, Infra Design, DevOps{' '}
+                            (AWS), and Backend API{' '}
                         </span>
                         ).
                     </div>
                     <ul>
                         <li>
-                            Designed and developed a scalable system for a
-                            cancer inquiry service called Findme Specialist
-                            Doctors with <span>Amazon Web Service</span>. The
-                            system provides cancer patients with hospital
-                            information according to user search and sends
-                            patient’s inquiry to those hospitals.
+                            Designed and developed the system with{' '}
+                            <span>Amazon Web Service</span>.
                         </li>
                         <li>
                             Utilized <span>MySQL</span> and{' '}
@@ -93,8 +118,8 @@ const SpecDoc = () => {
                             microservices.
                         </li>
                         <li>
-                            Designed the UI/UX interfaces with ease of use and
-                            modern appearance.
+                            <span>Designed the UI/UX interfaces</span> with ease
+                            of use and modern appearance.
                         </li>
                         <li>
                             Carried out the management system for company
@@ -102,9 +127,9 @@ const SpecDoc = () => {
                             developed with <span>Flask</span>
                             and frontend application developed with{' '}
                             <span>React.js</span>
-                            application. The frontend is served with{' '}
-                            <span>Amplify</span> and the backend is served
-                            inside <span>ECS Fargate</span> containers.
+                            application. And served frontend with{' '}
+                            <span>Amplify</span> and backend inside{' '}
+                            <span>ECS Fargate</span> containers.
                         </li>
                         <li>
                             Created a fast and highly available search system of
