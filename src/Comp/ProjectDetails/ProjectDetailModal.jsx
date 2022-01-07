@@ -4,9 +4,11 @@ import styles from './ProjectDetailModal.module.scss';
 import Calories from './ModalContents/Calories';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import SpecDoc from './ModalContents/SpecDoc';
 
 const formKeyCompMap = {
     calories: Calories,
+    specdoc: SpecDoc,
 };
 
 const ProjectDetailModal = (props) => {
@@ -47,7 +49,7 @@ const ProjectDetailModal = (props) => {
                     </div>
                 </div>
                 <div className={styles.contentContainer}>
-                    <Calories />
+                    <Component />
                 </div>
             </motion.div>
         </motion.div>

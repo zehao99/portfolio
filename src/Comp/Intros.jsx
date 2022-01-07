@@ -40,7 +40,7 @@ const Intro = () => {
                 <div className="about-container">
                     <h3>About Me</h3>
                     <p className="about-text">
-                        I'm currently an upcoming software engineer at Rakuten
+                        I'm currently an software engineer at Rakuten
                         Group, Inc. Photography is my hobby. I like challenging
                         new things and making discoveries.
                     </p>
@@ -104,23 +104,24 @@ const Intro = () => {
                     </p>
                 </div>
                 <ProjectCard
+                    name="SpecDoc"
+                    imgText="Findme Specialist Doctors"
+                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/spec-doc.jpg?h=400"}
+                    style={{ gridArea: 'card' }}
+                    onClick={() => handelDisplayModal("specdoc")}
+                />
+                <ProjectCard
                     name="Calories"
                     imgText="Calories Search"
-                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/calories.png?h=300"}
+                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/calories.png?h=400"}
                     style={{ gridArea: 'card' }}
                     onClick={() => handelDisplayModal("calories")}
                 />
                 <ProjectCard
                     name="EIT"
                     imgText="Flexible Proximity Sensor With Tomographic Approach"
-                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/eit.jpg?h=300"}
+                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/eit.jpg?h=400"}
                     url="https://doi.org/10.3390/s21082736"
-                    style={{ gridArea: 'card' }}
-                />
-                <ProjectCard
-                    name="UWBAGV"
-                    imgText="Positioning System for Port AGVs using UWB"
-                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/uwbagv.png?h=300"}
                     style={{ gridArea: 'card' }}
                 />
             </div>

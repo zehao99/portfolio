@@ -1,0 +1,38 @@
+@import "Contents.module";
+
+.imgOne2 {
+  @extend .imgOne;
+  img {
+    height: 400px;
+  }
+}
+
+.imgTwo2 {
+  @extend .imgTwo;
+}
+
+.imgThree2 {
+  @extend .imgThree;
+}
+
+.imgFour2 {
+  @extend .imgThree;
+
+  z-index: 298;
+
+  transform: translateX(300px) translateY(130px);
+
+  &:hover {
+    z-index: 303;
+    transform: translateX(320px) translateY(110px);
+  }
+
+  @media (max-width: 900px) {
+    transform: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+
+}
