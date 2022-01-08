@@ -153,7 +153,7 @@ const SpecDoc = () => {
                 <div className={styles.footer}>
                     <div className={styles.footerLine}>
                         <span>
-                            * Service Frontend NOT Designed or Developed by Me
+                            * Service Page NOT Designed or Developed by Me
                         </span>
                     </div>
                     <div className={styles.footerLine}>
