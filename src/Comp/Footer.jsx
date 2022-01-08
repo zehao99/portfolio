@@ -12,7 +12,7 @@ const Footer = () => {
   const showPopHandle = () => {
     Popup.show({
       message: "Building",
-      title: "Contact Form",
+      title: "Contact Email",
     });
   };
 

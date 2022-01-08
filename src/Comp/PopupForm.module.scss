@@ -12,9 +12,9 @@
 .ErrorPopCard {
   z-index: 501;
   position: fixed;
-  top: calc(30% - 4rem);
+  top: calc(50% - 7rem);
   left: calc(50% - 9.5rem);
-
+  padding-bottom: 1rem;
   background-color: rgba(241, 245, 255, 0.9);
   color: $primaryColorComplimentary;
   display: flex;
@@ -23,6 +23,15 @@
   width: 20rem;
   max-width: 300px;
   border-radius: 20px;
+
+  a {
+    color: $primaryColorComplimentary;
+    transition: all 0.3s linear;
+
+    &:hover {
+      color: $logoColor;
+    }
+  }
 
   button {
     border: none;
@@ -88,6 +97,54 @@
       outline: none;
       border: $primaryColorComplimentary 1.5px solid;
       background: white;
+    }
+  }
+}
+
+.emailLine {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  svg {
+    height: 25px;
+  }
+}
+
+.text {
+  padding-top: 5px;
+  margin: 0 1rem;
+}
+
+.emailButton {
+  width: 100%;
+  margin: 0.2rem 0;
+  padding: 0 2rem;
+  font-family: "Antic Slab", serif;
+
+  a {
+    border-radius: 200px;
+    border: 1px solid $primaryColorComplimentary;
+    padding: 0.3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    .text {
+      padding-top: 0;
+    }
+
+    svg {
+      height: 20px;
+    }
+
+    &:hover {
+      background: $primaryColorComplimentary;
+      color: white;
     }
   }
 }
