@@ -9,29 +9,11 @@ import SkillCard from './Cards/SkillCard';
 import TextCard from './Cards/TextCard';
 import ProjectDetailModal from './ProjectDetails/ProjectDetailModal';
 
-const Intro = () => {
-    const [showModal, setShowModal] = useState(false);
-    const [formKey, setFormKey] = useState('');
-
-    const handelDisplayModal = (formKey) => {
-        setFormKey(formKey);
-        setShowModal(true)
-    }
+const Intro = ({handleDisplayModal}) => {
 
     return (
         <div className="intro-container">
-            <AnimatePresence
-                initial={false}
-                exitBeforeEnter={true}
-                onExitComplete={() => null}
-            >
-                {showModal ? (
-                    <ProjectDetailModal
-                        formKey={formKey}
-                        onClose={() => setShowModal(false)}
-                    />
-                ) : null}
-            </AnimatePresence>
+
             <motion.div
                 initial={{ x: -100, scale: 0 }}
                 animate={{ x: 0, scale: 1 }}
@@ -108,14 +90,14 @@ const Intro = () => {
                     imgText="Findme Specialist Doctors"
                     imgSrc={"https://philipliart.files.wordpress.com/2021/12/spec-doc.jpg?h=400"}
                     style={{ gridArea: 'card' }}
-                    onClick={() => handelDisplayModal("specdoc")}
+                    onClick={() => handleDisplayModal("specdoc")}
                 />
                 <ProjectCard
                     name="Calories"
                     imgText="Calories Search"
                     imgSrc={"https://philipliart.files.wordpress.com/2021/12/calories.png?h=400"}
                     style={{ gridArea: 'card' }}
-                    onClick={() => handelDisplayModal("calories")}
+                    onClick={() => handleDisplayModal("calories")}
                 />
                 <ProjectCard
                     name="EIT"
