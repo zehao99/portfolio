@@ -1,32 +1,27 @@
 export const pageTransition = {
     type: 'tween',
     ease: 'anticipate',
-    duration: 0.3,
+    duration: 0.5,
 };
 
 export const pageVariants = {
     initial: {
         opacity: 0,
-        scaleY: 0,
-        y: "-10vh",
+        rotateY: -90,
         transition: pageTransition,
     },
     animate: {
         opacity: 1,
-        scaleY: 1,
         transition: pageTransition,
-        y: 0,
+        rotateY: 0,
         transitionEnd: { // temp workaround to fix trailing opacity and transform
             opacity: 1,
-            scaleY: 1,
-            y: 0,
+            rotateY: 0,
         },
     },
     exit: {
         opacity: 0,
-        scaleY: 0.2,
-        scroll: 100,
-        y: "20vh",
+        rotateY: 90,
         transition: pageTransition
     },
 };
