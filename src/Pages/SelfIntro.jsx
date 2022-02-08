@@ -12,8 +12,8 @@ const IntroPage = (props) => {
 
     const handleDisplayModal = (formKey) => {
         setFormKey(formKey);
-        setShowModal(true)
-    }
+        setShowModal(true);
+    };
 
     return (
         <motion.div
@@ -39,7 +39,7 @@ const IntroPage = (props) => {
                 <Navbar />
             </header>
             <section className="App-body">
-                <Intros handleDisplayModal={handleDisplayModal}/>
+                <Intros handleDisplayModal={handleDisplayModal} />
                 <Footer />
             </section>
         </motion.div>

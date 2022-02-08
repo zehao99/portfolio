@@ -9,11 +9,9 @@ import SkillCard from './Cards/SkillCard';
 import TextCard from './Cards/TextCard';
 import ProjectDetailModal from './ProjectDetails/ProjectDetailModal';
 
-const Intro = ({handleDisplayModal}) => {
-
+const Intro = ({ handleDisplayModal }) => {
     return (
         <div className="intro-container">
-
             <motion.div
                 initial={{ x: -100, scale: 0 }}
                 animate={{ x: 0, scale: 1 }}
@@ -22,9 +20,9 @@ const Intro = ({handleDisplayModal}) => {
                 <div className="about-container">
                     <h3>About Me</h3>
                     <p className="about-text">
-                        I'm currently an software engineer at Rakuten
-                        Group, Inc. Photography is my hobby. I like challenging
-                        new things and making discoveries.
+                        I'm currently a software engineer at Rakuten Group, Inc.
+                        Photography is my hobby. I like challenging new things
+                        and making discoveries.
                     </p>
                 </div>
             </motion.div>
@@ -88,21 +86,27 @@ const Intro = ({handleDisplayModal}) => {
                 <ProjectCard
                     name="SpecDoc"
                     imgText="Findme Specialist Doctors"
-                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/spec-doc.jpg?h=400"}
+                    imgSrc={
+                        'https://philipliart.files.wordpress.com/2021/12/spec-doc.jpg?h=400'
+                    }
                     style={{ gridArea: 'card' }}
-                    onClick={() => handleDisplayModal("specdoc")}
+                    onClick={() => handleDisplayModal('specdoc')}
                 />
                 <ProjectCard
                     name="Calories"
                     imgText="Calories Search"
-                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/calories.png?h=400"}
+                    imgSrc={
+                        'https://philipliart.files.wordpress.com/2021/12/calories.png?h=400'
+                    }
                     style={{ gridArea: 'card' }}
-                    onClick={() => handleDisplayModal("calories")}
+                    onClick={() => handleDisplayModal('calories')}
                 />
                 <ProjectCard
                     name="EIT"
                     imgText="Flexible Proximity Sensor With Tomographic Approach"
-                    imgSrc={"https://philipliart.files.wordpress.com/2021/12/eit.jpg?h=400"}
+                    imgSrc={
+                        'https://philipliart.files.wordpress.com/2021/12/eit.jpg?h=400'
+                    }
                     url="https://doi.org/10.3390/s21082736"
                     style={{ gridArea: 'card' }}
                 />
@@ -119,7 +123,7 @@ const Intro = ({handleDisplayModal}) => {
                 />
                 <SkillCard
                     skillName="Cloud & Deployment"
-                    skillInfo="AWS, GCP, Kubernetes, Terraform, Istio, Spinnaker"
+                    skillInfo="AWS (SAA-C02), GCP, Kubernetes, Terraform, Istio, Spinnaker"
                 />
                 <SkillCard
                     skillName="Creative"

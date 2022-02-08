@@ -14,7 +14,8 @@ export const pageVariants = {
         opacity: 1,
         transition: pageTransition,
         rotateY: 0,
-        transitionEnd: { // temp workaround to fix trailing opacity and transform
+        transitionEnd: {
+            // temp workaround to fix trailing opacity and transform
             opacity: 1,
             rotateY: 0,
         },
@@ -22,8 +23,6 @@ export const pageVariants = {
     exit: {
         opacity: 0,
         rotateY: 90,
-        transition: pageTransition
+        transition: pageTransition,
     },
 };
-
-

@@ -1,24 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export function getWindowScroll() {
-  const { scrollX: scrollXPos, scrollY: scrollYPos } = window;
-  return {
-    scrollXPos,
-    scrollYPos,
-  };
+    const { scrollX: scrollXPos, scrollY: scrollYPos } = window;
+    return {
+        scrollXPos,
+        scrollYPos,
+    };
 }
 
 export default function useWindowScroll() {
-  const [windowScroll, setWindowScroll] = useState(getWindowScroll());
+    const [windowScroll, setWindowScroll] = useState(getWindowScroll());
 
-  useEffect(() => {
-    function handleScroll() {
-      setWindowScroll(getWindowScroll());
-    }
+    useEffect(() => {
+        function handleScroll() {
+            setWindowScroll(getWindowScroll());
+        }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
-  return windowScroll;
+    return windowScroll;
 }

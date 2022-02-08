@@ -69,25 +69,25 @@ const Calories = () => {
                     <div className={styles.imgContainer}>
                         <div className={styles.imgOne2}>
                             <img
-                                src='https://philipliart.files.wordpress.com/2021/12/calories-search-cart-mobile.png?h=800'
+                                src="https://philipliart.files.wordpress.com/2021/12/calories-search-cart-mobile.png?h=800"
                                 alt={'calories-detail'}
                             />
                         </div>
                         <div className={styles.imgTwo2}>
                             <img
-                                src='https://philipliart.files.wordpress.com/2021/12/caloriesuserbasicinfo.png?h=800'
+                                src="https://philipliart.files.wordpress.com/2021/12/caloriesuserbasicinfo.png?h=800"
                                 alt={'calories-detail'}
                             />
                         </div>
                         <div className={styles.imgThree2}>
                             <img
-                                src='https://philipliart.files.wordpress.com/2021/12/caloriesuserdayview.png?h=800'
+                                src="https://philipliart.files.wordpress.com/2021/12/caloriesuserdayview.png?h=800"
                                 alt={'calories-detail'}
                             />
                         </div>
                         <div className={styles.imgFour2}>
                             <img
-                                src='https://philipliart.files.wordpress.com/2021/12/caloriesuserpiechart.png?h=800'
+                                src="https://philipliart.files.wordpress.com/2021/12/caloriesuserpiechart.png?h=800"
                                 alt={'calories-detail'}
                             />
                         </div>
@@ -100,8 +100,8 @@ const Calories = () => {
                     The user can add items into the cart and record their meals.
                     After recording meals, they can watch their analytics
                     metrics inside the user summary page. The metrics can be
-                    checked inside different periods (e.g., one year, six months, three
-                    months, one month).
+                    checked inside different periods (e.g., one year, six
+                    months, three months, one month).
                 </div>
                 <div className={styles.subTitle}>Technical Details</div>
                 <div className={styles.contentText}>

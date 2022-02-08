@@ -1,24 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export function getMaxSize() {
-  const { clientHeight: docHeight, clientWidth: docWidth } = document.body;
-  return {
-    docHeight,
-    docWidth,
-  };
+    const { clientHeight: docHeight, clientWidth: docWidth } = document.body;
+    return {
+        docHeight,
+        docWidth,
+    };
 }
 
 export default function useMaxSize() {
-  const [windowMaxSize, setMaxSize] = useState(getMaxSize());
+    const [windowMaxSize, setMaxSize] = useState(getMaxSize());
 
-  useEffect(() => {
-    function handleMaxSize() {
-      setMaxSize(getMaxSize());
-    }
+    useEffect(() => {
+        function handleMaxSize() {
+            setMaxSize(getMaxSize());
+        }
 
-    window.addEventListener("resize", handleMaxSize());
-    return () => window.removeEventListener("resize", handleMaxSize);
-  }, []);
+        window.addEventListener('resize', handleMaxSize());
+        return () => window.removeEventListener('resize', handleMaxSize);
+    }, []);
 
-  return windowMaxSize;
+    return windowMaxSize;
 }

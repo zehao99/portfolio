@@ -1,13 +1,13 @@
-@import "./Contents.module";
+@import './Contents.module';
 
 .imgContainer {
-  height: auto;
+    height: auto;
 }
 
 .normalPicTwo {
-  @extend .normalPic;
+    @extend .normalPic;
 
-  img {
-    max-width: 250px;
-  }
+    img {
+        max-width: 250px;
+    }
 }

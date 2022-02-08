@@ -1,104 +1,104 @@
-@import "../../Styles/Colors.scss";
+@import '../../Styles/Colors.scss';
 
 .navbarContainer {
-  margin: auto;
-  max-width: $maxWidth;
-  height: 60px;
+    margin: auto;
+    max-width: $maxWidth;
+    height: 60px;
 }
 
 .navbarContainer .navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 60px;
 }
 
 .navbarContainer .navbar h1 {
-  font-size: 2rem;
-  font-weight: 400;
-  margin: auto 0;
-  margin-top: 1rem;
-  padding: 0 1rem;
-}
-
-.navbarContainer .navbar a {
-  text-decoration: none;
-  color: $logoColor;
-}
-
-.navbar img {
-  margin-top: -0.1rem;
-  height: 40px;
-}
-
-.navbarContainer .navbarLinks {
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbarElement {
-  position: relative;
-  // overflow: hidden;
-  height: 100%;
-  transition: all 0.5s ease-in-out;
-}
-
-.navbarLink {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
-  align-items: center;
-  // color: $primaryFontColor;
-
-  transition: all 0.5s ease-in-out;
-
-  a {
-    padding: 0 1rem;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-.navbarElement:hover {
-  cursor: pointer;
-  box-sizing: border-box;
-  background-color: $btnHoverBackgroundColor;
-  color: $btnHoverFontColor;
-  border-bottom: 1px solid $btnHoverFontColor;
-
-  a {
-    color: $btnHoverFontColor;
-  }
-}
-
-@media (max-width: 600px) {
-  .navbarContainer {
-    height: 100px;
-  }
-  .navbarContainer .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbarContainer .navbar h1 {
     font-size: 2rem;
     font-weight: 400;
     margin: auto 0;
     margin-top: 1rem;
     padding: 0 1rem;
-  }
-  .navbarContainer .navbarLinks {
-    min-height: 40px;
-  }
-  .navbarContainer .navbarLinks a {
+}
+
+.navbarContainer .navbar a {
+    text-decoration: none;
+    color: $logoColor;
+}
+
+.navbar img {
+    margin-top: -0.1rem;
     height: 40px;
-  }
+}
+
+.navbarContainer .navbarLinks {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbarElement {
+    position: relative;
+    // overflow: hidden;
+    height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.navbarLink {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    align-items: center;
+    // color: $primaryFontColor;
+
+    transition: all 0.5s ease-in-out;
+
+    a {
+        padding: 0 1rem;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.navbarElement:hover {
+    cursor: pointer;
+    box-sizing: border-box;
+    background-color: $btnHoverBackgroundColor;
+    color: $btnHoverFontColor;
+    border-bottom: 1px solid $btnHoverFontColor;
+
+    a {
+        color: $btnHoverFontColor;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbarContainer {
+        height: 100px;
+    }
+    .navbarContainer .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbarContainer .navbar h1 {
+        font-size: 2rem;
+        font-weight: 400;
+        margin: auto 0;
+        margin-top: 1rem;
+        padding: 0 1rem;
+    }
+    .navbarContainer .navbarLinks {
+        min-height: 40px;
+    }
+    .navbarContainer .navbarLinks a {
+        height: 40px;
+    }
 }

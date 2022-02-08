@@ -1,46 +1,46 @@
-@import "../Comp/Styles/Colors.scss";
+@import '../Comp/Styles/Colors.scss';
 
 .HomePage {
 }
 .bkImage {
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
 
-  //background: url("../img/BackGround.jpg") no-repeat center center/cover;
-  z-index: -999;
-  position: absolute;
-  img {
-    min-height: 100vh;
-    min-width: 100vw;
-    left: 50%;
-    top: 50%;
+    //background: url("../img/BackGround.jpg") no-repeat center center/cover;
+    z-index: -999;
     position: absolute;
-    transform: translate(-50%, -50%);
-  }
+    img {
+        min-height: 100vh;
+        min-width: 100vw;
+        left: 50%;
+        top: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .loadingIcon {
-  position: absolute;
-  top: 50vh;
-  left: 50vw;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
 }
 
 .loadingIconAnimator {
-  background: $HomePageLightTextColor;
-  border-radius: 30px;
-  width: 50px;
-  height: 50px;
+    background: $HomePageLightTextColor;
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
 }
 
 .bkBlue {
-  background: $primaryColor;
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  top: 0;
-  left: 0;
+    background: $primaryColor;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 //.bkImageBefore {
@@ -54,68 +54,68 @@
 //}
 
 .HomePageHeader {
-  a {
-    color: $primaryColor !important;
-  }
+    a {
+        color: $primaryColor !important;
+    }
 }
 
 .HomePageContent {
-  height: 75vh;
-  //display: absolute;
-  max-width: $maxWidth;
-  margin: auto;
+    height: 75vh;
+    //display: absolute;
+    max-width: $maxWidth;
+    margin: auto;
 }
 
 .HomePagePrompt {
-  left: 0;
-  height: 300px;
-  width: 400px;
-  // background: rgba(17, 29, 43, 0.3);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: "Antic Slab", serif;
-  align-items: flex-start;
-  transform: translateY(calc(100vh - 60px - 50vh));
-  color: $HomePageLightTextColor;
-  margin: 0 2rem;
-  h1 {
-    font-weight: normal;
-    text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
-    font-size: 1.4rem;
-    margin: 0.3rem 1rem;
-  }
-  h2 {
-    font-weight: normal;
-    text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
-    font-size: 1.2rem;
-    margin: 0.3rem 1rem;
-  }
-  p {
-    font-size: 1.1rem;
-    margin: 0.3rem 1rem;
-    text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
-  }
-  .ButtonContainer {
-    margin: 1rem 1rem;
-  }
-  .HomePageBtn {
+    left: 0;
+    height: 300px;
+    width: 400px;
+    // background: rgba(17, 29, 43, 0.3);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Antic Slab', serif;
+    align-items: flex-start;
+    transform: translateY(calc(100vh - 60px - 50vh));
     color: $HomePageLightTextColor;
-    text-decoration: none;
-    text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
-    font-size: 1.1rem;
-    margin-right: 0.5rem;
-    padding: 0.5rem;
-    border: 1px rgba($color: $logoColor, $alpha: 0.4) solid;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      background: $logoColor;
-      color: $primaryColor;
+    margin: 0 2rem;
+    h1 {
+        font-weight: normal;
+        text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
+        font-size: 1.4rem;
+        margin: 0.3rem 1rem;
     }
-  }
+    h2 {
+        font-weight: normal;
+        text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
+        font-size: 1.2rem;
+        margin: 0.3rem 1rem;
+    }
+    p {
+        font-size: 1.1rem;
+        margin: 0.3rem 1rem;
+        text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
+    }
+    .ButtonContainer {
+        margin: 1rem 1rem;
+    }
+    .HomePageBtn {
+        color: $HomePageLightTextColor;
+        text-decoration: none;
+        text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.3);
+        font-size: 1.1rem;
+        margin-right: 0.5rem;
+        padding: 0.5rem;
+        border: 1px rgba($color: $logoColor, $alpha: 0.4) solid;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background: $logoColor;
+            color: $primaryColor;
+        }
+    }
 }
 
 .HomePageBody {

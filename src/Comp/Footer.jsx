@@ -1,56 +1,56 @@
-import React from "react";
-import Colors from "./Colors";
-import Popup from "./PopupAlert";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
+import Colors from './Colors';
+import Popup from './PopupAlert';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faInstagram,
-  faLinkedin,
-  faGithub,
-} from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+    faInstagram,
+    faLinkedin,
+    faGithub,
+} from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 const Footer = () => {
-  const showPopHandle = () => {
-    Popup.show({
-      message: "Building",
-      title: "Contact Email",
-    });
-  };
+    const showPopHandle = () => {
+        Popup.show({
+            message: 'Building',
+            title: 'Contact Email',
+        });
+    };
 
-  return (
-    <div className="footer-container">
-      <div className="sns-icons">
-        <a href="https://www.instagram.com/zehao99/">
-          <FontAwesomeIcon
-            className="social-media-icon"
-            icon={faInstagram}
-            size="2x"
-          />
-        </a>
-        {/* Pop Out a Contact Form */}
-        <a onClick={showPopHandle}>
-          <FontAwesomeIcon
-            className="social-media-icon"
-            icon={faEnvelope}
-            size="2x"
-          />
-        </a>
-        <a href="https://www.linkedin.com/in/zehao-li-49ab9615b/">
-          <FontAwesomeIcon
-            className="social-media-icon"
-            icon={faLinkedin}
-            size="2x"
-          />
-        </a>
-        <a href="https://github.com/zehao99">
-          <FontAwesomeIcon
-            className="social-media-icon"
-            icon={faGithub}
-            size="2x"
-          />
-        </a>
-        <p>Zehao Li, 2021 &copy; all rights reserved.</p>
-      </div>
-      <style>{`
+    return (
+        <div className="footer-container">
+            <div className="sns-icons">
+                <a href="https://www.instagram.com/zehao99/">
+                    <FontAwesomeIcon
+                        className="social-media-icon"
+                        icon={faInstagram}
+                        size="2x"
+                    />
+                </a>
+                {/* Pop Out a Contact Form */}
+                <a onClick={showPopHandle}>
+                    <FontAwesomeIcon
+                        className="social-media-icon"
+                        icon={faEnvelope}
+                        size="2x"
+                    />
+                </a>
+                <a href="https://www.linkedin.com/in/zehao-li-49ab9615b/">
+                    <FontAwesomeIcon
+                        className="social-media-icon"
+                        icon={faLinkedin}
+                        size="2x"
+                    />
+                </a>
+                <a href="https://github.com/zehao99">
+                    <FontAwesomeIcon
+                        className="social-media-icon"
+                        icon={faGithub}
+                        size="2x"
+                    />
+                </a>
+                <p>Zehao Li, 2022 &copy; all rights reserved.</p>
+            </div>
+            <style>{`
         .footer-container {
           text-align: center;
         }
@@ -74,8 +74,8 @@ const Footer = () => {
           cursor: pointer;
         }
       `}</style>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default Footer;

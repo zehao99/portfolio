@@ -101,8 +101,8 @@ const SpecDoc = () => {
                         I designed and implemented all the systems mentioned
                         above (including{' '}
                         <span>
-                            UI/UX Design, Frontend, Infra Design, DevOps{' '}
-                            (AWS), and Backend API{' '}
+                            UI/UX Design, Frontend, Infra Design, DevOps (AWS),
+                            and Backend API{' '}
                         </span>
                         ).
                     </div>

@@ -41,7 +41,10 @@ const ProjectDetailModal = (props) => {
                 className={styles.modalContainer}
             >
                 <div className={styles.modalBackButtonContainer}>
-                    <div className={styles.modalBackButton} onClick={props.onClose}>
+                    <div
+                        className={styles.modalBackButton}
+                        onClick={props.onClose}
+                    >
                         <FontAwesomeIcon icon={faAngleLeft} />
                         <div className={styles.modalBackText}>
                             Back to Intro

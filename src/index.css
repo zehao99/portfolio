@@ -1,46 +1,46 @@
 * {
-  margin: 0;
-  box-sizing: border-box;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 body {
-  margin: auto;
-  font-family: "Tajawal", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  position: relative;
-  background: #172639;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    margin: auto;
+    font-family: 'Tajawal', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    background: #172639;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  /* background: #172639; */
-  z-index: -1000;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    /* background: #172639; */
+    z-index: -1000;
+    width: 100%;
+    height: 100%;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
 }
 
 ::-webkit-scrollbar {
-  background: none;
-  height: 3px;
-  width: 3px;
-  margin: 0 5px;
+    background: none;
+    height: 3px;
+    width: 3px;
+    margin: 0 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #e3c084;
-  border-radius: 10px;
+    background-color: #e3c084;
+    border-radius: 10px;
 }

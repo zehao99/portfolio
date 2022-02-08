@@ -1,18 +1,18 @@
-@import "../../Comp/Styles/Colors.scss";
+@import '../../Comp/Styles/Colors.scss';
 
 .LatestWorkContent {
-  max-width: 90%;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2rem 0;
-  margin: auto;
-  @media (max-width: 600px) {
-    padding: 1rem 0;
-  }
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem 0;
+    margin: auto;
+    @media (max-width: 600px) {
+        padding: 1rem 0;
+    }
 }
 
 .ContentContainer {
-  margin: 0 2rem;
-  @media (max-width: 600px) {
-    margin: 0 1rem;
-  }
+    margin: 0 2rem;
+    @media (max-width: 600px) {
+        margin: 0 1rem;
+    }
 }
