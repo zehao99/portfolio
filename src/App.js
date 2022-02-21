@@ -11,9 +11,9 @@ const App = (props) => {
         <Router>
             <div
                 className="App"
-                onContextMenu={preventDefaultEvent}
-                onDoubleClick={preventDefaultEvent}
-                onDragStart={preventDefaultEvent}
+                // onContextMenu={preventDefaultEvent}
+                // onDoubleClick={preventDefaultEvent}
+                // onDragStart={preventDefaultEvent}
             >
                 <PageRouter />
                 <style>{`

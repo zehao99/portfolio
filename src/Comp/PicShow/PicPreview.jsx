@@ -58,9 +58,8 @@ const PicPreview = (props) => {
                                                 }px`
                                               : `${
                                                     (((idx - halfLen) *
-                                                        singleWidth) /
-                                                        halfLen) *
-                                                    1
+                                                            singleWidth) /
+                                                        halfLen)
                                                 }px`,
                                   }
                                 : {
@@ -77,10 +76,10 @@ const PicPreview = (props) => {
                                       })`,
                                       zIndex: -Math.abs(idx - halfLen) + 100,
                                       marginRight: `${
-                                          -(
+                                          (-(
                                               ((idx - halfLen) * singleWidth) /
                                               halfLen
-                                          ) * 1
+                                          ))
                                       }px`,
                                   }
                         }
