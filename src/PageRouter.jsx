@@ -14,6 +14,7 @@ import ImgLoadingComp from './Comp/LoadingComp/ImgLoadingComp';
 import { AnimatePresence } from 'framer-motion';
 const PageRouter = (props) => {
     const location = useLocation();
+
     return (
         <AnimatePresence initial={true} exitBeforeEnter>
             <Switch location={location} key={location.pathname}>

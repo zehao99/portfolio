@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../Comp/Navbar/Navbar';
 import { NavLink } from 'react-router-dom';
 import Footer from '../Comp/Footer';
@@ -16,25 +16,34 @@ const exitParam = {
     },
 };
 
+const IMG_01_URL =
+    'https://philipliart.files.wordpress.com/2022/02/lp_img01.png?h=330';
+const IMG_02_URL =
+    'https://philipliart.files.wordpress.com/2022/02/lp_img02.png?h=330';
+
 const HomePage = (props) => {
-    const [isImgLoading, setIsImgLoading] = useState(true);
+    const [isImg01Loading, setIsImg01Loading] = useState(true);
+    const [isImg02Loading, setIsImg02Loading] = useState(true);
+
+    useEffect(() => {
+        const img01 = new Image();
+        img01.onload = () => setIsImg01Loading(false);
+        img01.src = IMG_01_URL;
+        const img02 = new Image();
+        img02.onload = () => setIsImg02Loading(false);
+        img02.src = IMG_02_URL;
+    });
 
     return (
         <motion.div
+            className={styles.HomePage}
             initial={'initial'}
             animate={'animate'}
             exit={'exit'}
             variants={pageVariants}
         >
-            <div className={styles.bkImage}>
-                <img
-                    src={process.env.PUBLIC_URL + '/img/BackGround.jpg'}
-                    alt={'background'}
-                    onLoad={() => setIsImgLoading(false)}
-                />
-            </div>
             <AnimatePresence exitBeforeEnter>
-                {isImgLoading ? (
+                {(isImg01Loading || isImg02Loading) ? (
                     <motion.div>
                         <motion.div
                             className={styles.bkBlue}
@@ -85,31 +94,45 @@ const HomePage = (props) => {
                             transition={{ delay: 0.5, duration: 0.5 }}
                         >
                             <div className={styles.HomePageContent}>
-                                <div className={styles.HomePagePrompt}>
-                                    <h1>Hi~&nbsp; : )</h1>
-                                    <h2>Philip Li</h2>
-                                    <p>Photography | Landscape | Life</p>
-                                    <div className={styles.ButtonContainer}>
-                                        <NavLink
-                                            className={styles.HomePageBtn}
-                                            to={'/latestworks'}
-                                        >
-                                            Latest Works
-                                        </NavLink>
-                                        <NavLink
-                                            className={styles.HomePageBtn}
-                                            to={'/about'}
-                                        >
-                                            About Me
-                                        </NavLink>
+                                <div className={styles.HomePageImages}>
+                                    <div className={styles.HomePageRect} />
+                                    <img
+                                        className={styles.HomePageImg01}
+                                        src={IMG_01_URL}
+                                        alt="lp-img-01"
+                                    />
+                                    <img
+                                        className={styles.HomePageImg02}
+                                        src={IMG_02_URL}
+                                        alt="lp-img-02"
+                                    />
+                                    <div className={styles.HomePagePrompt}>
+                                        <h1>Hi~&nbsp; : )</h1>
+                                        <p>I'm Philip</p>
+                                        <p>
+                                            A Software Engineer | Photographer
+                                        </p>
+                                        <div className={styles.ButtonContainer}>
+                                            <NavLink
+                                                className={styles.HomePageBtn}
+                                                to={'/latestworks'}
+                                            >
+                                                Latest Works→
+                                            </NavLink>
+                                            <NavLink
+                                                className={styles.HomePageBtn}
+                                                to={'/about'}
+                                            >
+                                                About Me→
+                                            </NavLink>
+                                        </div>
                                     </div>
+                                </div>
+                                <div className={styles.HomePageBody}>
+                                    <Footer />
                                 </div>
                             </div>
                         </motion.div>
-
-                        <div className={styles.HomePageBody}>
-                            <Footer />
-                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
