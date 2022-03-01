@@ -5,6 +5,7 @@ import Footer from '../Comp/Footer';
 import styles from './HomePage.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { pageVariants } from '../Utilities/AnimateParams';
+import AnimatedCharacters from '../Comp/Common/AnnimatedText';
 
 const exitParam = {
     scale: [1, 2, 5, 20, 400],
@@ -14,6 +15,47 @@ const exitParam = {
         ease: 'easeInOut',
         times: [0, 0.2, 0.5, 0.8, 1],
     },
+};
+
+const rectParentParam = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            delayChildren: 0.1,
+            staggerChildren: 0.3,
+        },
+    },
+};
+
+const getGatherAnimationParams = (patternIdx, transitionOptions) => {
+    let moveLength = 100;
+    let direction = [
+        [0, -1],
+        [1, 0],
+        [0, 1],
+        [-1, 0],
+    ];
+    return {
+        hidden: {
+            x: direction[patternIdx][0] * moveLength,
+            y: direction[patternIdx][1] * moveLength,
+            opacity: 0,
+        },
+        visible: {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.5,
+                ease: 'easeInOut',
+                times: [0, 0.2, 0.5, 0.8, 1],
+                ...transitionOptions,
+            },
+        },
+    };
 };
 
 const IMG_01_URL =
@@ -43,7 +85,7 @@ const HomePage = (props) => {
             variants={pageVariants}
         >
             <AnimatePresence exitBeforeEnter>
-                {(isImg01Loading || isImg02Loading) ? (
+                {isImg01Loading || isImg02Loading ? (
                     <motion.div>
                         <motion.div
                             className={styles.bkBlue}
@@ -80,39 +122,66 @@ const HomePage = (props) => {
                         </motion.div>
                     </motion.div>
                 ) : (
-                    <motion.div
-                        key="main-comp"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: [0, 1] }}
-                        transition={{ duration: 0.1 }}
-                    >
+                    <motion.div key="main-comp">
                         <div className={styles.HomePageHeader}>
                             <Navbar />
                         </div>
-                        <motion.div
-                            animate={{ opacity: [0, 1] }}
-                            transition={{ delay: 0.5, duration: 0.5 }}
-                        >
-                            <div className={styles.HomePageContent}>
-                                <div className={styles.HomePageImages}>
-                                    <div className={styles.HomePageRect} />
-                                    <img
+                        <motion.div>
+                            <motion.div className={styles.HomePageContent}>
+                                <motion.div
+                                    initial="hidden"
+                                    animate="visible"
+                                    variants={rectParentParam}
+                                    className={styles.HomePageImages}
+                                >
+                                    <motion.div
+                                        key={'home-page-rect'}
+                                        variants={getGatherAnimationParams(0)}
+                                        className={styles.HomePageRect}
+                                    />
+                                    <motion.img
+                                        key={'home-page-img01'}
+                                        variants={getGatherAnimationParams(1)}
                                         className={styles.HomePageImg01}
                                         src={IMG_01_URL}
                                         alt="lp-img-01"
                                     />
-                                    <img
+                                    <motion.img
+                                        key={'home-page-img02'}
+                                        variants={getGatherAnimationParams(2)}
                                         className={styles.HomePageImg02}
                                         src={IMG_02_URL}
                                         alt="lp-img-02"
                                     />
-                                    <div className={styles.HomePagePrompt}>
-                                        <h1>Hi~&nbsp; : )</h1>
-                                        <p>I'm Philip</p>
-                                        <p>
-                                            A Software Engineer | Photographer
-                                        </p>
-                                        <div className={styles.ButtonContainer}>
+                                    <motion.div
+                                        key={'home-page-prompt'}
+                                        variants={getGatherAnimationParams(3, {
+                                            duration: 0.1,
+                                            when: "beforeChildren",
+                                            staggerChildren: 0.025,
+                                        })}
+                                        className={styles.HomePagePrompt}
+                                    >
+                                        <AnimatedCharacters
+                                            type={'heading1'}
+                                            text={'Hi~ : )'}
+                                        />
+                                        <AnimatedCharacters
+                                            type={'paragraph'}
+                                            text={"I'm Philip"}
+                                        />
+                                        <AnimatedCharacters
+                                            type={'paragraph'}
+                                            text={
+                                                'A Software Engineer | Photographer'
+                                            }
+                                        />
+                                        <motion.div
+                                            variants={getGatherAnimationParams(3, {
+                                                delay: 1.8,
+                                            })}
+                                            className={styles.ButtonContainer}
+                                        >
                                             <NavLink
                                                 className={styles.HomePageBtn}
                                                 to={'/latestworks'}
@@ -125,13 +194,13 @@ const HomePage = (props) => {
                                             >
                                                 About Me→
                                             </NavLink>
-                                        </div>
-                                    </div>
-                                </div>
+                                        </motion.div>
+                                    </motion.div>
+                                </motion.div>
                                 <div className={styles.HomePageBody}>
                                     <Footer />
                                 </div>
-                            </div>
+                            </motion.div>
                         </motion.div>
                     </motion.div>
                 )}

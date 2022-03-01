@@ -71,6 +71,7 @@
 
 .HomePageImages {
     height: 630px;
+    min-height: calc(100vh - 180px - 6rem);
     width: 764px;
     margin: 3rem auto;
     position: relative;
@@ -155,6 +156,7 @@
 
     .HomePageImages {
         margin: 0.5rem 0;
+        min-height: calc(100vh - 140px - 6rem);
     }
 }
 
