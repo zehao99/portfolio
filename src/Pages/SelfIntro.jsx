@@ -5,10 +5,13 @@ import Intros from '../Comp/Intros';
 import { pageVariants } from '../Utilities/AnimateParams';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectDetailModal from '../Comp/ProjectDetails/ProjectDetailModal';
+import useIsMobile from '../Utilities/useIsMobile';
+import IntroPC from '../Comp/Intro/IntroPC';
 
 const IntroPage = (props) => {
     const [showModal, setShowModal] = useState(false);
     const [formKey, setFormKey] = useState('');
+    const isMobile = useIsMobile();
 
     const handleDisplayModal = (formKey) => {
         setFormKey(formKey);
@@ -39,7 +42,12 @@ const IntroPage = (props) => {
                 <Navbar />
             </header>
             <section className="App-body">
-                <Intros handleDisplayModal={handleDisplayModal} />
+                {isMobile ? (
+                    <Intros handleDisplayModal={handleDisplayModal} />
+                ) : (
+                    <IntroPC handleDisplayModal={handleDisplayModal} />
+                )}
+
                 <Footer />
             </section>
         </motion.div>

@@ -1,0 +1,44 @@
+@import '../../../Styles/Colors';
+
+$cardSideLength: 14em;
+$negativeCardSideLength: -14em;
+
+.projectCardContainer {
+  position: relative;
+  width: $cardSideLength;
+  height: $cardSideLength;
+  overflow: hidden;
+
+  img {
+    width: $cardSideLength;
+    height: $cardSideLength;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.cardCover {
+  position: absolute;
+  width: $cardSideLength;
+  height: $cardSideLength;
+  margin-top: $negativeCardSideLength;
+}
+
+.coverRectangle {
+  position: absolute;
+  width: 30em;
+  height: 20em;
+  background: rgba(#000, 0.2);
+}
+
+.title {
+  position: absolute;
+  width: $cardSideLength;
+  height: $cardSideLength;
+  display: grid;
+  place-items: center;
+  color: $logoColor;
+}
+

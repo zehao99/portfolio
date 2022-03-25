@@ -55,10 +55,10 @@ const Footer = () => {
           text-align: center;
         }
         .footer-container .sns-icons {
-          margin-top: 1rem;
+          margin-top: 1em;
         }
         .footer-container .sns-icons a {
-          padding: 0 1rem;
+          padding: 0 1em;
           color: ${Colors.primaryColorComplimentary};
           transition: all 0.3s ease-in-out;
         }
@@ -68,10 +68,16 @@ const Footer = () => {
         }
 
         .footer-container p {
-          padding: 1rem;
+          padding: 1em;
         }
         .footer-container .social-media-icon {
           cursor: pointer;
+        }
+        
+        @media(min-width:1200px) {
+            .footer-container {
+                font-size: MIN(1.33vw, 22px);
+            }
         }
       `}</style>
         </div>

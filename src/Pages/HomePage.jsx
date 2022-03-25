@@ -11,6 +11,7 @@ const exitParam = {
     scale: [1, 2, 5, 20, 400],
     opacity: [1, 0.8, 0.6, 0.4, 0],
     transition: {
+        delay: 0.6,
         duration: 0.5,
         ease: 'easeInOut',
         times: [0, 0.2, 0.5, 0.8, 1],
@@ -157,8 +158,8 @@ const HomePage = (props) => {
                                         key={'home-page-prompt'}
                                         variants={getGatherAnimationParams(3, {
                                             duration: 0.1,
-                                            when: "beforeChildren",
-                                            staggerChildren: 0.025,
+                                            when: 'beforeChildren',
+                                            staggerChildren: 0.03,
                                         })}
                                         className={styles.HomePagePrompt}
                                     >
@@ -177,9 +178,12 @@ const HomePage = (props) => {
                                             }
                                         />
                                         <motion.div
-                                            variants={getGatherAnimationParams(3, {
-                                                delay: 1.8,
-                                            })}
+                                            variants={getGatherAnimationParams(
+                                                3,
+                                                {
+                                                    delay: 1.8,
+                                                }
+                                            )}
                                             className={styles.ButtonContainer}
                                         >
                                             <NavLink

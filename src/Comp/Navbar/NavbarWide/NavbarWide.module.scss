@@ -2,8 +2,14 @@
 
 .navbarContainer {
     margin: auto;
-    max-width: $maxWidth;
     height: 60px;
+    @media (min-width: 1200px) {
+        font-size: MIN(1.33vw, 20px);
+        width: 95vw;
+    }
+    @media (min-width: 1200px) {
+        height: MIN(80px, 5vw);
+    }
 }
 
 .navbarContainer .navbar {
@@ -11,10 +17,13 @@
     flex-direction: row;
     justify-content: space-between;
     height: 60px;
+    @media (min-width: 1200px) {
+        height: MIN(80px, 5vw);
+    }
 }
 
 .navbarContainer .navbar h1 {
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: 400;
     margin: auto 0;
     margin-top: 1rem;
@@ -29,6 +38,9 @@
 .navbar img {
     margin-top: -0.1rem;
     height: 40px;
+    @media (min-width: 1200px) {
+        height: MIN(60px, 3.33vw);
+    }
 }
 
 .navbarContainer .navbarLinks {
@@ -58,7 +70,7 @@
     transition: all 0.5s ease-in-out;
 
     a {
-        padding: 0 1rem;
+        padding: 0 1em;
         height: 100%;
         width: 100%;
         display: flex;

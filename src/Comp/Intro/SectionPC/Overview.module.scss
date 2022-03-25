@@ -1,0 +1,53 @@
+@import '../../Styles/Colors';
+
+.mainContainer {
+  margin: 5em 5em 8em;
+  display: flex;
+  flex-direction: row;
+}
+
+.backgroundRect {
+  position: absolute;
+  background: rgba($lightTextColor, 0.1);
+  height: 14em;
+  margin-top: 7em;
+  width: calc(100vw - 10em);
+  max-width: calc(100vw - 10em);
+  z-index: -10;
+}
+
+.textContainer {
+  flex: 1;
+  padding: 1em;
+}
+
+.titleContainer {
+  padding: 2em 2em;
+  h1 {
+    font-size: 3.5em;
+    color: $logoColor;
+    font-weight: normal;
+  }
+}
+
+.imgContainer img{
+  max-width: 20em;
+  max-height: 20em;
+}
+
+.detailContainer {
+  padding: 0.5em 2em;
+
+  .details {
+    max-width: 25em;
+    line-height: 1.5;
+  }
+}
+
+.floatingSquare {
+  position: absolute;
+  background: rgba($logoColor, 0.2);
+  width: 5em;
+  height: 5em;
+  z-index: -11;
+}

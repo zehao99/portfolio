@@ -40,19 +40,21 @@ const ProjectDetailModal = (props) => {
                 onClick={(e) => e.stopPropagation()}
                 className={styles.modalContainer}
             >
-                <div className={styles.modalBackButtonContainer}>
-                    <div
-                        className={styles.modalBackButton}
-                        onClick={props.onClose}
-                    >
-                        <FontAwesomeIcon icon={faAngleLeft} />
-                        <div className={styles.modalBackText}>
-                            Back to Intro
+                <div className={styles.boxContent}>
+                    <div className={styles.modalBackButtonContainer}>
+                        <div
+                            className={styles.modalBackButton}
+                            onClick={props.onClose}
+                        >
+                            <FontAwesomeIcon icon={faAngleLeft} />
+                            <div className={styles.modalBackText}>
+                                Back to Intro
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className={styles.contentContainer}>
-                    <Component />
+                    <div className={styles.contentContainer}>
+                        <Component />
+                    </div>
                 </div>
             </motion.div>
         </motion.div>
