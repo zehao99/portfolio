@@ -1,6 +1,6 @@
 {
-    "name": "lzh",
-    "version": "0.1.0",
+    "name": "portfolio",
+    "version": "1.2.0",
     "private": true,
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.30",
