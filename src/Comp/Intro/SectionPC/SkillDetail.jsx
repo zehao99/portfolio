@@ -5,12 +5,19 @@ import styles from './SkillDetail.module.scss';
 import IntroTitle from './common/IntroTitle';
 import awsBadge from '../../../img/aws-badge.png';
 import gcpLogo from '../../../img/gcp-logo.png';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const SkillDetail = () => {
     return (
         <div className={styles.mainContainer}>
-            <div className={styles.background} style={{backgroundImage : `url(${process.env.PUBLIC_URL + '/infoBkg.svg'})`}}>
+            <div
+                className={styles.background}
+                style={{
+                    backgroundImage: `url(${
+                        process.env.PUBLIC_URL + '/infoBkg.svg'
+                    })`,
+                }}
+            >
                 <div className={styles.skillAndExperienceContainer}>
                     <IntroTitle title={'Skill & Experiences'} />
                     <div className={styles.skillContent}>
@@ -22,7 +29,10 @@ const SkillDetail = () => {
                         designing and implementing user interfaces. So I’m
                         building websites during spare time.
                     </div>
-                    <motion.div className={styles.floatingSquare} animate={{ x: '10em', y: '20em' }}/>
+                    <motion.div
+                        className={styles.floatingSquare}
+                        animate={{ x: '14em', y: '19em' }}
+                    />
                 </div>
                 <div className={styles.toolsContainer}>
                     <div className={styles.toolsSection}>

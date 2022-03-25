@@ -13,9 +13,9 @@ const Overview = (props) => {
                     </div>
                     <div className={styles.detailContainer}>
                         <div className={styles.details}>
-                            I’m a software engineer currently working at Rakuten Group,
-                            based in Tokyo, Japan. Photography is my hobby, hope you
-                            enjoy my works.
+                            I’m a software engineer currently working at Rakuten
+                            Group, based in Tokyo, Japan. Photography is my
+                            hobby, hope you enjoy my works.
                         </div>
                     </div>
                 </div>
@@ -25,10 +25,16 @@ const Overview = (props) => {
                         alt="Memoji"
                     />
                 </div>
-                <div className={styles.backgroundRect}/>
+                <div className={styles.backgroundRect} />
             </div>
-            <motion.div className={styles.floatingSquare} animate={{x: '20em', y: '-9em'}}/>
-            <motion.div className={styles.floatingSquare} animate={{x: '45em', y: '-24em'}}/>
+            <motion.div
+                className={styles.floatingSquare}
+                animate={{ x: '30em', y: '-9em' }}
+            />
+            <motion.div
+                className={styles.floatingSquare}
+                animate={{ x: '60em', y: '-28em' }}
+            />
         </motion.div>
     );
 };
