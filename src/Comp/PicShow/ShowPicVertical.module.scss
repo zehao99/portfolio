@@ -1,11 +1,11 @@
 @import '../Styles/Colors.scss';
 .VerticalContainer {
-    background: rgba(240, 240, 240, 0.1);
-    max-width: 80%;
+    //background: rgba(240, 240, 240, 0.1);
+    max-width: 100%;
     margin: auto;
     padding: 2rem 0;
     @media (max-width: 600px) {
-        max-width: 90%;
+        max-width: 100%;
         padding: 1rem 0;
     }
 }
@@ -18,10 +18,10 @@
     padding: 1rem;
 
     img {
-        max-width: 90%;
+        max-width: 100%;
         margin: auto;
         @media (max-width: 600px) {
-            max-width: 95%;
+            max-width: 100%;
         }
     }
     p {

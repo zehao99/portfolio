@@ -38,14 +38,14 @@ const CollectionShowVertical = (props) => {
             {props.Photos.map((e, idx) => {
                 return (
                     <motion.div
-                        key={e.id + Math.random().toString(8)}
+                        key={e.id}
                         className={styles.PhotoContainer}
                         variants={item}
                     >
-                        <ImgLoadingComp url={e.url} alt="" dark={true} />
-                        {e.stories == null || e.stories === undefined ? null : (
-                            <p>{e.stories}</p>
+                        {e.url && e.url.length > 0 && (
+                            <ImgLoadingComp url={e.url} alt="" dark={true} />
                         )}
+                        {e.stories == null ? null : <p>{e.stories}</p>}
                     </motion.div>
                 );
             })}

@@ -158,7 +158,7 @@ const SpecDoc = () => {
                     </div>
                     <div className={styles.footerLine}>
                         Spec Doc Service Page:
-                        <a href="https://specialist.findme.life/service/cancer/prostate/ittosanken/">
+                        <a href="https://www.specialist-doctor.com/">
                             <FontAwesomeIcon
                                 className="social-media-icon"
                                 icon={faLink}
@@ -166,8 +166,8 @@ const SpecDoc = () => {
                         </a>
                     </div>
                     <div className={styles.footerLine}>
-                        Reasonwhy Inc. HomePage:
-                        <a href="https://www.reasonwhy.jp/">
+                        Specialist Doctors Inc. HomePage:
+                        <a href="https://www.specialist-doctor.com/home/">
                             <FontAwesomeIcon
                                 className="social-media-icon"
                                 icon={faLink}

@@ -12,6 +12,7 @@ import TheWeirdPage from './Pages/CollectionPages/TheWeirdPage';
 import JapanStoriesPage from './Pages/CollectionPages/JapanStoriesPage';
 import ImgLoadingComp from './Comp/LoadingComp/ImgLoadingComp';
 import { AnimatePresence } from 'framer-motion';
+import CollectionsLP from './Pages/CollectionPages/CollectionsLP';
 const PageRouter = (props) => {
     const location = useLocation();
 
@@ -37,7 +38,7 @@ const PageRouter = (props) => {
                 />
                 <Route
                     path="/collections"
-                    component={() => <BacktoDesertPage />}
+                    component={() => <CollectionsLP />}
                 />
                 <Route
                     path="/landscape/xinjiang"

@@ -112,18 +112,18 @@
     h1 {
         font-weight: normal;
         text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.1);
-        font-size: 1.4rem;
+        font-size: 1.4em;
         padding: 0 0.5rem;
         margin: 1rem 1rem;
     }
     h2 {
         font-weight: normal;
         text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.1);
-        font-size: 1.2rem;
+        font-size: 1.2em;
         margin: 0.3rem 1rem;
     }
     p {
-        font-size: 1rem;
+        font-size: 1em;
         margin: 0.4rem 1rem;
         padding: 0 0.5rem;
         text-shadow: 0.1em 0.1em 0.2em rgba($color: #000000, $alpha: 0.1);
@@ -155,6 +155,7 @@
     }
 
     .HomePageImages {
+        height: 750px;
         margin: 0.5rem 0;
         min-height: calc(100vh - 140px - 6rem);
     }

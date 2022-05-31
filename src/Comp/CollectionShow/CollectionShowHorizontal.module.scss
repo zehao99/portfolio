@@ -6,8 +6,8 @@
     flex-direction: initial;
     align-items: center;
     width: auto;
-    overflow: auto;
-    overflowx: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
     margin: 0 1rem;
     h1 {
         font-weight: lighter;

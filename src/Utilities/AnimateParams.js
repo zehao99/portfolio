@@ -14,6 +14,7 @@ export const pageVariants = {
         opacity: 1,
         transition: pageTransition,
         rotateY: 0,
+        overflow: 'hidden',
         transitionEnd: {
             // temp workaround to fix trailing opacity and transform
             opacity: 1,

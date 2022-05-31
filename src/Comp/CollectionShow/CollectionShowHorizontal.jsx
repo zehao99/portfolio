@@ -32,7 +32,7 @@ const CollectionShowHorizontal = (props) => {
                 animate={{ x: 0, scale: 1 }}
                 transition={{ duration: 0.4 }}
             >
-                <div className={styles.DescriptionPlaceholder}></div>
+                <div className={styles.DescriptionPlaceholder} />
                 <h1 className={styles.LandscapeTitle}>{props.title}</h1>
                 {props.description}
             </motion.div>
@@ -45,7 +45,7 @@ const CollectionShowHorizontal = (props) => {
                         animate={{ x: 0, scale: 1 }}
                         transition={{ duration: 0.4 }}
                     >
-                        <div className={styles.storiesPlaceHolder}></div>
+                        <div className={styles.storiesPlaceHolder} />
                         <div className={styles.storiesText}>
                             <p>{e.stories}</p>
                         </div>

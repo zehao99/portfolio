@@ -4,11 +4,11 @@
     margin: auto;
     height: 60px;
     @media (min-width: 1200px) {
-        font-size: MIN(1.33vw, 20px);
+        font-size: MIN(1.33vw, 19px);
         width: 95vw;
     }
     @media (min-width: 1200px) {
-        height: MIN(80px, 5vw);
+        height: MIN(80px, 4vw);
     }
 }
 
@@ -18,15 +18,14 @@
     justify-content: space-between;
     height: 60px;
     @media (min-width: 1200px) {
-        height: MIN(80px, 5vw);
+        height: MIN(80px, 4vw);
     }
 }
 
 .navbarContainer .navbar h1 {
     font-size: 2em;
     font-weight: 400;
-    margin: auto 0;
-    margin-top: 1rem;
+    margin: 1rem 0 auto;
     padding: 0 1rem;
 }
 
@@ -39,7 +38,7 @@
     margin-top: -0.1rem;
     height: 40px;
     @media (min-width: 1200px) {
-        height: MIN(60px, 3.33vw);
+        height: MIN(50px, 2.5vw);
     }
 }
 

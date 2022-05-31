@@ -76,7 +76,7 @@ const Footer = () => {
         
         @media(min-width:1200px) {
             .footer-container {
-                font-size: MIN(1.33vw, 22px);
+                font-size: MIN(1.33vw, 17px);
             }
         }
       `}</style>
