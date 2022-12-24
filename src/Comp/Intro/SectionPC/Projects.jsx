@@ -30,6 +30,7 @@ const Projects = (props) => {
                     imgSrc={
                         'https://philipliart.files.wordpress.com/2021/12/eit.jpg?h=400'
                     }
+                    onOpenPanel={() => props.handleDisplayModal('tomographic')}
                 />
             </motion.div>
         </motion.div>
