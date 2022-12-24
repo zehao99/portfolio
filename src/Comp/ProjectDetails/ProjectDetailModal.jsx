@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import styles from './ProjectDetailModal.module.scss';
 import Calories from './ModalContents/Calories';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import SpecDoc from './ModalContents/SpecDoc';
+import Tomographic from './ModalContents/Tomographic';
 
 const formKeyCompMap = {
     calories: Calories,
     specdoc: SpecDoc,
+    tomographic: Tomographic,
 };
 
 const ProjectDetailModal = (props) => {

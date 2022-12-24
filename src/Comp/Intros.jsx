@@ -109,6 +109,7 @@ const Intro = ({ handleDisplayModal }) => {
                     }
                     url="https://doi.org/10.3390/s21082736"
                     style={{ gridArea: 'card' }}
+                    onClick={() => handleDisplayModal('tomographic')}
                 />
             </div>
             <div className="skill-container text-container">
