@@ -28,7 +28,7 @@ const IntroPage = (props) => {
         >
             <AnimatePresence
                 initial={false}
-                exitBeforeEnter={true}
+                mode={'wait'}
                 onExitComplete={() => null}
             >
                 {showModal ? (

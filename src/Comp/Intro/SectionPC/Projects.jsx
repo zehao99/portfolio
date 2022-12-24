@@ -15,7 +15,6 @@ const Projects = (props) => {
                         'https://philipliart.files.wordpress.com/2021/12/spec-doc.jpg?h=400'
                     }
                     onOpenPanel={() => {
-                        console.log('SASASS');
                         props.handleDisplayModal('specdoc');
                     }}
                 />

@@ -15,7 +15,6 @@ const baseVariants = {
 const rectTransitionVariant = {
     duration: 0.15,
     ease: 'easeInOut',
-    times: [0, 0.2, 0.5, 0.8, 1],
 };
 
 const rectVariants1 = {
@@ -99,7 +98,7 @@ const ProjectCard = (props) => {
             onMouseLeave={() => setIsHover(false)}
         >
             <img src={props.imgSrc} alt={'project'} />
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence mode={"wait"}>
                 {isHover && (
                     <motion.div
                         initial="hidden"

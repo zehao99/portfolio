@@ -4,14 +4,14 @@ import NavbarMobile from './NavbarMobile/NavbarMobile';
 import NavbarWide from './NavbarWide/NavbarWide';
 
 const navContent = [
-    {
-        id: 'Latest Works',
-        content: [],
-        show: false,
-        isRight: false,
-        isExternalLink: false,
-        url: '/latestworks',
-    },
+    // {
+    //     id: 'Latest Works',
+    //     content: [],
+    //     show: false,
+    //     isRight: false,
+    //     isExternalLink: false,
+    //     url: '/latestworks',
+    // },
     {
         id: 'Landscape',
         content: [
@@ -65,15 +65,15 @@ const navContent = [
         isRight: false,
         isExternalLink: false,
         url: '/about',
-    },
-    {
-        id: 'Code&Chat',
-        content: [],
-        show: false,
-        isRight: false,
-        isExternalLink: true,
-        url: 'https://codeandchat.live',
-    },
+    }
+    // {
+    //     id: 'Code&Chat',
+    //     content: [],
+    //     show: false,
+    //     isRight: false,
+    //     isExternalLink: true,
+    //     url: 'https://codeandchat.live',
+    // },
 ];
 
 const Navbar = () => {

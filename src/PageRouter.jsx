@@ -1,8 +1,7 @@
 import React from 'react';
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import IntroPage from './Pages/SelfIntro';
-import LatestWorks from './Pages/LatestWork';
 import XinjiangPage from './Pages/LandscapePages/XinjiangPage';
 import JapanPage from './Pages/LandscapePages/JapanPage';
 import ZhejiangPage from './Pages/LandscapePages/ZhejiangPage';
@@ -13,50 +12,50 @@ import JapanStoriesPage from './Pages/CollectionPages/JapanStoriesPage';
 import ImgLoadingComp from './Comp/LoadingComp/ImgLoadingComp';
 import { AnimatePresence } from 'framer-motion';
 import CollectionsLP from './Pages/CollectionPages/CollectionsLP';
+
 const PageRouter = (props) => {
     const location = useLocation();
 
     return (
-        <AnimatePresence initial={true} exitBeforeEnter>
-            <Switch location={location} key={location.pathname}>
-                <Route path="/latestworks" component={() => <LatestWorks />} />
+        <AnimatePresence initial={true} mode={'wait'}>
+            <Routes location={location} key={location.pathname}>
                 <Route
-                    path="/collections/backtodesert"
-                    component={() => <BacktoDesertPage />}
+                    path='/collections/backtodesert'
+                    element={<BacktoDesertPage />}
                 />
                 <Route
-                    path="/collections/sakurayuki"
-                    component={() => <SakuraYukiPage />}
+                    path='/collections/sakurayuki'
+                    element={<SakuraYukiPage />}
                 />
                 <Route
-                    path="/collections/theweird"
-                    component={() => <TheWeirdPage />}
+                    path='/collections/theweird'
+                    element={<TheWeirdPage />}
                 />
                 <Route
-                    path="/collections/japanstories"
-                    component={() => <JapanStoriesPage />}
+                    path='/collections/japanstories'
+                    element={<JapanStoriesPage />}
                 />
                 <Route
-                    path="/collections"
-                    component={() => <CollectionsLP />}
+                    path='/collections'
+                    element={<CollectionsLP />}
                 />
                 <Route
-                    path="/landscape/xinjiang"
-                    component={() => <XinjiangPage />}
+                    path='/landscape/xinjiang'
+                    element={<XinjiangPage />}
                 />
                 <Route
-                    path="/landscape/japan"
-                    component={() => <JapanPage />}
+                    path='/landscape/japan'
+                    element={<JapanPage />}
                 />
                 <Route
-                    path="/landscape/zhejiang"
-                    component={() => <ZhejiangPage />}
+                    path='/landscape/zhejiang'
+                    element={<ZhejiangPage />}
                 />
-                <Route path="/landscape" component={() => <XinjiangPage />} />
-                <Route path="/about" component={IntroPage} />
-                <Route path="/test" component={ImgLoadingComp} />
-                <Route path="/" component={HomePage} />
-            </Switch>
+                <Route path='/landscape' element={<XinjiangPage />} />
+                <Route path='/about' element={<IntroPage />} />
+                <Route path='/test' element={<ImgLoadingComp />} />
+                <Route path='/' element={<HomePage />} />
+            </Routes>
         </AnimatePresence>
     );
 };

@@ -14,7 +14,6 @@ const exitParam = {
         delay: 0.6,
         duration: 0.5,
         ease: 'easeInOut',
-        times: [0, 0.2, 0.5, 0.8, 1],
     },
 };
 
@@ -52,7 +51,6 @@ const getGatherAnimationParams = (patternIdx, transitionOptions) => {
             transition: {
                 duration: 0.5,
                 ease: 'easeInOut',
-                times: [0, 0.2, 0.5, 0.8, 1],
                 ...transitionOptions,
             },
         },
@@ -85,7 +83,7 @@ const HomePage = (props) => {
             exit={'exit'}
             variants={pageVariants}
         >
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence mode={"wait"}>
                 {isImg01Loading || isImg02Loading ? (
                     <motion.div>
                         <motion.div
@@ -188,9 +186,9 @@ const HomePage = (props) => {
                                         >
                                             <NavLink
                                                 className={styles.HomePageBtn}
-                                                to={'/latestworks'}
+                                                to={'/collections'}
                                             >
-                                                Latest Works→
+                                                Collections→
                                             </NavLink>
                                             <NavLink
                                                 className={styles.HomePageBtn}
