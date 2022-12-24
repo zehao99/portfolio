@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import styles from './ProjectDetailModal.module.scss';
 import Calories from './ModalContents/Calories';
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons';
