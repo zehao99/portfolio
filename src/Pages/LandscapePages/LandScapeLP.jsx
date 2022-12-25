@@ -1,21 +1,18 @@
 import React from 'react';
 import styles from './LandScapeLP.module.scss';
-import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import LoadingComp from '../../Comp/LoadingComp';
 import { AnimatePresence } from 'framer-motion';
-const Earth = React.lazy(() => import('../../Comp/Earth/earth'));
+const EarthCanvas = React.lazy(() => import('../../Comp/Earth'));
 
-const LandScapeLP = (props) => {
+const LandScapeLP = () => {
     return (
         <>
             <div className={styles.canvasContainer}>
                 <AnimatePresence mode={'wait'}>
                     <Suspense fallback={<LoadingComp />}>
                         {/* <LoadingComp /> */}
-                        <Canvas>
-                            <Earth />
-                        </Canvas>
+                        <EarthCanvas />
                     </Suspense>
                 </AnimatePresence>
             </div>

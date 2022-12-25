@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera, Stars } from '@react-three/drei';
+import { PerspectiveCamera, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
 import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
@@ -11,7 +11,6 @@ import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import { TextureLoader, Vector3 } from 'three';
 import {
     getCurrSunPositionVector,
-    getInitialCameraPosition,
     getCameraInitialLonLat,
     getCameraPosition,
 } from './locationUtils';
