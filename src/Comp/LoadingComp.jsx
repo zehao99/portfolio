@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from './LoadingComp.module.scss';
 
@@ -12,7 +12,15 @@ const exitParam = {
     },
 };
 
-const LoadingComp = () => {
+const LoadingComp = (props) => {
+    useEffect(() => {
+        const notifyIsLoading = props.notifyIsLoading ? props.notifyIsLoading: (status) =>{}
+        notifyIsLoading(true);
+        return () => {
+            notifyIsLoading(false);
+        }
+    })
+
     return (
         <motion.div className={styles.bkBlue} exit={exitParam}>
             <motion.div className={styles.loadingIcon} exit={exitParam}>
