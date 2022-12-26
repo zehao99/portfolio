@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import styles from './LandScapeLP.module.scss';
-import { Suspense } from 'react';
 import LoadingComp from '../../Comp/LoadingComp';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from '../../Comp/Navbar/Navbar';

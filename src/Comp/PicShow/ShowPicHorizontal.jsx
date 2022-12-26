@@ -60,7 +60,6 @@ const ShowPicHorizontal = (props) => {
     };
 
     const onClickHandler = (newId) => {
-        console.log(newId);
         setCurrentPicID(([id, direction]) => {
             let dir = 0;
             if (newId > id) dir = 1;

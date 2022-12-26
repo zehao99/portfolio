@@ -15,6 +15,8 @@ import { earthVertexShader, earthFragmentShader } from './CustomShader';
 
 import useMousePositionMoveLonLat from './useMousePositionMoveLonLat';
 
+import useIsMobile from '../../Utilities/useIsMobile';
+
 const MOVE_ANIMATION_FRAME_LENGTH = 45;
 
 const Earth = (props) => {
@@ -26,6 +28,8 @@ const Earth = (props) => {
             EarthSpecularMap,
             EarthCloudsMap,
         ]);
+
+    const isMobileDevice = useIsMobile();
 
     const sunPosition = getCurrSunPositionVector();
 
@@ -70,8 +74,12 @@ const Earth = (props) => {
         }
         // Update Camera Location.
         const newVec = getCameraPosition(
-            _currLonLat.lon + mouseLonLatOffset.lon,
-            _currLonLat.lat + mouseLonLatOffset.lat
+            isMobileDevice
+                ? _currLonLat.lon
+                : _currLonLat.lon + mouseLonLatOffset.lon,
+            isMobileDevice
+                ? _currLonLat.lat
+                : _currLonLat.lat + mouseLonLatOffset.lat
         );
         cameraRef.current.position.setX(newVec.x);
         cameraRef.current.position.setY(newVec.y);
