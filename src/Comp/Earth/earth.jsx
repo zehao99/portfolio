@@ -17,6 +17,8 @@ import {
 
 import { vs, fs } from './CustomShader';
 
+import useMousePositionMoveLonLat from './useMousePositionMoveLonLat';
+
 const MOVE_ANIMATION_FRAME_LENGTH = 45;
 
 const Earth = (props) => {
@@ -31,8 +33,10 @@ const Earth = (props) => {
 
     const sunPosition = getCurrSunPositionVector();
 
+    const mouseLonLatOffset = useMousePositionMoveLonLat();
+
     const [cameraPositionTarget, setCameraPositionTarget] = useState(
-        getCameraInitialLonLat()
+        props.currCamLonLat
     );
 
     const [currentLonLat, setCurrentLonLat] = useState({ lon: 0, lat: 0 });
@@ -50,24 +54,38 @@ const Earth = (props) => {
 
     const earthPosition = [0, 0, 0];
 
-    useFrame(({ clock }) => {
+    useEffect(() => {
+        setCameraPositionTarget(props.currCamLonLat);
+        setFramesLeft(MOVE_ANIMATION_FRAME_LENGTH);
+    }, [props.currCamLonLat]);
+
+    const setCameraPosition = () => {
+        const _currLonLat = { ...currentLonLat };
         // If animation finished, then don't move.
-        if (framesLeft <= 0) return;
-        // Calculate new longitude and lattitude.
-        const londiff = cameraPositionTarget.lon - currentLonLat.lon;
-        const latdiff = cameraPositionTarget.lat - currentLonLat.lat;
-        const newLon = currentLonLat.lon + (londiff / framesLeft) * 3;
-        const newLat = currentLonLat.lat + (latdiff / framesLeft) * 3;
-        // Update React States.
-        setCurrentLonLat({ lon: newLon, lat: newLat });
-        setFramesLeft((prev) => prev - 1);
+        if (framesLeft > 0) {
+            // Calculate new longitude and lattitude.
+            const londiff = cameraPositionTarget.lon - currentLonLat.lon;
+            const latdiff = cameraPositionTarget.lat - currentLonLat.lat;
+            _currLonLat.lon = currentLonLat.lon + (londiff / framesLeft) * 2;
+            _currLonLat.lat = currentLonLat.lat + (latdiff / framesLeft) * 2;
+            // Update React States.
+            setCurrentLonLat({ ..._currLonLat });
+            setFramesLeft((prev) => prev - 1);
+        }
         // Update Camera Location.
-        const newVec = getCameraPosition(newLon, newLat);
+        const newVec = getCameraPosition(
+            _currLonLat.lon + mouseLonLatOffset.lon,
+            _currLonLat.lat + mouseLonLatOffset.lat
+        );
         cameraRef.current.position.setX(newVec.x);
         cameraRef.current.position.setY(newVec.y);
         cameraRef.current.position.setZ(newVec.z);
         // Always look at the Original Point.
         cameraRef.current.lookAt(new Vector3(0, 0, 0));
+    };
+
+    useFrame(({ clock }) => {
+        setCameraPosition();
     });
 
     return (
@@ -87,7 +105,7 @@ const Earth = (props) => {
                 fade={true}
             />
             <mesh ref={cloudsRef} position={earthPosition}>
-                <sphereGeometry args={[1.01, 32, 32]} />
+                <sphereGeometry args={[1.005, 32, 32]} />
                 <meshPhongMaterial
                     map={cloudsMap}
                     opacity={1}
@@ -117,6 +135,14 @@ const Earth = (props) => {
                     fragmentShader={fs}
                 />
             </mesh>
+            {/* <mesh>
+                <sphereGeometry args={[1.05, 32, 32]} />
+                <shaderMaterial
+                    vertexShader={atmosphereVertexShader}
+                    fragmentShader={atmosphereFragmentShader}
+                    blending={THREE.AdditiveBlending}
+                />
+            </mesh> */}
             {/* <OrbitControls /> */}
             <PerspectiveCamera
                 ref={cameraRef}

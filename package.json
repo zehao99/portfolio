@@ -17,22 +17,25 @@
         "array-move": "^4.0.0",
         "create-react-app": "^5.0.1",
         "framer-motion": "8.0.2",
+        "glslify-loader": "^2.0.0",
         "netlify-cli": "^12.5.0",
         "node-sass": "^8.0.0",
         "prettier": "^2.8.1",
+        "raw-loader": "^4.0.2",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "react-router-dom": "^6.6.1",
         "react-scripts": "^5.0.1",
         "react-scroll-percentage": "^4.3.0",
         "three": "^0.148.0",
-        "typescript": "^4.9.4"
+        "typescript": "^4.9.4",
+        "webpack": "^5.75.0"
     },
     "scripts": {
-        "start": "react-scripts start",
-        "build": "GENERATE_SOURCEMAP=false react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject",
+        "start": "craco start",
+        "build": "GENERATE_SOURCEMAP=false craco build",
+        "test": "craco test",
+        "eject": "craco eject",
         "deploy": "npm run build && cp ./_redirects build/ && netlify deploy --prod"
     },
     "eslintConfig": {
@@ -49,5 +52,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@craco/craco": "^7.0.0"
     }
 }

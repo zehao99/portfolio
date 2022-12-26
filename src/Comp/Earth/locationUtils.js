@@ -2,9 +2,9 @@ import { Euler, Vector3 } from 'three';
 
 const MILISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
 
-const to_rad = (deg) => (deg / 180) * Math.PI;
+export const toRad = (deg) => (deg / 180) * Math.PI;
 
-const DEFAULT_ROTATION = { lon: to_rad(139.6), lat: to_rad(35.8) };
+const DEFAULT_ROTATION = { lon: toRad(139.6), lat: toRad(35.8) };
 
 const UTC_TIME_RAD_OFFSET = (12 / 24) * Math.PI;
 
@@ -31,7 +31,7 @@ const getCurrentSunLongLattitudeRad = () => {
     const lattitudeOfSun =
         -0.39795 * Math.cos(((0.98563 * (dayInYear() - 173)) / 180) * Math.PI);
 
-    return { longtitudeOfSun, lattitudeOfSun };
+    return { lon: longtitudeOfSun, lat: lattitudeOfSun };
 };
 
 export const getCurrSunPositionVector = () => {
