@@ -1,10 +1,14 @@
-import { Canvas } from '@react-three/fiber';
+import { Canvas, extend } from '@react-three/fiber';
+import { Suspense } from 'react';
+import SuspendFinishComponent from '../../Utilities/SuspendFinishComponent';
 import Earth from './earth';
 
 const EarthCanvas = (props) => {
     return (
         <Canvas>
-            <Earth {...props} />
+            <Suspense fallback={<SuspendFinishComponent {...props} />}>
+                <Earth {...props} />
+            </Suspense>
         </Canvas>
     );
 };

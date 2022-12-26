@@ -60,7 +60,3 @@ export const getCameraPosition = (lon, lat) => {
 export const getCameraInitialLonLat = () => {
     return DEFAULT_ROTATION;
 };
-
-export const getInitialCameraPosition = () => {
-    return getCameraPosition(DEFAULT_ROTATION.lon, DEFAULT_ROTATION.lat);
-};

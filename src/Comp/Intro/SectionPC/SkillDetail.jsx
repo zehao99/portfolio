@@ -1,6 +1,4 @@
 import React from 'react';
-import { ReactComponent as WaveFrameTop } from '../../../img/waveFrameTop.svg';
-import { ReactComponent as WaveFrameBottom } from '../../../img/waveFrameBottom.svg';
 import styles from './SkillDetail.module.scss';
 import IntroTitle from './common/IntroTitle';
 import awsBadge from '../../../img/aws-badge.png';

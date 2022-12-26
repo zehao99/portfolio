@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './LandScapeLP.module.scss';
 import { Suspense } from 'react';
 import LoadingComp from '../../Comp/LoadingComp';
@@ -18,47 +18,81 @@ const positions = {
 
 const LandScapeLP = () => {
     const [currCamLonLat, setCurrCamLonLat] = useState(positions.tokyo);
+    const [isLoading, setIsLoading] = useState(true);
+    const [notifyInLoadingCalled, setNotifyInLoadingCalled] = useState(false);
+
+    const notifyLoaded = () => {
+        setIsLoading(false);
+    };
+
+    const notifyInLoading = () => {
+        setNotifyInLoadingCalled(true);
+        setIsLoading(true);
+    };
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            if (!notifyInLoadingCalled) {
+                setIsLoading(false);
+            }
+        }, 500);
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    });
 
     return (
         <>
             <div>
                 <AnimatePresence mode={'wait'}>
-                    <Suspense fallback={<LoadingComp />}>
-                        {/* <LoadingComp /> */}
-                        <div className={styles.pageContent}>
-                            <Navbar />
-                            <div className={styles.pageContentBody}>
-                                <h1>Explore</h1>
-                                <h2>The World in My Lens</h2>
-                                <div
-                                    onClick={() =>
-                                        setCurrCamLonLat(positions.xinjiang)
-                                    }
-                                >
-                                    Xinjiang 新疆 →
+                    <div key={'page-content'} className={styles.pageContent}>
+                        {isLoading ? (
+                            <LoadingComp />
+                        ) : (
+                            <>
+                                <Navbar />
+                                <div className={styles.pageContentBody}>
+                                    <h1>Explore</h1>
+                                    <h2>The World in My Lens</h2>
+                                    <div
+                                        key="xinjiang"
+                                        onClick={() =>
+                                            setCurrCamLonLat(positions.xinjiang)
+                                        }
+                                    >
+                                        Xinjiang 新疆 →
+                                    </div>
+                                    <div
+                                        key="zhejiang"
+                                        onClick={() =>
+                                            setCurrCamLonLat(positions.zhejiang)
+                                        }
+                                    >
+                                        Zhejiang 浙江 →
+                                    </div>
+                                    <div
+                                        key="japan"
+                                        onClick={() =>
+                                            setCurrCamLonLat(positions.tokyo)
+                                        }
+                                    >
+                                        Japan 日本 →
+                                    </div>
                                 </div>
-                                <div
-                                    onClick={() =>
-                                        setCurrCamLonLat(positions.zhejiang)
-                                    }
-                                >
-                                    Zhejiang 浙江 →
-                                </div>
-                                <div
-                                    onClick={() =>
-                                        setCurrCamLonLat(positions.tokyo)
-                                    }
-                                >
-                                    Japan 日本 →
-                                </div>
-                            </div>
-                            <Footer />
-                        </div>
+                            </>
+                        )}
 
-                        <div className={styles.canvasContainer}>
-                            <EarthCanvas currCamLonLat={currCamLonLat} />
-                        </div>
-                    </Suspense>
+                        <Footer />
+                    </div>
+
+                    <div className={styles.canvasContainer}>
+                        <EarthCanvas
+                            currCamLonLat={currCamLonLat}
+                            notifyLoaded={notifyLoaded}
+                            notifyInLoading={notifyInLoading}
+                        />
+                    </div>
                 </AnimatePresence>
             </div>
         </>

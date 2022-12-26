@@ -9,11 +9,7 @@ import EarthNightMap from '../../assets/textures/8k_earth_nightmap.jpg';
 import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import { TextureLoader, Vector3 } from 'three';
-import {
-    getCurrSunPositionVector,
-    getCameraInitialLonLat,
-    getCameraPosition,
-} from './locationUtils';
+import { getCurrSunPositionVector, getCameraPosition } from './locationUtils';
 
 import { vs, fs } from './CustomShader';
 
@@ -135,15 +131,6 @@ const Earth = (props) => {
                     fragmentShader={fs}
                 />
             </mesh>
-            {/* <mesh>
-                <sphereGeometry args={[1.05, 32, 32]} />
-                <shaderMaterial
-                    vertexShader={atmosphereVertexShader}
-                    fragmentShader={atmosphereFragmentShader}
-                    blending={THREE.AdditiveBlending}
-                />
-            </mesh> */}
-            {/* <OrbitControls /> */}
             <PerspectiveCamera
                 ref={cameraRef}
                 makeDefault
