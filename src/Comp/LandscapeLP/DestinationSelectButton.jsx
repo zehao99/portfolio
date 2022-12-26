@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './DestinationSelectButton.module.scss';
 import Color from '../Colors';

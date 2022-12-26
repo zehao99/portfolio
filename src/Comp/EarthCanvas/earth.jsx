@@ -10,8 +10,8 @@ import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import { TextureLoader, Vector3 } from 'three';
 import { getCurrSunPositionVector, getCameraPosition } from './locationUtils';
-
-import { earthVertexShader, earthFragmentShader } from './CustomShader';
+import earthVertexShader from './shaders/earthVertexShader.glsl';
+import earthFragmentShader from './shaders/earthFragmentShader.glsl';
 
 import useMousePositionMoveLonLat from './useMousePositionMoveLonLat';
 
