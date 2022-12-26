@@ -26,15 +26,17 @@
     flex-direction: column;
     justify-content: flex-end;
     color: $HomePageLightTextColor;
-    padding: 2em;
+    padding: 2rem;
 
     h1 {
         font-weight: normal;
-        font-size: 3em;
+        font-size: 3rem;
+        margin: 0.5rem 1rem;
     }
 
     h2 {
         font-weight: normal;
-        font-size: 2em;
+        font-size: 2rem;
+        margin: 1rem;
     }
 }

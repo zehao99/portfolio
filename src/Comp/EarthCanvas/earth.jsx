@@ -11,7 +11,7 @@ import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
 import { TextureLoader, Vector3 } from 'three';
 import { getCurrSunPositionVector, getCameraPosition } from './locationUtils';
 
-import { vs, fs } from './CustomShader';
+import { earthVertexShader, earthFragmentShader } from './CustomShader';
 
 import useMousePositionMoveLonLat from './useMousePositionMoveLonLat';
 
@@ -127,8 +127,8 @@ const Earth = (props) => {
                         dayTexture: { value: colorMap },
                         nightTexture: { value: nightColorMap },
                     }}
-                    vertexShader={vs}
-                    fragmentShader={fs}
+                    vertexShader={earthVertexShader}
+                    fragmentShader={earthFragmentShader}
                 />
             </mesh>
             <PerspectiveCamera

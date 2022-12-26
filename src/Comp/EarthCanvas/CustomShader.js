@@ -1,4 +1,4 @@
-export const vs = `
+export const earthVertexShader = `
 uniform vec3 sunDirection;
 varying vec2 vUv;
 varying vec3 vNormal;
@@ -13,7 +13,7 @@ void main() {
 }
 `;
 
-export const fs = `
+export const earthFragmentShader = `
 uniform sampler2D dayTexture;
 uniform sampler2D nightTexture;
 
