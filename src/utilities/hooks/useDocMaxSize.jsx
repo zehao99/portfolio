@@ -16,7 +16,7 @@ export default function useMaxSize() {
             setMaxSize(getMaxSize());
         }
 
-        window.addEventListener('resize', handleMaxSize());
+        window.addEventListener('resize', handleMaxSize);
         return () => window.removeEventListener('resize', handleMaxSize);
     }, []);
 

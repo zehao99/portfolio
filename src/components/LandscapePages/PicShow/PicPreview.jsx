@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './PicPreview.module.scss';
-import useWindowDimensions from '../../../utilities/useWindowDimensions';
+import useWindowDimensions from '../../../utilities/hooks/useWindowDimensions.jsx';
 
 const PicPreview = (props) => {
     const { height, width } = useWindowDimensions();

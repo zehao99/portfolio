@@ -1,5 +1,5 @@
 import React from 'react';
-import useWindowDimensions from '../../../utilities/useWindowDimensions';
+import useWindowDimensions from '../../../utilities/hooks/useWindowDimensions.jsx';
 import NavbarMobile from './NavbarMobile/NavbarMobile';
 import NavbarWide from './NavbarWide/NavbarWide';
 

@@ -15,7 +15,7 @@ import earthFragmentShader from './shaders/earthFragmentShader.glsl';
 
 import useMousePositionMoveLonLat from './useMousePositionMoveLonLat';
 
-import useIsMobile from '../../../../utilities/useIsMobile';
+import useIsMobile from '../../../../utilities/hooks/useIsMobile.jsx';
 
 const MOVE_ANIMATION_FRAME_LENGTH = 45;
 
