@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Common/Navbar/Navbar';
 import Footer from '../components/Common/Footer';
 import Intros from '../components/SelfIntroPage/Intros';
-import { pageVariants } from '../Utilities/AnimateParams';
+import { pageVariants } from '../utilities/AnimateParams';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectDetailModal from '../components/SelfIntroPage/ProjectDetails/ProjectDetailModal';
-import useIsMobile from '../Utilities/useIsMobile';
+import useIsMobile from '../utilities/useIsMobile';
 import IntroPC from '../components/SelfIntroPage/IntroNew/IntroPC';
 
 const IntroPage = (props) => {

@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './NavbarWide.module.scss';
 import { NavLink } from 'react-router-dom';
 import SubNav from './SubNav';
+
 const NavbarWide = (props) => {
     const [content, setContent] = useState(props.navContent);
+
+    const setAllFalse = () => {
+        setContent((prevState) => {
+            prevState.map((e) => {
+                e.show = false;
+            });
+            return [...prevState];
+        });
+    };
+
+    useEffect(() => {
+        setAllFalse();
+
+        return () => setAllFalse();
+    }, []);
 
     const HoverHandlerEnter = (id) => {
         setContent((prevState) => {
@@ -11,7 +27,6 @@ const NavbarWide = (props) => {
                 if (e.id === id) {
                     e.show = true;
                 }
-                return 0;
             });
             return [...prevState];
         });

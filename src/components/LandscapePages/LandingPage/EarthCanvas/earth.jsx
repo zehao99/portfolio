@@ -1,21 +1,21 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { PerspectiveCamera, Stars } from '@react-three/drei';
 import * as THREE from 'three';
+import { TextureLoader, Vector3 } from 'three';
 
 import EarthDayMap from '../../../../assets/textures/8k_earth_daymap.jpg';
 import EarthCloudsMap from '../../../../assets/textures/8k_earth_clouds.png';
 import EarthNightMap from '../../../../assets/textures/8k_earth_nightmap.jpg';
 import EarthNormalMap from '../../../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../../../assets/textures/8k_earth_specular_map.jpg';
-import { TextureLoader, Vector3 } from 'three';
-import { getCurrSunPositionVector, getCameraPosition } from './locationUtils';
+import { getCameraPosition, getCurrSunPositionVector } from './locationUtils';
 import earthVertexShader from './shaders/earthVertexShader.glsl';
 import earthFragmentShader from './shaders/earthFragmentShader.glsl';
 
 import useMousePositionMoveLonLat from './useMousePositionMoveLonLat';
 
-import useIsMobile from '../../../../Utilities/useIsMobile';
+import useIsMobile from '../../../../utilities/useIsMobile';
 
 const MOVE_ANIMATION_FRAME_LENGTH = 45;
 

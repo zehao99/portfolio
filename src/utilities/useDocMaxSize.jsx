@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export function getMaxSize() {
     const { clientHeight: docHeight, clientWidth: docWidth } = document.body;

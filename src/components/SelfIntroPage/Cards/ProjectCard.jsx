@@ -30,6 +30,7 @@ const ProjectCard = (props) => {
                         transition: all 0.3s ease-in-out;
                         border-radius: 5px;
                     }
+
                     .projectcard-container .card {
                         border-radius: 5px;
                         position: relative;
@@ -56,6 +57,7 @@ const ProjectCard = (props) => {
                         transform: scale(2) translateX(0) translateY(0)
                             rotate(-25deg);
                     }
+
                     .projectcard-container .card img {
                         border-radius: 5px;
                         border-radius: 5px;
@@ -63,6 +65,7 @@ const ProjectCard = (props) => {
                         height: 100%;
                         transition: transform 0.4s ease-in-out;
                     }
+
                     .projectcard-container .card:hover img {
                         transform: scale(1.05);
                     }
@@ -82,6 +85,7 @@ const ProjectCard = (props) => {
                         transform: translateY(-50%);
                         transition: all 0.6s ease-in-out 0.15s ease-in-out;
                     }
+
                     .projectcard-container .card:hover .card-text {
                         opacity: 1;
                     }

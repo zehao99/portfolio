@@ -9,14 +9,17 @@
     overflow-x: scroll;
     overflow-y: hidden;
     margin: 0 1rem;
+
     h1 {
         font-weight: lighter;
         font-size: 2rem;
     }
+
     @media (max-height: 500px) {
         height: calc(100vh - 60px);
     }
 }
+
 .DescriptionPlaceholder {
     height: 10vh;
 }
@@ -26,6 +29,7 @@
     width: 400px;
     min-width: 400px;
     height: 100%;
+
     h1 {
         margin: 2rem 1rem;
     }
@@ -58,10 +62,12 @@
     height: inherit;
     padding: 1rem;
     font-family: 'Quicksand', 'Noto Serif JP', sans-serif;
+
     .storiesPlaceHolder {
         width: 350px;
         height: 20vh;
     }
+
     p {
         font-size: 1rem;
         margin: 2rem 1rem;

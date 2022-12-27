@@ -14,12 +14,14 @@ const exitParam = {
 
 const LoadingComp = (props) => {
     useEffect(() => {
-        const notifyIsLoading = props.notifyIsLoading ? props.notifyIsLoading: (status) =>{}
+        const notifyIsLoading = props.notifyIsLoading
+            ? props.notifyIsLoading
+            : (status) => {};
         notifyIsLoading(true);
         return () => {
             notifyIsLoading(false);
-        }
-    })
+        };
+    });
 
     return (
         <motion.div className={styles.bkBlue} exit={exitParam}>

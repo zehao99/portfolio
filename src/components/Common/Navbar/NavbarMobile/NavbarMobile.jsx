@@ -1,11 +1,10 @@
 import React from 'react';
 import styles from './NavbarMobile.module.scss';
 import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useCycle } from 'framer-motion';
+import { motion, useCycle } from 'framer-motion';
 import { MenuToggle } from './NavbarMobileToggle';
 import { Navigation } from './NavbarMobileMainNav';
-import useDimensions from '../../../../Utilities/useWindowDimensions';
+import useDimensions from '../../../../utilities/useWindowDimensions';
 
 const NavbarMobile = (props) => {
     const [isOpen, toggleOpen] = useCycle(false, true);

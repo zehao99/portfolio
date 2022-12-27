@@ -1,7 +1,7 @@
 import React from 'react';
 import Colors from '../../../styles/Colors';
 import { motion } from 'framer-motion';
-import ComponentWithScrollLoad from '../../../Utilities/ComponentWithScrollLoad.jsx';
+import ComponentWithScrollLoad from '../../../utilities/ComponentWithScrollLoad.jsx';
 
 const EduCard = (props) => {
     return (
@@ -56,22 +56,27 @@ const EduCard = (props) => {
                     margin: 0.5rem auto;
                     font-size: 1.2rem;
                 }
+
                 .educard-container h5 {
                     color: ${Colors.logoColor};
                     font-size: 1.2rem;
                     margin: 0.5rem auto;
                 }
+
                 .educard-container h5 span {
                     color: ${Colors.darkTextColor};
                     font-size: 1.2rem;
                 }
+
                 .educard-container .location {
                     font-style: italic;
                 }
+
                 .educard-container p {
                     color: ${Colors.lightTextColor};
                     margin: 0.5rem auto;
                 }
+
                 .educard-container a {
                     text-decoration: none;
                     color: ${Colors.lightTextColor};

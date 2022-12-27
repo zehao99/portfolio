@@ -1,21 +1,20 @@
-@import "../../../../styles/Colors";
-
+@import '../../../../styles/Colors';
 
 .contactInfoContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 1em 0 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1em 0 2em;
 }
 
 .contactInfoText {
-  background: rgba($lightTextColor, 0.1);
-  padding: 1.5em 2em;
-  line-height: 1.8;
-  text-align: center;
+    background: rgba($lightTextColor, 0.1);
+    padding: 1.5em 2em;
+    line-height: 1.8;
+    text-align: center;
 
-  span {
-    color: $logoColor;
-  }
+    span {
+        color: $logoColor;
+    }
 }

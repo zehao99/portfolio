@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Colors from '../../../styles/Colors';
-import ComponentWithScrollLoad from '../../../Utilities/ComponentWithScrollLoad.jsx';
+import ComponentWithScrollLoad from '../../../utilities/ComponentWithScrollLoad.jsx';
 
 const Title = (props) => {
     return (
@@ -21,6 +21,7 @@ const Title = (props) => {
                     justify-content: center;
                     align-items: center;
                 }
+
                 .title .subtitles {
                     text-align: center;
                     padding: 2rem;
@@ -28,6 +29,7 @@ const Title = (props) => {
                     font-weight: 400;
                     font-size: 1.5rem;
                 }
+
                 .title .underline {
                     background: ${Colors.primaryColorComplimentary};
                     height: 5px;

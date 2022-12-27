@@ -1,78 +1,78 @@
-@import "../../../styles/Colors";
+@import '../../../styles/Colors';
 
 $transferWidth: 700px;
 
 .pageSectionWrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 100%;
 
-  @media(max-width: $transferWidth) {
-    flex-direction: column-reverse;
-    align-items: center;
-  }
+    @media (max-width: $transferWidth) {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
 }
 
 .pageSelectionWrapperRight {
-  @extend .pageSectionWrapper;
+    @extend .pageSectionWrapper;
 
-  flex-direction: row-reverse;
+    flex-direction: row-reverse;
 
-  @media(max-width: $transferWidth) {
-    flex-direction: column-reverse;
-  }
+    @media (max-width: $transferWidth) {
+        flex-direction: column-reverse;
+    }
 }
 
 .pageSectionTitleWrapper {
-  flex: 1;
-  padding: 60px;
-  z-index: 2;
+    flex: 1;
+    padding: 60px;
+    z-index: 2;
 
-  h3 {
-    margin: 10px 0;
-    font-size: 25px;
-    font-weight: normal;
-  }
-
-  a {
-    color: $darkGold;
-    transition: all 0.3s;
-
-    &:hover {
-      color: $lightTextColorComplimentary;
+    h3 {
+        margin: 10px 0;
+        font-size: 25px;
+        font-weight: normal;
     }
-  }
+
+    a {
+        color: $darkGold;
+        transition: all 0.3s;
+
+        &:hover {
+            color: $lightTextColorComplimentary;
+        }
+    }
 }
 
 .pageSectionTitleWrapperRight {
-  @extend .pageSectionTitleWrapper;
-  text-align: right;
+    @extend .pageSectionTitleWrapper;
+    text-align: right;
 }
 
 .goldRectangle {
-  background: none;
-  border: 3px solid $transparentGold;
-  width: 800px;
-  height: 200px;
-  position: absolute;
-  margin-top: -100px;
+    background: none;
+    border: 3px solid $transparentGold;
+    width: 800px;
+    height: 200px;
+    position: absolute;
+    margin-top: -100px;
 
-  margin-right: 10px;
-  z-index: 0;
-  
-  @media (max-width:$transferWidth) {
-    display: none;
-  }
+    margin-right: 10px;
+    z-index: 0;
+
+    @media (max-width: $transferWidth) {
+        display: none;
+    }
 }
 
 .goldRectangleRight {
-  @extend .goldRectangle;
-  margin-right: auto;
-  margin-left: 10px;
+    @extend .goldRectangle;
+    margin-right: auto;
+    margin-left: 10px;
 }
 
 .imgContainer {
-  z-index: 1;
-  padding: 30px;
+    z-index: 1;
+    padding: 30px;
 }

@@ -32,6 +32,7 @@
         width: 90vw;
     }
 }
+
 .boxContent {
     position: relative;
     overflow-y: auto;
@@ -58,6 +59,7 @@
         cursor: pointer;
         color: $primaryColor;
         background: $logoColor;
+
         svg {
             fill: $primaryColor;
         }

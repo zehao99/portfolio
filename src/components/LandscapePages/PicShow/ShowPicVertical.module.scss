@@ -1,4 +1,5 @@
 @import '../../../styles/Colors.scss';
+
 .VerticalContainer {
     //background: rgba(240, 240, 240, 0.1);
     max-width: 100%;
@@ -9,6 +10,7 @@
         padding: 1rem 0;
     }
 }
+
 .VerticalPicContainer {
     overflow: hidden;
     margin: auto;
@@ -24,6 +26,7 @@
             max-width: 100%;
         }
     }
+
     p {
         color: $complimentaryTextColor;
         font-size: 0.7rem;

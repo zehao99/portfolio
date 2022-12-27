@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Colors from '../../../styles/Colors';
-import ComponentWithScrollLoad from '../../../Utilities/ComponentWithScrollLoad';
+import ComponentWithScrollLoad from '../../../utilities/ComponentWithScrollLoad';
 
 const TextCard = (props) => {
     const hoverColor =
@@ -29,6 +29,7 @@ const TextCard = (props) => {
                     text-align: ${props.textAlign};
                     padding: 1rem;
                 }
+
                 .textcard-container p {
                     margin-top: 0.5rem !important;
                     margin-bottom: 0.4rem !important;

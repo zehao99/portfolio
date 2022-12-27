@@ -5,9 +5,11 @@ import { AnimatePresence } from 'framer-motion';
 import Navbar from '../../components/Common/Navbar/Navbar';
 import Footer from '../../components/Common/Footer';
 import DestinationSelectButton from '../../components/LandscapePages/LandingPage/DestinationSelectButton';
-import { toRad } from '../../Utilities/calculations.js';
+import { toRad } from '../../utilities/calculations.js';
 
-const EarthCanvas = React.lazy(() => import('../../components/LandscapePages/LandingPage/EarthCanvas'));
+const EarthCanvas = React.lazy(() =>
+    import('../../components/LandscapePages/LandingPage/EarthCanvas')
+);
 
 const positions = {
     tokyo: {

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import styles from './ShowPicHorizontal.module.scss';
 import PicPreview from './PicPreview';
-import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import ImgLoadingComp from '../../Common/LoadingComp/ImgLoadingComp';
+
 const variants = {
     enter: (direction) => {
         return {

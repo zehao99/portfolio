@@ -3,15 +3,18 @@
 .CollectionPageDescription {
     font-family: 'Quicksand', 'Noto Serif JP', sans-serif;
     margin: 2rem 1.3rem;
+
     h1 {
         font-weight: lighter;
         font-size: 2rem;
         padding: 1rem 0;
     }
+
     p {
         padding: 1rem 0;
     }
 }
+
 .ContentContainer {
     img {
         max-width: calc(100vw - 2.6rem);
@@ -25,6 +28,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     p {
         font-family: 'Quicksand', 'Noto Serif JP', sans-serif;
         font-size: 1rem;

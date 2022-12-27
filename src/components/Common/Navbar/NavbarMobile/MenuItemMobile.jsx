@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import styles from './NavbarMobile.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+
 const variantsSub = {
     open: {
         opacity: 1,
