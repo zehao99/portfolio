@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './ShowPicVertical.module.scss';
-import ComponentWithScrollLoad from '../../../Utilities/ComponentWithScrollLoad';
+import ComponentWithScrollLoad from '../../../utilities/ComponentWithScrollLoad';
 import ImgLoadingComp from '../../Common/LoadingComp/ImgLoadingComp';
 
 const VerticalPic = (props) => {

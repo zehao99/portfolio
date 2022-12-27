@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import PageProps from '../../Utilities/PageProps';
+import React from 'react';
+import PageProps from '../../utilities/PageProps';
 import ProjectCard from './Cards/ProjectCard';
 import Colors from '../../styles/Colors';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import EduCard from './Cards/EduCard';
 import Title from './Cards/Title';
 import SkillCard from './Cards/SkillCard';

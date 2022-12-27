@@ -98,7 +98,7 @@ const ProjectCard = (props) => {
             onMouseLeave={() => setIsHover(false)}
         >
             <img src={props.imgSrc} alt={'project'} />
-            <AnimatePresence mode={"wait"}>
+            <AnimatePresence mode={'wait'}>
                 {isHover && (
                     <motion.div
                         initial="hidden"

@@ -1,5 +1,5 @@
 import React from 'react';
-import useWindowDimensions from '../../../Utilities/useWindowDimensions';
+import useWindowDimensions from '../../../utilities/useWindowDimensions';
 import ShowPicVertical from './ShowPicVertical';
 import ShowPicHorizontal from './ShowPicHorizontal';
 import styles from './ShowPic.module.scss';

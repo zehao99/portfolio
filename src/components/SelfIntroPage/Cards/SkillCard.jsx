@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Colors from '../../../styles/Colors';
-import ComponentWithScrollLoad from '../../../Utilities/ComponentWithScrollLoad.jsx';
+import ComponentWithScrollLoad from '../../../utilities/ComponentWithScrollLoad.jsx';
 
 const SkillCard = (props) => {
     return (
@@ -32,6 +32,7 @@ const SkillCard = (props) => {
                     width: 100%;
                     color: ${Colors.lightTextColorComplimentary};
                 }
+
                 .skillcard-container .skill-info {
                     grid-area: info;
                     padding: 0.8rem;
@@ -46,6 +47,7 @@ const SkillCard = (props) => {
                             'info';
                         grid-template-columns: 1fr;
                     }
+
                     .skillcard-container .skill-info {
                         padding: 0.25rem 1rem;
                         padding-bottom: 0.75rem;

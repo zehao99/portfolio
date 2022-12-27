@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { motion } from 'framer-motion';
 import styles from './PopupForm.module.scss';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
@@ -20,9 +19,9 @@ const PopupAlert = (props) => {
                 <h3>{props.title}</h3>
                 <div className={styles.emailLine}>
                     <FontAwesomeIcon
-                        className='social-media-icon'
+                        className="social-media-icon"
                         icon={faEnvelope}
-                        size='2x'
+                        size="2x"
                     />
                     <div className={styles.text}>
                         <a
@@ -41,9 +40,9 @@ const PopupAlert = (props) => {
                         }
                     >
                         <FontAwesomeIcon
-                            className='social-media-icon'
+                            className="social-media-icon"
                             icon={faGoogle}
-                            size='2x'
+                            size="2x"
                         />
                         <div className={styles.text}>Gmail</div>
                     </a>
@@ -55,9 +54,9 @@ const PopupAlert = (props) => {
                         }
                     >
                         <FontAwesomeIcon
-                            className='social-media-icon'
+                            className="social-media-icon"
                             icon={faMicrosoft}
-                            size='2x'
+                            size="2x"
                         />
                         <div className={styles.text}>Outlook</div>
                     </a>
@@ -88,16 +87,12 @@ const PopModal = (WrappedComponent) => {
         const root = createRoot(container);
 
         function closeHandle() {
-            root.unmount()
+            root.unmount();
             document.body.removeChild(container);
             container = null;
         }
 
-
-
-        root.render(
-            <EnhancedComponent {...params} onClose={closeHandle} />,
-        );
+        root.render(<EnhancedComponent {...params} onClose={closeHandle} />);
     };
 
     return EnhancedComponent;

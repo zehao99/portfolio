@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 import styles from './CollectionPages.module.scss';
 import CollectionShowHorizontal from '../../components/CollectionPages/CollectionShowHorizontal';
 import CollectionShowVertical from '../../components/CollectionPages/CollectionShowVertical';
-import useWindowDimensions from '../../Utilities/useWindowDimensions';
-import { pageVariants } from '../../Utilities/AnimateParams';
+import useWindowDimensions from '../../utilities/useWindowDimensions';
+import { pageVariants } from '../../utilities/AnimateParams';
 
 const CollectionPage = (props) => {
     const { width, height } = useWindowDimensions();

@@ -1,6 +1,6 @@
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
-import SuspendFinishComponent from '../../../../Utilities/SuspendFinishComponent';
+import SuspendFinishComponent from '../../../../utilities/SuspendFinishComponent';
 import Earth from './earth';
 
 const EarthCanvas = (props) => {

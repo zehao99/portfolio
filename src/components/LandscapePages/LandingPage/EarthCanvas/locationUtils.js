@@ -1,10 +1,8 @@
 import { Euler, Vector3 } from 'three';
 
-import {toRad} from '../../../../Utilities/calculations.js';
+import { toRad } from '../../../../utilities/calculations.js';
 
 const MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
-
-
 
 const DEFAULT_ROTATION = { lon: toRad(139.6), lat: toRad(35.8) };
 

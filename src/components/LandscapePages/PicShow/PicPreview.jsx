@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './PicPreview.module.scss';
-import useWindowDimensions from '../../../Utilities/useWindowDimensions';
+import useWindowDimensions from '../../../utilities/useWindowDimensions';
 
 const PicPreview = (props) => {
     const { height, width } = useWindowDimensions();
@@ -57,9 +57,9 @@ const PicPreview = (props) => {
                                                               0.605
                                                 }px`
                                               : `${
-                                                    (((idx - halfLen) *
-                                                            singleWidth) /
-                                                        halfLen)
+                                                    ((idx - halfLen) *
+                                                        singleWidth) /
+                                                    halfLen
                                                 }px`,
                                   }
                                 : {
@@ -75,12 +75,10 @@ const PicPreview = (props) => {
                                                 50
                                       })`,
                                       zIndex: -Math.abs(idx - halfLen) + 100,
-                                      marginRight: `${
-                                          (-(
-                                              ((idx - halfLen) * singleWidth) /
-                                              halfLen
-                                          ))
-                                      }px`,
+                                      marginRight: `${-(
+                                          ((idx - halfLen) * singleWidth) /
+                                          halfLen
+                                      )}px`,
                                   }
                         }
                     >

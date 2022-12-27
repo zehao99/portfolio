@@ -1,5 +1,5 @@
 import React from 'react';
-import { pageVariants } from '../../Utilities/AnimateParams';
+import { pageVariants } from '../../utilities/AnimateParams';
 import styles from './CollectionPages.module.scss';
 import { motion } from 'framer-motion';
 import NavBar from '../../components/Common/Navbar/Navbar';

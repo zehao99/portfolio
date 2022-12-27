@@ -8,7 +8,7 @@ const Title = () => {
                 <h1>Collections</h1>
                 <p>It is what happens around us that matters.</p>
             </div>
-            <div className={styles.GreyRectangle}> </div>
+            <div className={styles.GreyRectangle}></div>
         </div>
     );
 };
