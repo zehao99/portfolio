@@ -182,9 +182,8 @@ const Intro = ({ handleDisplayModal }) => {
                         content: '';
                         position: absolute;
                         display: block;
-                        background: url('${process.env
-                                .PUBLIC_URL}/about_bg.jpg')
-                            no-repeat center center/cover;
+                        background: url('/about_bg.jpg') no-repeat center
+                            center/cover;
                         width: 100%;
                         height: 100%;
                         top: 0;

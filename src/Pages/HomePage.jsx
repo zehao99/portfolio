@@ -83,7 +83,7 @@ const HomePage = (props) => {
             exit={'exit'}
             variants={pageVariants}
         >
-            <AnimatePresence mode={"wait"}>
+            <AnimatePresence mode={'wait'}>
                 {isImg01Loading || isImg02Loading ? (
                     <motion.div>
                         <motion.div
@@ -186,15 +186,21 @@ const HomePage = (props) => {
                                         >
                                             <NavLink
                                                 className={styles.HomePageBtn}
+                                                to={'/landscape'}
+                                            >
+                                                Landscape
+                                            </NavLink>
+                                            <NavLink
+                                                className={styles.HomePageBtn}
                                                 to={'/collections'}
                                             >
-                                                Collections→
+                                                Collections
                                             </NavLink>
                                             <NavLink
                                                 className={styles.HomePageBtn}
                                                 to={'/about'}
                                             >
-                                                About Me→
+                                                About Me
                                             </NavLink>
                                         </motion.div>
                                     </motion.div>

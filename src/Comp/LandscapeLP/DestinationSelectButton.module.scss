@@ -1,0 +1,27 @@
+.buttonContainer {
+    margin: 0.2rem 0.5rem;
+    display: flex;
+    min-height: 2.5rem;
+}
+
+.buttonTextContainer {
+    padding: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    .closeIcon {
+        margin: 0 0.1rem 0 3rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    a {
+        color: inherit;
+    }
+}
