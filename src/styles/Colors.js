@@ -11,6 +11,8 @@ const Color = {
     logoColor: '#E3C084',
     lightTextColor: '#E0EFFF',
     skillCardBackgroundColor: '#284263',
+    homePageLightTextColor: '#f7d392',
+    white: "#FFFFFF",
 };
 
 export default Color;

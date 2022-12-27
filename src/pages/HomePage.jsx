@@ -6,16 +6,9 @@ import styles from './HomePage.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { pageVariants } from '../styles/animations/PageAnimateParams.js';
 import AnimatedCharacters from '../components/Common/AnnimatedText';
+import LoadingComp from '../components/Common/LoadingComp.jsx';
+import Colors from '../styles/Colors.js';
 
-const exitParam = {
-    scale: [1, 2, 5, 20, 400],
-    opacity: [1, 0.8, 0.6, 0.4, 0],
-    transition: {
-        delay: 0.6,
-        duration: 0.5,
-        ease: 'easeInOut',
-    },
-};
 
 const rectParentParam = {
     hidden: {
@@ -85,41 +78,7 @@ const HomePage = (props) => {
         >
             <AnimatePresence mode={'wait'}>
                 {isImg01Loading || isImg02Loading ? (
-                    <motion.div>
-                        <motion.div
-                            className={styles.bkBlue}
-                            exit={exitParam}
-                        />
-                        <motion.div
-                            className={styles.loadingIcon}
-                            exit={exitParam}
-                        >
-                            <motion.div
-                                key="loading-icon"
-                                className={styles.loadingIconAnimator}
-                                animate={{
-                                    scale: [1, 1, 1, 1, 1],
-                                    x: [0, -100, 0, 100, 0],
-                                    rotate: [0, 0, 270, 270, 0],
-                                    borderRadius: [
-                                        '20%',
-                                        '50%',
-                                        '20%',
-                                        '50%',
-                                        '20%',
-                                    ],
-                                    transition: {
-                                        duration: 2,
-                                        ease: 'easeInOut',
-                                        times: [0, 0.2, 0.5, 0.8, 1],
-                                        repeat: Infinity,
-                                        repeatDelay: 0.5,
-                                    },
-                                }}
-                                exit={exitParam}
-                            />
-                        </motion.div>
-                    </motion.div>
+                    <LoadingComp delay={0.6} backgroundColor={Colors.white} />
                 ) : (
                     <motion.div key="main-comp">
                         <div className={styles.HomePageHeader}>

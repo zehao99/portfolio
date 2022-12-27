@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import LoadingComp from '../../../Common/LoadingComp';
+import { AnimatePresence } from 'framer-motion';
 
 const Tomographic = () => {
     const [imgLoadList, setImgLoadList] = useState([false]);
@@ -21,9 +22,9 @@ const Tomographic = () => {
         });
 
     return (
-        <>
-            {showComp ? null : <LoadingComp />}
-            <div className={showComp ? styles.container : styles.noShow}>
+        <AnimatePresence mode={"wait"}>
+            {!showComp && <LoadingComp />}
+            <div key={"tomographic-content"} className={showComp ? styles.container : styles.noShow}>
                 <div className={styles.title}>Tomographic Proximity Sensor</div>
                 <div className={styles.periodContainer}>
                     <div className={styles.period}>
@@ -91,7 +92,7 @@ const Tomographic = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </AnimatePresence>
     );
 };
 

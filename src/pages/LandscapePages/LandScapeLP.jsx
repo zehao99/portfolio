@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import styles from './LandScapeLP.module.scss';
 import LoadingComp from '../../components/Common/LoadingComp';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Navbar from '../../components/Common/Navbar/Navbar';
 import Footer from '../../components/Common/Footer';
 import DestinationSelectButton from '../../components/LandscapePages/LandingPage/DestinationSelectButton';
 import { toRad } from '../../utilities/calculations.js';
 
 const EarthCanvas = React.lazy(() =>
-    import('../../components/LandscapePages/LandingPage/EarthCanvas')
+    import('../../components/LandscapePages/LandingPage/EarthCanvas'),
 );
 
 const positions = {
@@ -75,45 +75,41 @@ const LandScapeLP = () => {
 
     return (
         <>
-            <div>
-                <AnimatePresence mode={'wait'}>
-                    <div key={'page-content'} className={styles.pageContent}>
-                        {isLoading ? (
-                            <LoadingComp />
-                        ) : (
-                            <>
-                                <Navbar />
-                                <div className={styles.pageContentBody}>
-                                    <h1>Explore</h1>
-                                    <h2>The World with My Lens</h2>
-                                    {Object.keys(positions).map((key) => (
-                                        <DestinationSelectButton
-                                            key={`dest-button-${key}`}
-                                            text={positions[key].text}
-                                            onClick={getSelectFunction(key)}
-                                            isSelected={key === selected}
-                                            setDeselect={deselectFunc}
-                                            destinationUrl={
-                                                positions[key].destinationUrl
-                                            }
-                                        />
-                                    ))}
-                                </div>
-                            </>
-                        )}
-
-                        <Footer />
-                    </div>
-
-                    <div className={styles.canvasContainer}>
-                        <EarthCanvas
-                            currCamLonLat={currCamLonLat}
-                            notifyLoaded={notifyLoaded}
-                            notifyInLoading={notifyInLoading}
-                        />
-                    </div>
-                </AnimatePresence>
-            </div>
+            <AnimatePresence mode={'wait'}>
+                <motion.div key={'page-content'} className={styles.pageContent}>
+                    {isLoading ? (
+                        <LoadingComp delay={0.6} />
+                    ) : (
+                        <>
+                            <Navbar />
+                            <div className={styles.pageContentBody}>
+                                <h1>Explore</h1>
+                                <h2>The World with My Lens</h2>
+                                {Object.keys(positions).map((key) => (
+                                    <DestinationSelectButton
+                                        key={`dest-button-${key}`}
+                                        text={positions[key].text}
+                                        onClick={getSelectFunction(key)}
+                                        isSelected={key === selected}
+                                        setDeselect={deselectFunc}
+                                        destinationUrl={
+                                            positions[key].destinationUrl
+                                        }
+                                    />
+                                ))}
+                            </div>
+                            <Footer />
+                        </>
+                    )}
+                </motion.div>
+                <motion.div key={'earth-canvas-container'} className={styles.canvasContainer}>
+                    <EarthCanvas
+                        currCamLonLat={currCamLonLat}
+                        notifyLoaded={notifyLoaded}
+                        notifyInLoading={notifyInLoading}
+                    />
+                </motion.div>
+            </AnimatePresence>
         </>
     );
 };

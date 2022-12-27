@@ -3,6 +3,7 @@ import styles from './SpecDoc.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import LoadingComp from '../../../Common/LoadingComp';
+import { AnimatePresence } from 'framer-motion';
 
 const SpecDoc = () => {
     const [imgLoadList, setImgLoadList] = useState([false, false]);
@@ -21,9 +22,9 @@ const SpecDoc = () => {
         });
 
     return (
-        <div>
-            {showComp ? null : <LoadingComp />}
-            <div className={showComp ? styles.container : styles.noShow}>
+        <AnimatePresence mode={"wait"}>
+            {!showComp && <LoadingComp />}
+            <div key={"specdoc-content"} className={showComp ? styles.container : styles.noShow}>
                 <div className={styles.title}>Specialist Doctors</div>
                 <div className={styles.periodContainer}>
                     <div className={styles.period}>
@@ -176,7 +177,7 @@ const SpecDoc = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </AnimatePresence>
     );
 };
 
