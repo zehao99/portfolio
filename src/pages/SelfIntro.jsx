@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '../components/Common/Navbar/Navbar';
 import Footer from '../components/Common/Footer';
 import Intros from '../components/SelfIntroPage/Intros';
-import { pageVariants } from '../utilities/AnimateParams';
+import { pageVariants } from '../styles/animations/PageAnimateParams.js';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectDetailModal from '../components/SelfIntroPage/ProjectDetails/ProjectDetailModal';
 import useIsMobile from '../utilities/hooks/useIsMobile.jsx';

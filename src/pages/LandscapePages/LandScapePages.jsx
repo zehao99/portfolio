@@ -5,7 +5,7 @@ import Footer from '../../components/Common/Footer';
 import ShowPic from '../../components/LandscapePages/PicShow/ShowPic';
 import styles from './LandscapePages.module.scss';
 import useWindowDimensions from '../../utilities/hooks/useWindowDimensions.jsx';
-import { pageVariants } from '../../utilities/AnimateParams';
+import { pageVariants } from '../../styles/animations/PageAnimateParams.js';
 
 const LandscapePages = (props) => {
     const { width, height } = useWindowDimensions();

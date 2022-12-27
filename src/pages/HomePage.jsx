@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import Footer from '../components/Common/Footer';
 import styles from './HomePage.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
-import { pageVariants } from '../utilities/AnimateParams';
+import { pageVariants } from '../styles/animations/PageAnimateParams.js';
 import AnimatedCharacters from '../components/Common/AnnimatedText';
 
 const exitParam = {

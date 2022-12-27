@@ -27,6 +27,7 @@ const CollectionShowHorizontal = (props) => {
             onScroll={(e) => scrollHandler(e)}
         >
             <motion.div
+                key={"collection-desc-index"}
                 className={styles.CollectionPageDescription}
                 initial={{ x: -100, scale: 0 }}
                 animate={{ x: 0, scale: 1 }}
@@ -39,7 +40,7 @@ const CollectionShowHorizontal = (props) => {
             {props.Photos.map((e, idx) => {
                 return e.stories !== null && e.stories !== undefined ? (
                     <motion.div
-                        key={e.id}
+                        key={`${e.id}-story`}
                         className={styles.storiesContainer}
                         initial={{ x: -100, scale: 0 }}
                         animate={{ x: 0, scale: 1 }}
@@ -52,7 +53,7 @@ const CollectionShowHorizontal = (props) => {
                     </motion.div>
                 ) : (
                     <motion.div
-                        key={e.id}
+                        key={`${e.id}-image`}
                         className={styles.PhotoContainer}
                         initial={{ x: -100, scale: 0 }}
                         animate={{ x: 0, scale: 1 }}
