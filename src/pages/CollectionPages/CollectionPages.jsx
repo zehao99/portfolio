@@ -1,10 +1,10 @@
 import React from 'react';
-import NavBar from '../../Comp/Navbar/Navbar';
-import Footer from '../../Comp/Footer';
+import NavBar from '../../components/Common/Navbar/Navbar';
+import Footer from '../../components/Common/Footer';
 import { motion } from 'framer-motion';
 import styles from './CollectionPages.module.scss';
-import CollectionShowHorizontal from '../../Comp/CollectionShow/CollectionShowHorizontal';
-import CollectionShowVertical from '../../Comp/CollectionShow/CollectionShowVertical';
+import CollectionShowHorizontal from '../../components/CollectionPages/CollectionShowHorizontal';
+import CollectionShowVertical from '../../components/CollectionPages/CollectionShowVertical';
 import useWindowDimensions from '../../Utilities/useWindowDimensions';
 import { pageVariants } from '../../Utilities/AnimateParams';
 

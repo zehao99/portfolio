@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useCycle } from 'framer-motion';
 import { MenuToggle } from './NavbarMobileToggle';
 import { Navigation } from './NavbarMobileMainNav';
-import useDimensions from '../../../Utilities/useWindowDimensions';
+import useDimensions from '../../../../Utilities/useWindowDimensions';
 
 const NavbarMobile = (props) => {
     const [isOpen, toggleOpen] = useCycle(false, true);

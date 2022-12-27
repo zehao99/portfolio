@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { NavLink } from 'react-router-dom';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import styles from './DestinationSelectButton.module.scss';
-import Color from '../Colors';
+import Color from '../../../styles/Colors';
 
 const DestinationSelectButton = ({
     text,

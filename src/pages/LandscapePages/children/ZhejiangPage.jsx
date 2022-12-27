@@ -1,5 +1,5 @@
 import React from 'react';
-import LandScapePage from './LandScapePages';
+import LandScapePage from '../LandScapePages';
 
 const Info = {
     title: 'Zhejiang 浙江',

@@ -3,11 +3,11 @@ import { useFrame, useLoader } from '@react-three/fiber';
 import { PerspectiveCamera, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 
-import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
-import EarthCloudsMap from '../../assets/textures/8k_earth_clouds.png';
-import EarthNightMap from '../../assets/textures/8k_earth_nightmap.jpg';
-import EarthNormalMap from '../../assets/textures/8k_earth_normal_map.jpg';
-import EarthSpecularMap from '../../assets/textures/8k_earth_specular_map.jpg';
+import EarthDayMap from '../../../../assets/textures/8k_earth_daymap.jpg';
+import EarthCloudsMap from '../../../../assets/textures/8k_earth_clouds.png';
+import EarthNightMap from '../../../../assets/textures/8k_earth_nightmap.jpg';
+import EarthNormalMap from '../../../../assets/textures/8k_earth_normal_map.jpg';
+import EarthSpecularMap from '../../../../assets/textures/8k_earth_specular_map.jpg';
 import { TextureLoader, Vector3 } from 'three';
 import { getCurrSunPositionVector, getCameraPosition } from './locationUtils';
 import earthVertexShader from './shaders/earthVertexShader.glsl';
@@ -15,7 +15,7 @@ import earthFragmentShader from './shaders/earthFragmentShader.glsl';
 
 import useMousePositionMoveLonLat from './useMousePositionMoveLonLat';
 
-import useIsMobile from '../../Utilities/useIsMobile';
+import useIsMobile from '../../../../Utilities/useIsMobile';
 
 const MOVE_ANIMATION_FRAME_LENGTH = 45;
 
@@ -43,7 +43,7 @@ const Earth = (props) => {
 
     const [framesLeft, setFramesLeft] = useState(MOVE_ANIMATION_FRAME_LENGTH);
 
-    const initialCameratPos = getCameraPosition(
+    const initialCameraPos = getCameraPosition(
         currentLonLat.lon,
         currentLonLat.lat
     );
@@ -146,7 +146,7 @@ const Earth = (props) => {
                 aspect={4 / 3}
                 near={0.1}
                 far={100000}
-                position={initialCameratPos}
+                position={initialCameraPos}
             />
         </>
     );

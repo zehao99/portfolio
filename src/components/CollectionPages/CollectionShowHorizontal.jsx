@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './CollectionShowHorizontal.module.scss';
 import { motion } from 'framer-motion';
-import ImgLoadingComp from '../LoadingComp/ImgLoadingComp';
+import ImgLoadingComp from '../Common/LoadingComp/ImgLoadingComp';
 
 const CollectionShowHorizontal = (props) => {
     useEffect(() => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './CollectionShowVertical.module.scss';
-import ImgLoadingComp from '../LoadingComp/ImgLoadingComp';
+import ImgLoadingComp from '../Common/LoadingComp/ImgLoadingComp';
 
 const container = {
     hidden: { opacity: 0 },

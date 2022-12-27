@@ -1,5 +1,5 @@
 import React from 'react';
-import Colors from './Colors';
+import Colors from '../../styles/Colors';
 import Popup from './PopupAlert';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {

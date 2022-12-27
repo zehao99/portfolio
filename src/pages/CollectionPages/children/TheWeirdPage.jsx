@@ -1,5 +1,5 @@
 import React from 'react';
-import CollectionPage from './CollectionPages';
+import CollectionPage from '../CollectionPages';
 const Info = {
     title: 'The weird',
     description: (

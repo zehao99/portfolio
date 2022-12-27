@@ -1,20 +1,22 @@
 import { Euler, Vector3 } from 'three';
 
-const MILISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
+import {toRad} from '../../../../Utilities/calculations.js';
 
-export const toRad = (deg) => (deg / 180) * Math.PI;
+const MILLISECONDS_IN_A_DAY = 24 * 60 * 60 * 1000;
+
+
 
 const DEFAULT_ROTATION = { lon: toRad(139.6), lat: toRad(35.8) };
 
 const UTC_TIME_RAD_OFFSET = (12 / 24) * Math.PI;
 
-const getCurrentSunLongLattitudeRad = () => {
+const getCurrentSunLongLatitudeRad = () => {
     const currentTime = new Date();
 
-    const longtitudeOfSun =
+    const longitudeOfSun =
         -(
-            (currentTime.getTime() % MILISECONDS_IN_A_DAY) /
-            MILISECONDS_IN_A_DAY
+            (currentTime.getTime() % MILLISECONDS_IN_A_DAY) /
+            MILLISECONDS_IN_A_DAY
         ) *
             2 *
             Math.PI -
@@ -28,26 +30,26 @@ const getCurrentSunLongLattitudeRad = () => {
         return Math.floor(diff / oneDay);
     };
 
-    const lattitudeOfSun =
+    const latitudeOfSun =
         -0.39795 * Math.cos(((0.98563 * (dayInYear() - 173)) / 180) * Math.PI);
 
-    return { lon: longtitudeOfSun, lat: lattitudeOfSun };
+    return { lon: longitudeOfSun, lat: latitudeOfSun };
 };
 
 export const getCurrSunPositionVector = () => {
-    const { lon, lat } = getCurrentSunLongLattitudeRad();
+    const { lon, lat } = getCurrentSunLongLatitudeRad();
 
-    const lattitudeEuler = new Euler(lat, 0, 0);
+    const latitudeEuler = new Euler(lat, 0, 0);
 
-    const longtitudeEuler = new Euler(0, lon, 0);
+    const longitudeEuler = new Euler(0, lon, 0);
 
-    let sunDireciton = new Vector3(0, 0, 10);
+    let sunDirection = new Vector3(0, 0, 10);
 
-    sunDireciton = sunDireciton.applyEuler(lattitudeEuler);
+    sunDirection = sunDirection.applyEuler(latitudeEuler);
 
-    sunDireciton = sunDireciton.applyEuler(longtitudeEuler);
+    sunDirection = sunDirection.applyEuler(longitudeEuler);
 
-    return sunDireciton;
+    return sunDirection;
 };
 
 export const getCameraPosition = (lon, lat) => {

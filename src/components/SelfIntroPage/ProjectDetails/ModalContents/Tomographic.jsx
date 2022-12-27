@@ -2,7 +2,7 @@ import styles from './Tomographic.module.scss';
 import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
-import LoadingComp from '../../LoadingComp';
+import LoadingComp from '../../../Common/LoadingComp';
 
 const Tomographic = () => {
     const [imgLoadList, setImgLoadList] = useState([false]);

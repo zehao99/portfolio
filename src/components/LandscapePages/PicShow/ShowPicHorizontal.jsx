@@ -4,7 +4,7 @@ import PicPreview from './PicPreview';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import ImgLoadingComp from '../LoadingComp/ImgLoadingComp';
+import ImgLoadingComp from '../../Common/LoadingComp/ImgLoadingComp';
 const variants = {
     enter: (direction) => {
         return {

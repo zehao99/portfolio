@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../Comp/Navbar/Navbar';
+import Navbar from '../components/Common/Navbar/Navbar';
 import { NavLink } from 'react-router-dom';
-import Footer from '../Comp/Footer';
+import Footer from '../components/Common/Footer';
 import styles from './HomePage.module.scss';
 import { AnimatePresence, motion } from 'framer-motion';
 import { pageVariants } from '../Utilities/AnimateParams';
-import AnimatedCharacters from '../Comp/Common/AnnimatedText';
+import AnimatedCharacters from '../components/Common/AnnimatedText';
 
 const exitParam = {
     scale: [1, 2, 5, 20, 400],

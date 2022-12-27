@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Colors from '../Colors';
-import ComponentWithScrollLoad from '../../Utilities/ComponentWithScrollLoad.jsx';
+import Colors from '../../../styles/Colors';
+import ComponentWithScrollLoad from '../../../Utilities/ComponentWithScrollLoad.jsx';
 
 const Title = (props) => {
     return (

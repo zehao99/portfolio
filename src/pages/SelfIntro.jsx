@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from '../Comp/Navbar/Navbar';
-import Footer from '../Comp/Footer';
-import Intros from '../Comp/Intros';
+import Navbar from '../components/Common/Navbar/Navbar';
+import Footer from '../components/Common/Footer';
+import Intros from '../components/SelfIntroPage/Intros';
 import { pageVariants } from '../Utilities/AnimateParams';
 import { AnimatePresence, motion } from 'framer-motion';
-import ProjectDetailModal from '../Comp/ProjectDetails/ProjectDetailModal';
+import ProjectDetailModal from '../components/SelfIntroPage/ProjectDetails/ProjectDetailModal';
 import useIsMobile from '../Utilities/useIsMobile';
-import IntroPC from '../Comp/Intro/IntroPC';
+import IntroPC from '../components/SelfIntroPage/IntroNew/IntroPC';
 
 const IntroPage = (props) => {
     const [showModal, setShowModal] = useState(false);

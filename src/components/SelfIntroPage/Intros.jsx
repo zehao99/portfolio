@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import PageProps from '../Utilities/PageProps';
+import PageProps from '../../Utilities/PageProps';
 import ProjectCard from './Cards/ProjectCard';
-import Colors from './Colors';
+import Colors from '../../styles/Colors';
 import { AnimatePresence, motion } from 'framer-motion';
 import EduCard from './Cards/EduCard';
 import Title from './Cards/Title';
 import SkillCard from './Cards/SkillCard';
 import TextCard from './Cards/TextCard';
-import ProjectDetailModal from './ProjectDetails/ProjectDetailModal';
 
 const Intro = ({ handleDisplayModal }) => {
     return (

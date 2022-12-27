@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './SpecDoc.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
-import LoadingComp from '../../LoadingComp';
+import LoadingComp from '../../../Common/LoadingComp';
 
 const SpecDoc = () => {
     const [imgLoadList, setImgLoadList] = useState([false, false]);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Calories.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
-import LoadingComp from '../../LoadingComp';
+import LoadingComp from '../../../Common/LoadingComp';
 
 const Calories = () => {
     const [imgLoadList, setImgLoadList] = useState([false, false, false]);

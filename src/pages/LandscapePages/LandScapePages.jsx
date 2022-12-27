@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import NavBar from '../../Comp/Navbar/Navbar';
-import Footer from '../../Comp/Footer';
-import ShowPic from '../../Comp/PicShow/ShowPic';
+import NavBar from '../../components/Common/Navbar/Navbar';
+import Footer from '../../components/Common/Footer';
+import ShowPic from '../../components/LandscapePages/PicShow/ShowPic';
 import styles from './LandscapePages.module.scss';
 import useWindowDimensions from '../../Utilities/useWindowDimensions';
 import { pageVariants } from '../../Utilities/AnimateParams';

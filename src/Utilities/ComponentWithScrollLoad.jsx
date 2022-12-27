@@ -1,5 +1,5 @@
 import React from 'react';
-import Colors from '../Comp/Colors';
+import Colors from '../styles/Colors';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const ComponentWithScrollLoad = (Component) => {

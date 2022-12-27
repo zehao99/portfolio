@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Colors from '../Colors';
-import ComponentWithScrollLoad from '../../Utilities/ComponentWithScrollLoad.jsx';
+import Colors from '../../../styles/Colors';
 
 const ProjectCard = (props) => {
     return (

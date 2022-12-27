@@ -1,7 +1,7 @@
 import React from 'react';
-import Colors from '../Colors';
+import Colors from '../../../styles/Colors';
 import { motion } from 'framer-motion';
-import ComponentWithScrollLoad from '../../Utilities/ComponentWithScrollLoad.jsx';
+import ComponentWithScrollLoad from '../../../Utilities/ComponentWithScrollLoad.jsx';
 
 const EduCard = (props) => {
     return (

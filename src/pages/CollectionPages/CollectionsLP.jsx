@@ -2,10 +2,10 @@ import React from 'react';
 import { pageVariants } from '../../Utilities/AnimateParams';
 import styles from './CollectionPages.module.scss';
 import { motion } from 'framer-motion';
-import NavBar from '../../Comp/Navbar/Navbar';
-import Footer from '../../Comp/Footer';
-import Title from '../../Comp/CollectionShow/LandingPage/Title';
-import PageSection from '../../Comp/CollectionShow/LandingPage/PageSection';
+import NavBar from '../../components/Common/Navbar/Navbar';
+import Footer from '../../components/Common/Footer';
+import Title from '../../components/CollectionPages/LandingPage/Title';
+import PageSection from '../../components/CollectionPages/LandingPage/PageSection';
 
 const CollectionsLP = () => {
     return (

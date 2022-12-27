@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Colors from '../Colors';
-import ComponentWithScrollLoad from '../../Utilities/ComponentWithScrollLoad';
-import Color from '../Colors';
+import Colors from '../../../styles/Colors';
+import ComponentWithScrollLoad from '../../../Utilities/ComponentWithScrollLoad';
 
 const TextCard = (props) => {
     const hoverColor =

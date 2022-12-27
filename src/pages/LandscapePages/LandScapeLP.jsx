@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './LandScapeLP.module.scss';
-import LoadingComp from '../../Comp/LoadingComp';
+import LoadingComp from '../../components/Common/LoadingComp';
 import { AnimatePresence } from 'framer-motion';
-import Navbar from '../../Comp/Navbar/Navbar';
-import Footer from '../../Comp/Footer';
-import { toRad } from '../../Comp/EarthCanvas/locationUtils';
-import DestinationSelectButton from '../../Comp/LandscapeLP/DestinationSelectButton';
+import Navbar from '../../components/Common/Navbar/Navbar';
+import Footer from '../../components/Common/Footer';
+import DestinationSelectButton from '../../components/LandscapePages/LandingPage/DestinationSelectButton';
+import { toRad } from '../../Utilities/calculations.js';
 
-const EarthCanvas = React.lazy(() => import('../../Comp/EarthCanvas'));
+const EarthCanvas = React.lazy(() => import('../../components/LandscapePages/LandingPage/EarthCanvas'));
 
 const positions = {
     tokyo: {

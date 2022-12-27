@@ -1,8 +1,8 @@
 import React from 'react';
 import styles from './SkillDetail.module.scss';
 import IntroTitle from './common/IntroTitle';
-import awsBadge from '../../../img/aws-badge.png';
-import gcpLogo from '../../../img/gcp-logo.png';
+import awsBadge from '../../../../img/aws-badge.png';
+import gcpLogo from '../../../../img/gcp-logo.png';
 import { motion } from 'framer-motion';
 
 const SkillDetail = () => {
