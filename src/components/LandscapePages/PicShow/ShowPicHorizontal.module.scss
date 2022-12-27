@@ -1,0 +1,85 @@
+@import '../../../styles/Colors.scss';
+
+.ImgSizeConstraint {
+    position: absolute;
+    max-height: calc(100vh - 15vh - 60px - 9rem);
+    max-width: calc(100vw - 12rem);
+
+    @media (max-height: 800px) {
+        max-height: calc(100vh - 15vh - 60px - 7.5rem);
+    }
+}
+
+.ShowPicHorizontalContainer {
+    width: 100vw;
+    height: calc(100vh - 15vh - 60px - 6.5rem);
+    display: flex;
+    flex-direction: initial;
+    justify-content: space-between;
+    align-items: center;
+    .changePicBtn {
+        padding: 1.5rem;
+        margin: 0.5rem;
+        cursor: pointer;
+        color: $logoColor;
+        border-radius: 1rem;
+        transition: all 0.05s ease-in-out;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        &:active {
+            background: rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    @media (max-height: 800px) {
+        height: calc(100vh - 15vh - 60px - 4.5rem);
+    }
+}
+.PhotoContainer {
+    margin: auto;
+    height: 100%;
+    width: calc(100vw - 11rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .ImgContainer {
+        flex: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .ImgLoaderContainer {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            @extend .ImgSizeConstraint;
+        }
+
+        img {
+            @extend .ImgSizeConstraint;
+        }
+    }
+
+    p {
+        color: $complimentaryTextColor;
+        justify-self: end;
+        padding: 0.5rem;
+    }
+}
+.PicPreview {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

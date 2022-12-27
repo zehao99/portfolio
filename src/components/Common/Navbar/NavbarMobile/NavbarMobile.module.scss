@@ -1,0 +1,149 @@
+@import '../../../../styles/Colors.scss';
+
+.navbarContainer {
+    margin: auto;
+    max-width: $maxWidth;
+    height: 80px;
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        z-index: 100;
+        overflow: hidden;
+    }
+
+    .background {
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+
+        z-index: 900;
+        background: rgba($color: #fff5e3, $alpha: 0.9);
+    }
+
+    button {
+        outline: none;
+        border: none;
+        z-index: 902;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        position: fixed;
+        top: 18px;
+        left: 15px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: transparent;
+        cursor: pointer;
+    }
+
+    ul,
+    li {
+        margin: 0;
+        padding: 0;
+        z-index: 903;
+    }
+
+    ul {
+        margin-left: 20px;
+        padding: 25px;
+        position: fixed;
+        top: 100px;
+        width: 230px;
+        left: 35%;
+        transform: translateX(-50%);
+    }
+
+    li {
+        color: $primaryColor;
+        font-size: 2rem;
+        list-style: none;
+        margin-bottom: 20px;
+        cursor: pointer;
+    }
+
+    .refresh {
+        padding: 10px;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 10px;
+        width: 20px;
+        height: 20px;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+}
+
+.navbarContainer .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+
+.navbarContainer .navbar h1 {
+    justify-self: center;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: auto 0;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.navbarContainer .navbar a {
+    text-decoration: none;
+    color: $primaryColor;
+}
+
+.navbar img {
+    margin-top: 0.5rem;
+    height: 40px;
+}
+
+.navbarToggleIcon {
+    width: 40px;
+    height: 40px;
+    background-color: $lightTextColorComplimentary;
+    cursor: pointer;
+    margin: 0.9rem 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $primaryColorComplimentary;
+    padding: 0.5rem 0.6rem;
+    box-shadow: rgba($color: #000000, $alpha: 0.2) 0.1rem 0.1rem 0.1rem;
+    border-radius: 50%;
+}
+
+.subUl {
+    margin: 0.5rem 2rem;
+    margin-bottom: 1rem;
+    padding: 0;
+    margin-left: 0;
+    font-size: 1rem;
+    width: 230px;
+    left: 0;
+    transform: translateX(0);
+    color: $primaryColor;
+}
+
+.subLi {
+    margin: 0.5rem 2rem;
+}
+
+.listicon {
+    width: 14px;
+    height: 14px;
+    margin-left: 10px;
+}

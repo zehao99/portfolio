@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Colors from './Comp/Colors';
+import Colors from './styles/Colors';
 import PageRouter from './PageRouter';
 import { BrowserRouter as Router } from 'react-router-dom';
 const App = (props) => {

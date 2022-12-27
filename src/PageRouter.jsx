@@ -1,18 +1,18 @@
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import HomePage from './Pages/HomePage';
-import IntroPage from './Pages/SelfIntro';
-import XinjiangPage from './Pages/LandscapePages/XinjiangPage';
-import JapanPage from './Pages/LandscapePages/JapanPage';
-import ZhejiangPage from './Pages/LandscapePages/ZhejiangPage';
-import BacktoDesertPage from './Pages/CollectionPages/BacktoDesertPage';
-import SakuraYukiPage from './Pages/CollectionPages/SakurayukiPage';
-import TheWeirdPage from './Pages/CollectionPages/TheWeirdPage';
-import JapanStoriesPage from './Pages/CollectionPages/JapanStoriesPage';
-import ImgLoadingComp from './Comp/LoadingComp/ImgLoadingComp';
+import HomePage from './pages/HomePage';
+import IntroPage from './pages/SelfIntro';
+import XinjiangPage from './pages/LandscapePages/children/XinjiangPage';
+import JapanPage from './pages/LandscapePages/children/JapanPage';
+import ZhejiangPage from './pages/LandscapePages/children/ZhejiangPage';
+import BacktoDesertPage from './pages/CollectionPages/children/BacktoDesertPage';
+import SakuraYukiPage from './pages/CollectionPages/children/SakurayukiPage';
+import TheWeirdPage from './pages/CollectionPages/children/TheWeirdPage';
+import JapanStoriesPage from './pages/CollectionPages/children/JapanStoriesPage';
+import ImgLoadingComp from './components/Common/LoadingComp/ImgLoadingComp';
 import { AnimatePresence } from 'framer-motion';
-import CollectionsLP from './Pages/CollectionPages/CollectionsLP';
-import LandScapeLP from './Pages/LandscapePages/LandScapeLP';
+import CollectionsLP from './pages/CollectionPages/CollectionsLP';
+import LandScapeLP from './pages/LandscapePages/LandScapeLP';
 
 const PageRouter = (props) => {
     const location = useLocation();

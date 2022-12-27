@@ -1,0 +1,84 @@
+@import '../../../../styles/Colors';
+
+.mainContainer svg {
+  fill: rgba($lightTextColor, 0.1);
+  width: 200%;
+  height: auto;
+  margin: 0;
+}
+
+.background {
+  background-size: 175% 100%;
+  padding: 1em 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.skillAndExperienceContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 2em;
+}
+
+.skillContent {
+  background: rgba($lightTextColor, 0.1);
+  padding: 2em;
+  margin: 0 2em;
+  line-height: 1.8;
+  border-right: 2px rgba($logoColor, 0.5) solid;
+  max-width: 30em;
+  span {
+    font-weight: bold;
+    color: $logoColor;
+  }
+}
+
+.floatingSquare {
+  background: rgba($logoColor, 0.2);
+  width: 5em;
+  height: 5em;
+  position: absolute;
+  z-index: -100;
+}
+
+.toolsContainer {
+  flex: 1;
+  padding: 0 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.toolsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5em 0;
+
+  h2 {
+    margin: 0.5em 0;
+    color: $logoColor;
+    font-weight: normal;
+    font-size: 1.3em;
+  }
+
+  p {
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  .badgeContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    img {
+      max-height: 9em;
+      max-width: 12em;
+      margin: 0 1em;
+    }
+  }
+}
