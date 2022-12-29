@@ -33,7 +33,7 @@ const positions = {
     shanghai: {
         lat: toRad(31.231706),
         lon: toRad(121.472644),
-    }
+    },
 };
 
 const MAX_CAMERA_HEIGHT = 2.5;
@@ -41,12 +41,12 @@ const MAX_CAMERA_HEIGHT = 2.5;
 const MIN_CAMERA_HEIGHT = 1.75;
 
 const animationStatusParam = {
-    hidden: { opacity: 0, x: -100 },
+    hidden: { opacity: 0, x: -200 },
     show: { opacity: 1, x: 0 },
 };
 
 
-const initCameraPos = {...positions.shanghai, height: MAX_CAMERA_HEIGHT, lookAtRadius: 0}
+const initCameraPos = { ...positions.shanghai, height: MAX_CAMERA_HEIGHT, lookAtRadius: 0 };
 
 const LandScapeLP = () => {
     const [currCamPos, setCurrCamPos] = useState(initCameraPos);
@@ -65,7 +65,7 @@ const LandScapeLP = () => {
                 lon: positions[key].lon,
                 lat: positions[key].lat,
                 height: MIN_CAMERA_HEIGHT,
-                lookAtRadius: 0.75
+                lookAtRadius: 0.75,
             });
             setIsInit(false);
             setSelected(key);
@@ -75,7 +75,7 @@ const LandScapeLP = () => {
     const deselectFunc = () => {
         setSelected(null);
         setCurrCamPos({ ...initCameraPos });
-        setIsInit(true)
+        setIsInit(true);
     };
 
     const notifyInLoading = () => {

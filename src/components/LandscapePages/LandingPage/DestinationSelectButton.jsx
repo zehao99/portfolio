@@ -21,7 +21,7 @@ const DestinationSelectButton = ({
                     className={styles.buttonTextContainer}
                     onClick={() => onClick()}
                     initial={{
-                        x: -100,
+                        x: -200,
                         opacity: 0,
                         background: 'rgba(0,0,0,0)',
                     }}
@@ -37,7 +37,7 @@ const DestinationSelectButton = ({
                         transition: { duration: 0.5 },
                     }}
                     exit={{
-                        x: 100,
+                        x: 200,
                         opacity: 0,
                         color: Color.darkTextColor,
                         background: Color.logoColor,
@@ -50,7 +50,7 @@ const DestinationSelectButton = ({
                 <motion.div
                     className={styles.buttonTextContainer}
                     initial={{
-                        x: -100,
+                        x: -200,
                         opacity: 0,
                         background: Color.btnHoverBackgroundColor,
                         color: Color.darkTextColor,
@@ -68,7 +68,7 @@ const DestinationSelectButton = ({
                         transition: { duration: 0.5 },
                     }}
                     exit={{
-                        x: 100,
+                        x: 200,
                         opacity: 0,
                         color: Color.darkTextColor,
                         background: Color.logoColor,
