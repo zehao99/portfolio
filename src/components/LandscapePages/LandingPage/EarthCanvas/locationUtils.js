@@ -16,8 +16,8 @@ const getCurrentSunLongLatitudeRad = () => {
             (currentTime.getTime() % MILLISECONDS_IN_A_DAY) /
             MILLISECONDS_IN_A_DAY
         ) *
-            2 *
-            Math.PI -
+        2 *
+        Math.PI -
         (12 / 24) * Math.PI;
 
     const dayInYear = () => {
@@ -50,11 +50,31 @@ export const getCurrSunPositionVector = () => {
     return sunDirection;
 };
 
-export const getCameraPosition = (lon, lat) => {
+export const getPolarCameraPosition = (lon, lat) => {
     let location = new Vector3(0, 0, 2);
     location = location.applyEuler(new Euler(-lat, 0, 0));
     location = location.applyEuler(new Euler(0, lon + UTC_TIME_RAD_OFFSET, 0));
-    return location;
+
+    return { position: location, lookAt: new Vector3(0, 0, 0) };
+
+};
+
+export const get45DegreesCameraPosition = (lon, lat, height, lookAtRadius, isInit) => {
+    let lookAtLocation = new Vector3(0, 0, lookAtRadius);
+    lookAtLocation = lookAtLocation.applyEuler(new Euler(-lat, 0, 0));
+    lookAtLocation = lookAtLocation.applyEuler(new Euler(0, lon + UTC_TIME_RAD_OFFSET, 0));
+    let location = new Vector3(0, 0, height);
+    let transferredLat;
+    if (lat > 0) {
+        transferredLat = -lat + toRad(10);
+    } else if (isInit) {
+        transferredLat = -lat;
+    } else {
+        transferredLat = -lat - toRad(10);
+    }
+    location = location.applyEuler(new Euler(transferredLat, 0, 0));
+    location = location.applyEuler(new Euler(0, lon + UTC_TIME_RAD_OFFSET, 0));
+    return { position: location, lookAt: lookAtLocation };
 };
 
 export const getCameraInitialLonLat = () => {

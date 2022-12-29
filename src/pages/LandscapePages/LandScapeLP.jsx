@@ -30,10 +30,27 @@ const positions = {
         text: 'Zhejiang 浙江',
         destinationUrl: '/landscape/zhejiang',
     },
+    shanghai: {
+        lat: toRad(31.231706),
+        lon: toRad(121.472644),
+    }
 };
 
+const MAX_CAMERA_HEIGHT = 2.5;
+
+const MIN_CAMERA_HEIGHT = 1.75;
+
+const animationStatusParam = {
+    hidden: { opacity: 0, x: -100 },
+    show: { opacity: 1, x: 0 },
+};
+
+
+const initCameraPos = {...positions.shanghai, height: MAX_CAMERA_HEIGHT, lookAtRadius: 0}
+
 const LandScapeLP = () => {
-    const [currCamLonLat, setCurrCamLonLat] = useState(positions.tokyo);
+    const [currCamPos, setCurrCamPos] = useState(initCameraPos);
+    const [isInit, setIsInit] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
     const [notifyInLoadingCalled, setNotifyInLoadingCalled] = useState(false);
     const [selected, setSelected] = useState(null);
@@ -44,16 +61,21 @@ const LandScapeLP = () => {
 
     const getSelectFunction = (key) => {
         return () => {
-            setCurrCamLonLat({
+            setCurrCamPos({
                 lon: positions[key].lon,
                 lat: positions[key].lat,
+                height: MIN_CAMERA_HEIGHT,
+                lookAtRadius: 0.75
             });
+            setIsInit(false);
             setSelected(key);
         };
     };
 
     const deselectFunc = () => {
         setSelected(null);
+        setCurrCamPos({ ...initCameraPos });
+        setIsInit(true)
     };
 
     const notifyInLoading = () => {
@@ -82,11 +104,19 @@ const LandScapeLP = () => {
                     ) : (
                         <>
                             <Navbar />
-                            <div className={styles.pageContentBody}>
-                                <h1>Explore</h1>
-                                <h2>The World with My Lens</h2>
+                            <motion.div
+                                className={styles.pageContentBody}
+                                transition={{
+                                    when: 'beforeChildren',
+                                    delayChildren: 0.3,
+                                    staggerChildren: 0.08,
+                                }}
+                                initial='hidden'
+                                animate='show'>
+                                <motion.h1 variants={animationStatusParam}>Explore</motion.h1>
+                                <motion.h2 variants={animationStatusParam}>The World with My Lens</motion.h2>
                                 {Object.keys(positions).map((key) => (
-                                    <DestinationSelectButton
+                                    positions[key].text && <DestinationSelectButton
                                         key={`dest-button-${key}`}
                                         text={positions[key].text}
                                         onClick={getSelectFunction(key)}
@@ -95,18 +125,20 @@ const LandScapeLP = () => {
                                         destinationUrl={
                                             positions[key].destinationUrl
                                         }
+                                        animationVariants={animationStatusParam}
                                     />
                                 ))}
-                            </div>
+                            </motion.div>
                             <Footer />
                         </>
                     )}
                 </motion.div>
                 <motion.div key={'earth-canvas-container'} className={styles.canvasContainer}>
                     <EarthCanvas
-                        currCamLonLat={currCamLonLat}
                         notifyLoaded={notifyLoaded}
                         notifyInLoading={notifyInLoading}
+                        isInit={isInit}
+                        currCamPos={currCamPos}
                     />
                 </motion.div>
             </AnimatePresence>

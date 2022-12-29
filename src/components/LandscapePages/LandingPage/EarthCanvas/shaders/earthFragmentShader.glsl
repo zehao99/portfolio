@@ -11,8 +11,8 @@ void main(void) {
     vec3 dayColor = texture2D(dayTexture, vUv).rgb;
     vec3 nightColor = texture2D(nightTexture, vUv).rgb;
 
+    // atmosphere settings.
     float intensity = 1.01 - dot(vNormal, vec3(0, 0, 1));
-
     vec3 atmosphere = vec3(0.3, 0.6, 1.0) * pow(intensity, 2.3);
 
     // compute cosine sun to normal so -1 is away from sun and +1 is toward sun.

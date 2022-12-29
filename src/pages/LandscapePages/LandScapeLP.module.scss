@@ -13,7 +13,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: none;
+    background: none;
     position: absolute;
     z-index: 1;
 }
@@ -33,12 +33,14 @@
         font-weight: normal;
         font-size: 3rem;
         margin: 0.5rem 1rem;
+        color: $logoColor;
     }
 
     h2 {
         font-weight: normal;
         font-size: 2rem;
         margin: 1rem;
+        color: $logoColor;
     }
 
     @media screen and (max-width: 600px) {

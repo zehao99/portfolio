@@ -6,15 +6,16 @@ import styles from './DestinationSelectButton.module.scss';
 import Color from '../../../styles/Colors';
 
 const DestinationSelectButton = ({
-    text,
-    destinationUrl,
-    onClick,
-    setDeselect,
-    isSelected,
-}) => {
+                                     text,
+                                     destinationUrl,
+                                     onClick,
+                                     setDeselect,
+                                     isSelected,
+                                     animationVariants,
+                                 }) => {
     return (
-        <motion.div className={styles.buttonContainer}>
-            <AnimatePresence mode="wait" />
+        <motion.div variants={animationVariants} className={styles.buttonContainer}>
+            <AnimatePresence mode='wait' />
             {!isSelected && (
                 <motion.div
                     className={styles.buttonTextContainer}
