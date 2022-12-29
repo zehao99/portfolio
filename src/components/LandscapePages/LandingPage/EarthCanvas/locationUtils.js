@@ -77,6 +77,13 @@ export const get45DegreesCameraPosition = (lon, lat, height, lookAtRadius, isIni
     return { position: location, lookAt: lookAtLocation };
 };
 
+export const get3DPositionOnSphereWithLonLat = (lon, lat) => {
+    let location = new Vector3(0, 0, 1);
+    location = location.applyEuler(new Euler(-lat, 0, 0));
+    location = location.applyEuler(new Euler(0, lon + UTC_TIME_RAD_OFFSET, 0));
+    return location
+}
+
 export const getCameraInitialLonLat = () => {
     return DEFAULT_ROTATION;
 };

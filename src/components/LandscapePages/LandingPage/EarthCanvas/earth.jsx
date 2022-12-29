@@ -2,20 +2,27 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { PerspectiveCamera, Stars } from '@react-three/drei';
 import * as THREE from 'three';
-import { TextureLoader, Vector3 } from 'three';
+import { TextureLoader } from 'three';
 
 import EarthDayMap from '../../../../assets/textures/8k_earth_daymap.jpg';
 import EarthCloudsMap from '../../../../assets/textures/8k_earth_clouds.png';
 import EarthNightMap from '../../../../assets/textures/8k_earth_nightmap.jpg';
 import EarthNormalMap from '../../../../assets/textures/8k_earth_normal_map.jpg';
 import EarthSpecularMap from '../../../../assets/textures/8k_earth_specular_map.jpg';
-import { get45DegreesCameraPosition, getCurrSunPositionVector, getPolarCameraPosition } from './locationUtils';
+import {
+    get3DPositionOnSphereWithLonLat,
+    get45DegreesCameraPosition,
+    getCurrSunPositionVector,
+    getPolarCameraPosition,
+} from './locationUtils';
 import earthVertexShader from './shaders/earthVertexShader.glsl';
 import earthFragmentShader from './shaders/earthFragmentShader.glsl';
 
 import useMousePositionMoveLonLat from './useMousePositionMoveLonLat';
 
 import useIsMobile from '../../../../utilities/hooks/useIsMobile.jsx';
+import LocationMark from './LocationMark';
+import { log } from 'three/nodes';
 
 const MOVE_ANIMATION_FRAME_LENGTH = 45;
 
@@ -40,16 +47,21 @@ const Earth = (props) => {
     const mouseLonLatOffset = useMousePositionMoveLonLat();
 
     const [cameraPositionTarget, setCameraPositionTarget] = useState(
-        props.currCamPos
+        props.currCamPos,
     );
 
-    const [currentLonLatPos, setCurrentLonLatPos] = useState({ lon: 0, lat: 0, height: MAX_CAMERA_HEIGHT, lookAtRadius: 0 });
+    const [currentLonLatPos, setCurrentLonLatPos] = useState({
+        lon: 0,
+        lat: 0,
+        height: MAX_CAMERA_HEIGHT,
+        lookAtRadius: 0,
+    });
 
     const [framesLeft, setFramesLeft] = useState(MOVE_ANIMATION_FRAME_LENGTH);
 
 
     const initialCameraPos = getPolarCameraPosition(
-        currentLonLatPos.lon, currentLonLatPos.lat
+        currentLonLatPos.lon, currentLonLatPos.lat,
     );
 
     const earthRef = useRef();
@@ -59,7 +71,7 @@ const Earth = (props) => {
     const earthPosition = [0, 0, 0];
 
     useEffect(() => {
-        if(props.currCamPos == null) return;
+        if (props.currCamPos == null) return;
         setCameraPositionTarget(props.currCamPos);
         setFramesLeft(MOVE_ANIMATION_FRAME_LENGTH);
     }, [props.currCamPos]);
@@ -82,7 +94,7 @@ const Earth = (props) => {
             setFramesLeft((prev) => prev - 1);
         }
         // Update Camera Location.
-        const {position, lookAt} = get45DegreesCameraPosition(
+        const { position, lookAt } = get45DegreesCameraPosition(
             isMobileDevice
                 ? _currLonLatPos.lon
                 : _currLonLatPos.lon + mouseLonLatOffset.lon,
@@ -91,7 +103,7 @@ const Earth = (props) => {
                 : _currLonLatPos.lat + mouseLonLatOffset.lat,
             _currLonLatPos.height,
             _currLonLatPos.lookAtRadius,
-            props.isInit
+            props.isInit,
         );
         cameraRef.current.position.setX(position.x);
         cameraRef.current.position.setY(position.y);
@@ -108,7 +120,7 @@ const Earth = (props) => {
         <>
             <ambientLight intensity={0.1} />
             <pointLight
-                color="#f6f3ea"
+                color='#f6f3ea'
                 position={sunPosition}
                 intensity={1.2}
             />
@@ -120,6 +132,12 @@ const Earth = (props) => {
                 saturation={0}
                 fade={true}
             />
+            {!props.isInit && <LocationMark
+                position={get3DPositionOnSphereWithLonLat(cameraPositionTarget.lon, cameraPositionTarget.lat)}
+                scale={0.03}
+                rotation={[0, cameraPositionTarget.lon + Math.PI / 6, 0]}
+                onPointerEnter={(e) => console.log('enter')}
+            />}
             <mesh ref={cloudsRef} position={earthPosition}>
                 <sphereGeometry args={[1.005, 32, 32]} />
                 <meshPhongMaterial
@@ -128,7 +146,8 @@ const Earth = (props) => {
                     depthWrite={true}
                     transparent={true}
                     side={THREE.DoubleSide}
-                    reflectivity={0.5}
+                    reflectivity={0.1}
+                    roughness={0}
                 />
             </mesh>
             <mesh ref={earthRef} position={earthPosition}>

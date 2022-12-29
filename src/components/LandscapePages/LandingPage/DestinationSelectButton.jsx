@@ -28,6 +28,7 @@ const DestinationSelectButton = ({
                     animate={{
                         x: 0,
                         opacity: 1,
+                        color: Color.logoColor,
                         background: 'rgba(0,0,0,0)',
                     }}
                     whileHover={{
@@ -41,6 +42,9 @@ const DestinationSelectButton = ({
                         opacity: 0,
                         color: Color.darkTextColor,
                         background: Color.logoColor,
+                        transition: {
+                            duration: 1.0
+                        }
                     }}
                 >
                     {text} →
