@@ -3,6 +3,7 @@ import styles from './Calories.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import LoadingComp from '../../../Common/LoadingComp';
+import { AnimatePresence } from 'framer-motion';
 
 const Calories = () => {
     const [imgLoadList, setImgLoadList] = useState([false, false, false]);
@@ -21,9 +22,12 @@ const Calories = () => {
         });
 
     return (
-        <div>
-            {showComp ? null : <LoadingComp />}
-            <div className={showComp ? styles.container : styles.noShow}>
+        <AnimatePresence mode={'wait'}>
+            {!showComp && <LoadingComp />}
+            <div
+                key={'calories-content'}
+                className={showComp ? styles.container : styles.noShow}
+            >
                 <div className={styles.title}>Calories Search</div>
                 <div className={styles.periodContainer}>
                     <div className={styles.period}>
@@ -148,7 +152,7 @@ const Calories = () => {
                     </a>
                 </div>
             </div>
-        </div>
+        </AnimatePresence>
     );
 };
 

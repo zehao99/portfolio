@@ -8,6 +8,37 @@ import {
     faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import styled from 'styled-components';
+
+const FooterContainer = styled.div`
+    text-align: center;
+
+    p {
+        padding: 1em;
+    }
+
+    .social-media-icon {
+        cursor: pointer;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: MIN(1.33vw, 17px);
+    }
+`;
+
+const SnsIcons = styled.div`
+    margin-top: 1em;
+
+    a {
+        padding: 0 1em;
+        color: ${Colors.primaryColorComplimentary};
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: ${Colors.lightTextColorComplimentary};
+        }
+    }
+`;
 
 const Footer = () => {
     const showPopHandle = () => {
@@ -18,8 +49,8 @@ const Footer = () => {
     };
 
     return (
-        <div className="footer-container">
-            <div className="sns-icons">
+        <FooterContainer>
+            <SnsIcons>
                 <a href="https://www.instagram.com/zehao99/">
                     <FontAwesomeIcon
                         className="social-media-icon"
@@ -49,39 +80,9 @@ const Footer = () => {
                         size="2x"
                     />
                 </a>
-                <p>Zehao Li, 2022 &copy; all rights reserved.</p>
-            </div>
-            <style>{`
-        .footer-container {
-          text-align: center;
-        }
-        .footer-container .sns-icons {
-          margin-top: 1em;
-        }
-        .footer-container .sns-icons a {
-          padding: 0 1em;
-          color: ${Colors.primaryColorComplimentary};
-          transition: all 0.3s ease-in-out;
-        }
-
-        .footer-container .sns-icons a:hover {
-          color: ${Colors.lightTextColorComplimentary};
-        }
-
-        .footer-container p {
-          padding: 1em;
-        }
-        .footer-container .social-media-icon {
-          cursor: pointer;
-        }
-        
-        @media(min-width:1200px) {
-            .footer-container {
-                font-size: MIN(1.33vw, 17px);
-            }
-        }
-      `}</style>
-        </div>
+                <p>Zehao Li, 2023 &copy; all rights reserved.</p>
+            </SnsIcons>
+        </FooterContainer>
     );
 };
 

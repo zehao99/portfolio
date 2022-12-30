@@ -11,22 +11,27 @@ const DestinationSelectButton = ({
     onClick,
     setDeselect,
     isSelected,
+    animationVariants,
 }) => {
     return (
-        <motion.div className={styles.buttonContainer}>
+        <motion.div
+            variants={animationVariants}
+            className={styles.buttonContainer}
+        >
             <AnimatePresence mode="wait" />
             {!isSelected && (
                 <motion.div
                     className={styles.buttonTextContainer}
                     onClick={() => onClick()}
                     initial={{
-                        x: -100,
+                        x: -200,
                         opacity: 0,
                         background: 'rgba(0,0,0,0)',
                     }}
                     animate={{
                         x: 0,
                         opacity: 1,
+                        color: Color.logoColor,
                         background: 'rgba(0,0,0,0)',
                     }}
                     whileHover={{
@@ -36,10 +41,13 @@ const DestinationSelectButton = ({
                         transition: { duration: 0.5 },
                     }}
                     exit={{
-                        x: 100,
+                        x: 200,
                         opacity: 0,
                         color: Color.darkTextColor,
                         background: Color.logoColor,
+                        transition: {
+                            duration: 1.0,
+                        },
                     }}
                 >
                     {text} →
@@ -49,7 +57,7 @@ const DestinationSelectButton = ({
                 <motion.div
                     className={styles.buttonTextContainer}
                     initial={{
-                        x: -100,
+                        x: -200,
                         opacity: 0,
                         background: Color.btnHoverBackgroundColor,
                         color: Color.darkTextColor,
@@ -67,7 +75,7 @@ const DestinationSelectButton = ({
                         transition: { duration: 0.5 },
                     }}
                     exit={{
-                        x: 100,
+                        x: 200,
                         opacity: 0,
                         color: Color.darkTextColor,
                         background: Color.logoColor,

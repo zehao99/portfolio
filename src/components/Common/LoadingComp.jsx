@@ -1,34 +1,47 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import styles from './LoadingComp.module.scss';
 
-const exitParam = {
-    scale: [1, 2, 5, 20, 400],
-    opacity: [1, 0.8, 0.6, 0.4, 0],
-    transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-        times: [0, 0.2, 0.5, 0.8, 1],
-    },
-};
+import styled from 'styled-components';
+import Colors from '../../styles/Colors.js';
 
-const LoadingComp = (props) => {
-    useEffect(() => {
-        const notifyIsLoading = props.notifyIsLoading
-            ? props.notifyIsLoading
-            : (status) => {};
-        notifyIsLoading(true);
-        return () => {
-            notifyIsLoading(false);
-        };
-    });
+const FullScreenBackGroundContainer = styled(motion.div)`
+    background: ${(props) => props.color};
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
+
+const LoadingIconAnimator = styled(motion.div)`
+    background: ${Colors.homePageLightTextColor};
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    transform: translateY(-70px);
+`;
+
+const LoadingComp = ({ delay, backgroundColor }) => {
+    const exitParam = {
+        scale: [1, 2, 5, 20, 400],
+        opacity: [1, 0.8, 0.6, 0.4, 0],
+        transition: {
+            delay: delay ?? 0,
+            duration: 0.5,
+            ease: 'easeInOut',
+            times: [0, 0.2, 0.5, 0.8, 1],
+        },
+    };
 
     return (
-        <motion.div className={styles.bkBlue} exit={exitParam}>
-            <motion.div className={styles.loadingIcon} exit={exitParam}>
-                <motion.div
+        <FullScreenBackGroundContainer
+            color={backgroundColor ?? Colors.skillCardBackgroundColor}
+        >
+            <motion.div exit={exitParam}>
+                <LoadingIconAnimator
                     key="loading-icon"
-                    className={styles.loadingIconAnimator}
                     animate={{
                         scale: [1, 1, 1, 1, 1],
                         x: [0, -100, 0, 100, 0],
@@ -45,7 +58,7 @@ const LoadingComp = (props) => {
                     exit={exitParam}
                 />
             </motion.div>
-        </motion.div>
+        </FullScreenBackGroundContainer>
     );
 };
 

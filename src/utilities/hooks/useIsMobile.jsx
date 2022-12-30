@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import useWindowDimensions from './useWindowDimensions';
+import useWindowDimensions from './useWindowDimensions.jsx';
 
 export default function useIsMobile() {
     const [isMobile, setIsMobile] = useState();

@@ -19,12 +19,17 @@ const Overview = (props) => {
                         </div>
                     </div>
                 </div>
-                <div className={styles.imgContainer}>
+                <motion.div
+                    className={styles.imgContainer}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ duration: 0.5 }}
+                >
                     <img
                         src="https://philipliart.files.wordpress.com/2022/03/memoji_zehao.png"
                         alt="Memoji"
                     />
-                </div>
+                </motion.div>
                 <div className={styles.backgroundRect} />
             </div>
             <motion.div

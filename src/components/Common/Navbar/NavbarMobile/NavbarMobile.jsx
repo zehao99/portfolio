@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import { motion, useCycle } from 'framer-motion';
 import { MenuToggle } from './NavbarMobileToggle';
 import { Navigation } from './NavbarMobileMainNav';
-import useDimensions from '../../../../utilities/useWindowDimensions';
+import useDimensions from '../../../../utilities/hooks/useWindowDimensions.jsx';
 
 const NavbarMobile = (props) => {
     const [isOpen, toggleOpen] = useCycle(false, true);
