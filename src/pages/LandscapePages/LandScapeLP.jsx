@@ -13,8 +13,8 @@ const EarthCanvas = React.lazy(() =>
 
 const positions = {
     tokyo: {
-        lat: toRad(-35.652832),
-        lon: toRad(-139.839478),
+        lat: toRad(35.652832),
+        lon: toRad(139.839478),
         text: 'Japan 日本',
         destinationUrl: '/landscape/japan',
     },
