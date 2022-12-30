@@ -5,8 +5,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import styled from 'styled-components';
 
 const AppDefaultContainer = styled.div`
-  color: ${Colors.primaryFontColor};
-`
+    color: ${Colors.primaryFontColor};
+`;
 
 const App = (props) => {
     const preventDefaultEvent = (e) => {

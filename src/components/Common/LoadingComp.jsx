@@ -5,25 +5,25 @@ import styled from 'styled-components';
 import Colors from '../../styles/Colors.js';
 
 const FullScreenBackGroundContainer = styled(motion.div)`
-  background: ${props => props.color};
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  z-index: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
+    background: ${(props) => props.color};
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
 
 const LoadingIconAnimator = styled(motion.div)`
-  background: ${Colors.homePageLightTextColor};
-  border-radius: 30px;
-  width: 50px;
-  height: 50px;
-  transform: translateY(-70px);
-`
+    background: ${Colors.homePageLightTextColor};
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    transform: translateY(-70px);
+`;
 
-const LoadingComp = ({delay, backgroundColor}) => {
+const LoadingComp = ({ delay, backgroundColor }) => {
     const exitParam = {
         scale: [1, 2, 5, 20, 400],
         opacity: [1, 0.8, 0.6, 0.4, 0],
@@ -36,10 +36,12 @@ const LoadingComp = ({delay, backgroundColor}) => {
     };
 
     return (
-        <FullScreenBackGroundContainer color={backgroundColor ?? Colors.skillCardBackgroundColor}>
+        <FullScreenBackGroundContainer
+            color={backgroundColor ?? Colors.skillCardBackgroundColor}
+        >
             <motion.div exit={exitParam}>
                 <LoadingIconAnimator
-                    key='loading-icon'
+                    key="loading-icon"
                     animate={{
                         scale: [1, 1, 1, 1, 1],
                         x: [0, -100, 0, 100, 0],

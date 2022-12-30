@@ -6,16 +6,19 @@ import styles from './DestinationSelectButton.module.scss';
 import Color from '../../../styles/Colors';
 
 const DestinationSelectButton = ({
-                                     text,
-                                     destinationUrl,
-                                     onClick,
-                                     setDeselect,
-                                     isSelected,
-                                     animationVariants,
-                                 }) => {
+    text,
+    destinationUrl,
+    onClick,
+    setDeselect,
+    isSelected,
+    animationVariants,
+}) => {
     return (
-        <motion.div variants={animationVariants} className={styles.buttonContainer}>
-            <AnimatePresence mode='wait' />
+        <motion.div
+            variants={animationVariants}
+            className={styles.buttonContainer}
+        >
+            <AnimatePresence mode="wait" />
             {!isSelected && (
                 <motion.div
                     className={styles.buttonTextContainer}
@@ -43,8 +46,8 @@ const DestinationSelectButton = ({
                         color: Color.darkTextColor,
                         background: Color.logoColor,
                         transition: {
-                            duration: 1.0
-                        }
+                            duration: 1.0,
+                        },
                     }}
                 >
                     {text} →

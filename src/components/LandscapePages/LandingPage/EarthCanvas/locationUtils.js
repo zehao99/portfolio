@@ -16,8 +16,8 @@ const getCurrentSunLongLatitudeRad = () => {
             (currentTime.getTime() % MILLISECONDS_IN_A_DAY) /
             MILLISECONDS_IN_A_DAY
         ) *
-        2 *
-        Math.PI -
+            2 *
+            Math.PI -
         (12 / 24) * Math.PI;
 
     const dayInYear = () => {
@@ -56,13 +56,20 @@ export const getPolarCameraPosition = (lon, lat) => {
     location = location.applyEuler(new Euler(0, lon + UTC_TIME_RAD_OFFSET, 0));
 
     return { position: location, lookAt: new Vector3(0, 0, 0) };
-
 };
 
-export const get45DegreesCameraPosition = (lon, lat, height, lookAtRadius, isInit) => {
+export const get45DegreesCameraPosition = (
+    lon,
+    lat,
+    height,
+    lookAtRadius,
+    isInit
+) => {
     let lookAtLocation = new Vector3(0, 0, lookAtRadius);
     lookAtLocation = lookAtLocation.applyEuler(new Euler(-lat, 0, 0));
-    lookAtLocation = lookAtLocation.applyEuler(new Euler(0, lon + UTC_TIME_RAD_OFFSET, 0));
+    lookAtLocation = lookAtLocation.applyEuler(
+        new Euler(0, lon + UTC_TIME_RAD_OFFSET, 0)
+    );
     let location = new Vector3(0, 0, height);
     let transferredLat;
     if (lat > 0) {
@@ -81,33 +88,39 @@ export const get3DPositionOnSphereWithLonLat = (lon, lat) => {
     let location = new Vector3(0, 0, 1);
     location = location.applyEuler(new Euler(-lat, 0, 0));
     location = location.applyEuler(new Euler(0, lon + UTC_TIME_RAD_OFFSET, 0));
-    return location
-}
+    return location;
+};
 
 export const getLocationMarkRotation = (lon, lat) => {
     let matrix1 = new Matrix4();
-    matrix1.makeRotationFromEuler(new Euler(0, lon, lat - toRad(30), 'XYZ'))
+    matrix1.makeRotationFromEuler(new Euler(0, lon, lat - toRad(30), 'XYZ'));
     let matrix2 = new Matrix4();
-    matrix2.makeRotationFromEuler(new Euler(0, Math.PI / 6, 0))
+    matrix2.makeRotationFromEuler(new Euler(0, Math.PI / 6, 0));
     matrix1.multiply(matrix2);
 
     let baseEuler = new Euler();
     baseEuler.setFromRotationMatrix(matrix1);
     // let secondEuler = new Euler(0, 0, toRad(15));
     return baseEuler;
-}
-
+};
 
 export const getRotationMatrix = (lo, la) => {
     let lon = lo + Math.PI;
     let lat = -la;
     const res = new Matrix4();
     res.set(
-        - Math.sin(lat) * Math.sin(lon), - Math.cos(lat), - Math.sin(lat) * Math.cos(lon), 0,
-        Math.cos(lat) * Math.sin(lon), Math.sin(lat), Math.cos(lat) * Math.cos(lon), 0,
-        Math.cos(lon), 0, -Math.sin(lon), 0
-        );
+        -Math.sin(lat) * Math.sin(lon),
+        -Math.cos(lat),
+        -Math.sin(lat) * Math.cos(lon),
+        0,
+        Math.cos(lat) * Math.sin(lon),
+        Math.sin(lat),
+        Math.cos(lat) * Math.cos(lon),
+        0,
+        Math.cos(lon),
+        0,
+        -Math.sin(lon),
+        0
+    );
     return res;
-}
-
-
+};

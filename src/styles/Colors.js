@@ -12,7 +12,8 @@ const Color = {
     lightTextColor: '#E0EFFF',
     skillCardBackgroundColor: '#284263',
     homePageLightTextColor: '#f7d392',
-    white: "#FFFFFF",
+    white: '#FFFFFF',
+    spotLightColor: '#ffe1aa',
 };
 
 export default Color;

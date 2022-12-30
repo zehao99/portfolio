@@ -67,12 +67,12 @@ const navContent = [
     //     url: 'https://codeandchat.live',
     // },
     {
-        id: "Tech Blog",
+        id: 'Tech Blog',
         content: [],
         show: false,
         isRight: false,
         isExternalLink: true,
-        url: 'https://philipli.dev'
+        url: 'https://philipli.dev',
     },
 ];
 

@@ -22,9 +22,12 @@ const SpecDoc = () => {
         });
 
     return (
-        <AnimatePresence mode={"wait"}>
+        <AnimatePresence mode={'wait'}>
             {!showComp && <LoadingComp />}
-            <div key={"specdoc-content"} className={showComp ? styles.container : styles.noShow}>
+            <div
+                key={'specdoc-content'}
+                className={showComp ? styles.container : styles.noShow}
+            >
                 <div className={styles.title}>Specialist Doctors</div>
                 <div className={styles.periodContainer}>
                     <div className={styles.period}>

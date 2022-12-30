@@ -8,7 +8,7 @@ import DestinationSelectButton from '../../components/LandscapePages/LandingPage
 import { toRad } from '../../utilities/calculations.js';
 
 const EarthCanvas = React.lazy(() =>
-    import('../../components/LandscapePages/LandingPage/EarthCanvas'),
+    import('../../components/LandscapePages/LandingPage/EarthCanvas')
 );
 
 const positions = {
@@ -45,8 +45,11 @@ const animationStatusParam = {
     show: { opacity: 1, x: 0 },
 };
 
-
-const initCameraPos = { ...positions.shanghai, height: MAX_CAMERA_HEIGHT, lookAtRadius: 0 };
+const initCameraPos = {
+    ...positions.shanghai,
+    height: MAX_CAMERA_HEIGHT,
+    lookAtRadius: 0,
+};
 
 const LandScapeLP = () => {
     const [currCamPos, setCurrCamPos] = useState(initCameraPos);
@@ -111,29 +114,43 @@ const LandScapeLP = () => {
                                     delayChildren: 0.3,
                                     staggerChildren: 0.08,
                                 }}
-                                initial='hidden'
-                                animate='show'>
-                                <motion.h1 variants={animationStatusParam}>Explore</motion.h1>
-                                <motion.h2 variants={animationStatusParam}>The World with My Lens</motion.h2>
-                                {Object.keys(positions).map((key) => (
-                                    positions[key].text && <DestinationSelectButton
-                                        key={`dest-button-${key}`}
-                                        text={positions[key].text}
-                                        onClick={getSelectFunction(key)}
-                                        isSelected={key === selected}
-                                        setDeselect={deselectFunc}
-                                        destinationUrl={
-                                            positions[key].destinationUrl
-                                        }
-                                        animationVariants={animationStatusParam}
-                                    />
-                                ))}
+                                initial="hidden"
+                                animate="show"
+                            >
+                                <motion.h1 variants={animationStatusParam}>
+                                    Explore
+                                </motion.h1>
+                                <motion.h2 variants={animationStatusParam}>
+                                    The World with My Lens
+                                </motion.h2>
+                                {Object.keys(positions).map(
+                                    (key) =>
+                                        positions[key].text && (
+                                            <DestinationSelectButton
+                                                key={`dest-button-${key}`}
+                                                text={positions[key].text}
+                                                onClick={getSelectFunction(key)}
+                                                isSelected={key === selected}
+                                                setDeselect={deselectFunc}
+                                                destinationUrl={
+                                                    positions[key]
+                                                        .destinationUrl
+                                                }
+                                                animationVariants={
+                                                    animationStatusParam
+                                                }
+                                            />
+                                        )
+                                )}
                             </motion.div>
                             <Footer />
                         </>
                     )}
                 </motion.div>
-                <motion.div key={'earth-canvas-container'} className={styles.canvasContainer}>
+                <motion.div
+                    key={'earth-canvas-container'}
+                    className={styles.canvasContainer}
+                >
                     <EarthCanvas
                         notifyLoaded={notifyLoaded}
                         notifyInLoading={notifyInLoading}

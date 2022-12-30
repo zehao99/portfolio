@@ -22,9 +22,12 @@ const Tomographic = () => {
         });
 
     return (
-        <AnimatePresence mode={"wait"}>
+        <AnimatePresence mode={'wait'}>
             {!showComp && <LoadingComp />}
-            <div key={"tomographic-content"} className={showComp ? styles.container : styles.noShow}>
+            <div
+                key={'tomographic-content'}
+                className={showComp ? styles.container : styles.noShow}
+            >
                 <div className={styles.title}>Tomographic Proximity Sensor</div>
                 <div className={styles.periodContainer}>
                     <div className={styles.period}>

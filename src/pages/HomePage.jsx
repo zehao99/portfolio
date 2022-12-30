@@ -9,7 +9,6 @@ import AnimatedCharacters from '../components/Common/AnnimatedText';
 import LoadingComp from '../components/Common/LoadingComp.jsx';
 import Colors from '../styles/Colors.js';
 
-
 const rectParentParam = {
     hidden: {
         opacity: 0,

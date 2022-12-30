@@ -22,9 +22,12 @@ const Calories = () => {
         });
 
     return (
-        <AnimatePresence mode={"wait"}>
+        <AnimatePresence mode={'wait'}>
             {!showComp && <LoadingComp />}
-            <div key={"calories-content"} className={showComp ? styles.container : styles.noShow}>
+            <div
+                key={'calories-content'}
+                className={showComp ? styles.container : styles.noShow}
+            >
                 <div className={styles.title}>Calories Search</div>
                 <div className={styles.periodContainer}>
                     <div className={styles.period}>

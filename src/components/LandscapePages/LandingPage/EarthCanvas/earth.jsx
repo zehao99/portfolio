@@ -12,7 +12,8 @@ import EarthSpecularMap from '../../../../assets/textures/8k_earth_specular_map.
 import {
     get3DPositionOnSphereWithLonLat,
     get45DegreesCameraPosition,
-    getCurrSunPositionVector, getLocationMarkRotation,
+    getCurrSunPositionVector,
+    getLocationMarkRotation,
     getPolarCameraPosition,
     getRotationMatrix,
 } from './locationUtils';
@@ -47,7 +48,7 @@ const Earth = (props) => {
     const mouseLonLatOffset = useMousePositionMoveLonLat();
 
     const [cameraPositionTarget, setCameraPositionTarget] = useState(
-        props.currCamPos,
+        props.currCamPos
     );
 
     const [currentLonLatPos, setCurrentLonLatPos] = useState({
@@ -60,10 +61,9 @@ const Earth = (props) => {
     const [framesLeft, setFramesLeft] = useState(MOVE_ANIMATION_FRAME_LENGTH);
 
     const initialCameraPos = getPolarCameraPosition(
-        currentLonLatPos.lon, currentLonLatPos.lat,
+        currentLonLatPos.lon,
+        currentLonLatPos.lat
     );
-
-    const [markRotation, setMarkRotation] = useState(new Euler());
 
     const earthRef = useRef();
     const cloudsRef = useRef();
@@ -84,12 +84,19 @@ const Earth = (props) => {
             // Calculate new longitude and lattitude.
             const lonDiff = cameraPositionTarget.lon - currentLonLatPos.lon;
             const latDiff = cameraPositionTarget.lat - currentLonLatPos.lat;
-            const heightDiff = cameraPositionTarget.height - currentLonLatPos.height;
-            const radiusDiff = cameraPositionTarget.lookAtRadius - currentLonLatPos.lookAtRadius;
-            _currLonLatPos.lon = currentLonLatPos.lon + (lonDiff / framesLeft) * 2;
-            _currLonLatPos.lat = currentLonLatPos.lat + (latDiff / framesLeft) * 2;
-            _currLonLatPos.height = currentLonLatPos.height + (heightDiff / framesLeft) * 2;
-            _currLonLatPos.lookAtRadius = currentLonLatPos.lookAtRadius + (radiusDiff / framesLeft);
+            const heightDiff =
+                cameraPositionTarget.height - currentLonLatPos.height;
+            const radiusDiff =
+                cameraPositionTarget.lookAtRadius -
+                currentLonLatPos.lookAtRadius;
+            _currLonLatPos.lon =
+                currentLonLatPos.lon + (lonDiff / framesLeft) * 2;
+            _currLonLatPos.lat =
+                currentLonLatPos.lat + (latDiff / framesLeft) * 2;
+            _currLonLatPos.height =
+                currentLonLatPos.height + (heightDiff / framesLeft) * 2;
+            _currLonLatPos.lookAtRadius =
+                currentLonLatPos.lookAtRadius + radiusDiff / framesLeft;
             // Update React States.
             setCurrentLonLatPos({ ..._currLonLatPos });
             setFramesLeft((prev) => prev - 1);
@@ -104,19 +111,13 @@ const Earth = (props) => {
                 : _currLonLatPos.lat + mouseLonLatOffset.lat,
             _currLonLatPos.height,
             _currLonLatPos.lookAtRadius,
-            props.isInit,
+            props.isInit
         );
         cameraRef.current.position.setX(position.x);
         cameraRef.current.position.setY(position.y);
         cameraRef.current.position.setZ(position.z);
         // Always look at target.
         cameraRef.current.lookAt(lookAt);
-        const newEuler = new Euler();
-        // console.log(getRotationMatrix(cameraPositionTarget.lon, cameraPositionTarget.lat));
-        newEuler.setFromRotationMatrix(getRotationMatrix(cameraPositionTarget.lon, cameraPositionTarget.lat), 'XYZ', true);
-        // console.log(newEuler);
-        setMarkRotation(cameraRef.current.rotation);
-        // console.log(cameraRef.current);
     };
 
     useFrame(({ clock }) => {
@@ -127,7 +128,7 @@ const Earth = (props) => {
         <>
             <ambientLight intensity={0.1} />
             <pointLight
-                color='#f6f3ea'
+                color="#f6f3ea"
                 position={sunPosition}
                 intensity={1.2}
             />
@@ -139,18 +140,25 @@ const Earth = (props) => {
                 saturation={0}
                 fade={true}
             />
-            {!props.isInit && <LocationMark
-                position={get3DPositionOnSphereWithLonLat(cameraPositionTarget.lon, cameraPositionTarget.lat)}
-                scale={0.023}
-                rotation={getLocationMarkRotation(cameraPositionTarget.lon, cameraPositionTarget.lat)}
-
-                // rotation={[
-                //     props.currCamPos.lat > 0 ? 0: - Math.PI,
-                //     (props.currCamPos.lat > 0 ? 1 : - 1) * cameraPositionTarget.lon + Math.PI / 7,
-                //     0
-                // ]}
-                onPointerEnter={(e) => console.log('enter')}
-            />}
+            {!props.isInit && (
+                <LocationMark
+                    position={get3DPositionOnSphereWithLonLat(
+                        cameraPositionTarget.lon,
+                        cameraPositionTarget.lat
+                    )}
+                    scale={0.023}
+                    rotation={getLocationMarkRotation(
+                        cameraPositionTarget.lon,
+                        cameraPositionTarget.lat
+                    )}
+                    // rotation={[
+                    //     props.currCamPos.lat > 0 ? 0: - Math.PI,
+                    //     (props.currCamPos.lat > 0 ? 1 : - 1) * cameraPositionTarget.lon + Math.PI / 7,
+                    //     0
+                    // ]}
+                    onPointerEnter={(e) => console.log('enter')}
+                />
+            )}
             <mesh ref={cloudsRef} position={earthPosition}>
                 <sphereGeometry args={[1.005, 32, 32]} />
                 <meshPhongMaterial

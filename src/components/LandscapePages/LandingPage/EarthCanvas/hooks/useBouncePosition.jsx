@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { useFrame } from '@react-three/fiber';
 
-
-const useBouncePosition = ({close, far, cycleFrames}) => {
+const useBouncePosition = ({ close, far, cycleFrames }) => {
     const [currPos, setCurrPos] = useState(close);
     const [bounceTarget, setBounceTarget] = useState(far);
     const [framesLeft, setFramesLeft] = useState(cycleFrames);
@@ -16,18 +15,18 @@ const useBouncePosition = ({close, far, cycleFrames}) => {
             }
         });
         setFramesLeft(cycleFrames);
-    }
+    };
 
     useFrame(() => {
         const diff = bounceTarget - currPos;
-        setFramesLeft(prev => prev - 1);
-        if(framesLeft === 1) {
+        setFramesLeft((prev) => prev - 1);
+        if (framesLeft === 1) {
             toggleBounceTarget();
         }
-        setCurrPos(prev => prev + (diff / framesLeft));
-    })
+        setCurrPos((prev) => prev + diff / framesLeft);
+    });
 
     return currPos;
-}
+};
 
 export default useBouncePosition;

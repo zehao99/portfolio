@@ -27,7 +27,7 @@ const CollectionShowHorizontal = (props) => {
             onScroll={(e) => scrollHandler(e)}
         >
             <motion.div
-                key={"collection-desc-index"}
+                key={'collection-desc-index'}
                 className={styles.CollectionPageDescription}
                 initial={{ x: -100, scale: 0 }}
                 animate={{ x: 0, scale: 1 }}
