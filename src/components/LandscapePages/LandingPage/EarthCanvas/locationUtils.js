@@ -85,7 +85,14 @@ export const get3DPositionOnSphereWithLonLat = (lon, lat) => {
 }
 
 export const getLocationMarkRotation = (lon, lat) => {
-    let baseEuler = new Euler(0, lon, lat - toRad(30), 'XYZ');
+    let matrix1 = new Matrix4();
+    matrix1.makeRotationFromEuler(new Euler(0, lon, lat - toRad(30), 'XYZ'))
+    let matrix2 = new Matrix4();
+    matrix2.makeRotationFromEuler(new Euler(0, Math.PI / 6, 0))
+    matrix1.multiply(matrix2);
+
+    let baseEuler = new Euler();
+    baseEuler.setFromRotationMatrix(matrix1);
     // let secondEuler = new Euler(0, 0, toRad(15));
     return baseEuler;
 }
