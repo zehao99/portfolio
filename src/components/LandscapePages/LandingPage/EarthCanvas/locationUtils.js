@@ -1,4 +1,4 @@
-import { Euler, Vector3 } from 'three';
+import { Euler, Matrix3, Matrix4, Vector3 } from 'three';
 
 import { toRad } from '../../../../utilities/calculations.js';
 
@@ -70,7 +70,7 @@ export const get45DegreesCameraPosition = (lon, lat, height, lookAtRadius, isIni
     } else if (isInit) {
         transferredLat = -lat;
     } else {
-        transferredLat = -lat - toRad(10);
+        transferredLat = -lat + toRad(10);
     }
     location = location.applyEuler(new Euler(transferredLat, 0, 0));
     location = location.applyEuler(new Euler(0, lon + UTC_TIME_RAD_OFFSET, 0));
@@ -84,6 +84,23 @@ export const get3DPositionOnSphereWithLonLat = (lon, lat) => {
     return location
 }
 
-export const getCameraInitialLonLat = () => {
-    return DEFAULT_ROTATION;
-};
+export const getLocationMarkRotation = (lon, lat) => {
+    let baseEuler = new Euler(0, lon, lat - toRad(30), 'XYZ');
+    // let secondEuler = new Euler(0, 0, toRad(15));
+    return baseEuler;
+}
+
+
+export const getRotationMatrix = (lo, la) => {
+    let lon = lo + Math.PI;
+    let lat = -la;
+    const res = new Matrix4();
+    res.set(
+        - Math.sin(lat) * Math.sin(lon), - Math.cos(lat), - Math.sin(lat) * Math.cos(lon), 0,
+        Math.cos(lat) * Math.sin(lon), Math.sin(lat), Math.cos(lat) * Math.cos(lon), 0,
+        Math.cos(lon), 0, -Math.sin(lon), 0
+        );
+    return res;
+}
+
+

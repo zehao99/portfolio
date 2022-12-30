@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useFrame, useLoader } from '@react-three/fiber';
 import { PerspectiveCamera, Stars } from '@react-three/drei';
 import * as THREE from 'three';
-import { TextureLoader } from 'three';
+import { Euler, TextureLoader } from 'three';
 
 import EarthDayMap from '../../../../assets/textures/8k_earth_daymap.jpg';
 import EarthCloudsMap from '../../../../assets/textures/8k_earth_clouds.png';
@@ -12,17 +12,17 @@ import EarthSpecularMap from '../../../../assets/textures/8k_earth_specular_map.
 import {
     get3DPositionOnSphereWithLonLat,
     get45DegreesCameraPosition,
-    getCurrSunPositionVector,
+    getCurrSunPositionVector, getLocationMarkRotation,
     getPolarCameraPosition,
+    getRotationMatrix,
 } from './locationUtils';
 import earthVertexShader from './shaders/earthVertexShader.glsl';
 import earthFragmentShader from './shaders/earthFragmentShader.glsl';
 
-import useMousePositionMoveLonLat from './useMousePositionMoveLonLat';
+import useMousePositionMoveLonLat from './hooks/useMousePositionMoveLonLat.jsx';
 
 import useIsMobile from '../../../../utilities/hooks/useIsMobile.jsx';
 import LocationMark from './LocationMark';
-import { log } from 'three/nodes';
 
 const MOVE_ANIMATION_FRAME_LENGTH = 45;
 
@@ -59,10 +59,11 @@ const Earth = (props) => {
 
     const [framesLeft, setFramesLeft] = useState(MOVE_ANIMATION_FRAME_LENGTH);
 
-
     const initialCameraPos = getPolarCameraPosition(
         currentLonLatPos.lon, currentLonLatPos.lat,
     );
+
+    const [markRotation, setMarkRotation] = useState(new Euler());
 
     const earthRef = useRef();
     const cloudsRef = useRef();
@@ -110,6 +111,12 @@ const Earth = (props) => {
         cameraRef.current.position.setZ(position.z);
         // Always look at target.
         cameraRef.current.lookAt(lookAt);
+        const newEuler = new Euler();
+        // console.log(getRotationMatrix(cameraPositionTarget.lon, cameraPositionTarget.lat));
+        newEuler.setFromRotationMatrix(getRotationMatrix(cameraPositionTarget.lon, cameraPositionTarget.lat), 'XYZ', true);
+        // console.log(newEuler);
+        setMarkRotation(cameraRef.current.rotation);
+        // console.log(cameraRef.current);
     };
 
     useFrame(({ clock }) => {
@@ -134,8 +141,14 @@ const Earth = (props) => {
             />
             {!props.isInit && <LocationMark
                 position={get3DPositionOnSphereWithLonLat(cameraPositionTarget.lon, cameraPositionTarget.lat)}
-                scale={0.03}
-                rotation={[0, cameraPositionTarget.lon + Math.PI / 6, 0]}
+                scale={0.023}
+                rotation={getLocationMarkRotation(cameraPositionTarget.lon, cameraPositionTarget.lat)}
+
+                // rotation={[
+                //     props.currCamPos.lat > 0 ? 0: - Math.PI,
+                //     (props.currCamPos.lat > 0 ? 1 : - 1) * cameraPositionTarget.lon + Math.PI / 7,
+                //     0
+                // ]}
                 onPointerEnter={(e) => console.log('enter')}
             />}
             <mesh ref={cloudsRef} position={earthPosition}>
