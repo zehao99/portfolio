@@ -104,23 +104,3 @@ export const getLocationMarkRotation = (lon, lat) => {
     return baseEuler;
 };
 
-export const getRotationMatrix = (lo, la) => {
-    let lon = lo + Math.PI;
-    let lat = -la;
-    const res = new Matrix4();
-    res.set(
-        -Math.sin(lat) * Math.sin(lon),
-        -Math.cos(lat),
-        -Math.sin(lat) * Math.cos(lon),
-        0,
-        Math.cos(lat) * Math.sin(lon),
-        Math.sin(lat),
-        Math.cos(lat) * Math.cos(lon),
-        0,
-        Math.cos(lon),
-        0,
-        -Math.sin(lon),
-        0
-    );
-    return res;
-};

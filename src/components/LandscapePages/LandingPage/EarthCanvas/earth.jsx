@@ -15,7 +15,6 @@ import {
     getCurrSunPositionVector,
     getLocationMarkRotation,
     getPolarCameraPosition,
-    getRotationMatrix,
 } from './locationUtils';
 import earthVertexShader from './shaders/earthVertexShader.glsl';
 import earthFragmentShader from './shaders/earthFragmentShader.glsl';
