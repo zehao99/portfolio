@@ -24,7 +24,8 @@ const LocationMark = (props) => {
     return (
         <group {...props} dispose={null}
                position={[props.position.x, props.position.y + groupBounceY, props.position.z]}>
-            <pointLight color='#f6f3ea' position={[2, 3, 0]} intensity={0.3}/>
+            <spotLight color='#f6f3ea' position={[2, 3.6, 0.5]} penumbra={0.6} angle={Math.PI / 3.5} distance={0.07}
+                       decay={1} intensity={0.6} />
             <mesh geometry={nodes.Circle.geometry}
                   material={materials['Material.002']} position={[0.07, 2.47, 0]}
                   rotation={[0, 0, -Math.PI / 2]} />
