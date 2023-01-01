@@ -181,7 +181,7 @@ const Intro = ({ handleDisplayModal }) => {
                         content: '';
                         position: absolute;
                         display: block;
-                        background: url('/about_bg.jpg') no-repeat center
+                        background: url('/img/about_bg.jpg') no-repeat center
                             center/cover;
                         width: 100%;
                         height: 100%;

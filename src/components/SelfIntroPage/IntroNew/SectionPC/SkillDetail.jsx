@@ -11,7 +11,7 @@ const SkillDetail = () => {
             <div
                 className={styles.background}
                 style={{
-                    backgroundImage: `url(${'/infoBkg.svg'})`,
+                    backgroundImage: `url(/img/infoBkg.svg)`,
                 }}
             >
                 <div className={styles.skillAndExperienceContainer}>
