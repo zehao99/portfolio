@@ -2,11 +2,21 @@
 
 $transferWidth: 700px;
 
+.wholePageWrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
 .pageSectionWrapper {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     width: 100%;
+
 
     @media (max-width: $transferWidth) {
         flex-direction: column-reverse;
@@ -56,7 +66,7 @@ $transferWidth: 700px;
     width: 800px;
     height: 200px;
     position: absolute;
-    margin-top: -100px;
+    //margin-top: -100px;
 
     margin-right: 10px;
     z-index: 0;

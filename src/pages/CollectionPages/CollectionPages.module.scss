@@ -39,4 +39,15 @@
     align-items: center;
     margin: auto;
     font-family: 'Quicksand', sans-serif;
+    scroll-snap-type: y mandatory;
+}
+
+.progressBar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: $logoColor;
+    top: 0px;
+    z-index: 1000;
 }

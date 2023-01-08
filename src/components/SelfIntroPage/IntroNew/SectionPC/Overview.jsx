@@ -4,8 +4,8 @@ import styles from './Overview.module.scss';
 
 const Overview = (props) => {
     return (
-        <motion.div>
-            <div className={styles.mainContainer}>
+        <motion.div transition={{mode: "beforeChildren", staggerChildren: 1, delayChildren: 1}}>
+            <motion.div className={styles.mainContainer}>
                 <div className={styles.textContainer}>
                     <div className={styles.titleContainer}>
                         <p className={styles.caption}>Hi ~ 😄, This is</p>
@@ -31,10 +31,11 @@ const Overview = (props) => {
                     />
                 </motion.div>
                 <div className={styles.backgroundRect} />
-            </div>
+            </motion.div>
             <motion.div
                 className={styles.floatingSquare}
-                animate={{ x: '30em', y: '-9em' }}
+                initial={{x: '10em', y: '-7em', opacity: 0}}
+                animate={{ x: '30em', y: '-9em', opacity: 1 }}
             />
             <motion.div
                 className={styles.floatingSquare}

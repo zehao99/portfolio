@@ -1,13 +1,20 @@
 import React from 'react';
 import { pageVariants } from '../../styles/animations/PageAnimateParams.js';
 import styles from './CollectionPages.module.scss';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import NavBar from '../../components/Common/Navbar/Navbar';
 import Footer from '../../components/Common/Footer';
 import Title from '../../components/CollectionPages/LandingPage/Title';
 import PageSection from '../../components/CollectionPages/LandingPage/PageSection';
 
 const CollectionsLP = () => {
+    const { scrollYProgress } = useScroll();
+    const scaleX = useSpring(scrollYProgress, {
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    });
+
     return (
         <motion.div
             initial={'initial'}
@@ -54,6 +61,7 @@ const CollectionsLP = () => {
                     pageTitle={'Japan stories'}
                 />
             </div>
+            <motion.div className={styles.progressBar} style={{ scaleX }} />
             <Footer />
         </motion.div>
     );
